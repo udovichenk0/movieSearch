@@ -1,0 +1,90 @@
+.buttonBack{
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.wrapper{
+	// padding: 40px 0;	
+	background-color: #f4f4f4;
+}
+.filmWrapper{
+	width: 100%;
+}
+
+.box__body{
+	margin: 26px 0 ;
+	@media(min-width: 680px){
+		display: flex;
+	}
+}
+.section__body{
+	background-color: #fff;
+	padding: 40px 40px;	
+}
+
+.fake{
+	width: 250px;
+	height: 400px;
+	background-color: rgb(141, 219, 141);
+}
+.body{
+	&__poster{
+		position: relative;
+		margin-right: 50px;
+	}
+
+	&__rating{
+		position: absolute;
+		top: 13px;
+		left: 14px;
+		background-color: #00a340;
+		padding: 2px 8px;
+		border-radius: 5px;
+		color: #fff;
+	}
+
+	&__title{
+		// font-size: 20px;
+		// color: red;
+	}
+	&__secondTitle{
+		font-size: 20px;
+		color: #414141;
+		font-weight: 300;
+		margin-bottom: 25px;
+	}
+	&__buttons{
+		display: flex;
+		align-items: center;
+		margin-bottom: 35px;
+		gap: 20px;
+	}
+}
+.info{
+	display: flex;
+	&:not(:last-child){
+		margin-bottom: 20px;
+	};
+	&__leftSide{
+		flex: 0 0 170px;
+	}
+	&__rightSide{
+		max-width: 600px;
+	}
+}
+
+.body__poster{
+	width: 300px;
+	height: 420px;
+	@media(max-width: 680px){
+		// margin-bottom: 20px;
+	}
+}
+
+.poster{
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 5px;
+}
+
+

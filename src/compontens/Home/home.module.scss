@@ -1,0 +1,32 @@
+.wrapper{
+	width: 100%;
+	background: center / cover no-repeat url('../../assets/heroImg/heroImg.jpg');
+	background-position: top;
+}
+
+.main{
+	&__body{
+		max-width: 400px;
+		padding: 110px 0;
+		color: #fff
+	}
+
+	&__title{
+		font-size: 40px;
+		line-height: 50px;
+		font-weight: 700;
+		margin-bottom: 40px;
+	}
+	&__description{
+		font-size: 18px;
+		margin-bottom: 40px;
+		line-height: 25px;
+	}
+	&__button{
+		padding: 13px 50px;
+		background-color: rgb(51, 51, 134);
+		font-size: 16px;
+		font-weight: 500;
+		border-radius: 5px;
+	}
+}

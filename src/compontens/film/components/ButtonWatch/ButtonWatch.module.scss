@@ -1,0 +1,15 @@
+.button__watch{
+	padding: 13px 20px;
+	background-color: rgb(80, 80, 158);
+	font-size: 15px;
+	font-weight: 500;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: #fff;
+	transition: background-color 0.2s ease-in-out;
+	&:hover{
+		background-color: rgb(57, 57, 160);
+	}
+}

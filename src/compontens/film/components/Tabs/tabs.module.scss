@@ -1,0 +1,37 @@
+
+
+.tab{
+	&__buttons{
+		display: flex;
+		margin-bottom: 30px;
+		gap: 10px;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+		padding-bottom: 10px;
+	}
+	&__button{
+		cursor: pointer;
+		position: relative;
+		padding: 9px;
+		font-size: 18px;
+		font-weight: 600;
+		&::after{
+			transition: width 0.2s ease;
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0%;
+			height: 3px;
+			background-color: #003f63;
+		}
+		&[aria-selected='true']{
+			color: #003f63;
+			&::after{
+				width: 100%;
+			}
+		}
+	}
+}
+.description{
+	line-height: 22px;;
+}

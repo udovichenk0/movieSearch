@@ -1,0 +1,39 @@
+.block__menu{
+	transition: all 0.15s ease;
+	visibility: hidden;
+	opacity: 0;
+}
+.menu{
+	padding: 85px 25px 30px 25px;
+	top: 0;
+	transform: translateX(-25px);
+	position: absolute;
+	z-index: 3;
+	background-color: #1f1f1f;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	&__list{
+		width: 170px;
+	}
+
+	&__link{
+		display: flex;
+		gap: 9px;
+		align-items: center;
+		&:not(:last-child){
+			margin-bottom: 32px;
+		}
+	}
+
+	&__item{
+		color: #fff;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 16px;
+		font-family: 'Montserrat'
+	}
+}
+.open{
+	visibility: visible;
+	opacity: 1;
+}

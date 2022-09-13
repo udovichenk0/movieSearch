@@ -1,0 +1,15 @@
+.button__store{
+	padding: 13px 20px;
+	background-color: #f2f2f2;
+	font-size: 15px;
+	font-weight: 500;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: #000;
+	transition: background-color 0.2s ease-in-out;
+	&:hover{
+		background-color: #dadada;
+	}
+}

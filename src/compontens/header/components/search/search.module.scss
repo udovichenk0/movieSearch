@@ -1,0 +1,35 @@
+.search__input{
+	background-color: #1f1f1f;
+	color: #fff;
+	padding: 12px 15px;
+	font-size: 18px;
+	margin-left: 150px;
+	border-radius: 5px;
+	min-width: 400px;
+	@media(max-width: 990px){
+		margin-left: 70px;
+	}
+	@media(max-width: 818px){
+		min-width: 200px;
+	}
+}
+
+.form__wrapper{
+	display: flex;
+	align-items: center;
+}
+
+.form__button{
+	padding: 10px;
+}
+
+.searchImage__container{
+	width: 23px;
+	height: 23px;
+	display: flex;
+	align-items: center;
+}
+.search{
+	max-width: 100%;
+	min-height: 100%;
+}

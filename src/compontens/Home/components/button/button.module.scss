@@ -1,0 +1,24 @@
+.button {
+	padding: 13px 20px;
+	background-color: rgb(80, 80, 158);
+	font-size: 16px;
+	font-weight: 500;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: #fff;
+	transition: background-color 0.2s ease-in-out;
+	&:hover{
+		background-color: rgb(57, 57, 160);
+	& .icon{
+		transform: translateX(5px);
+		}
+	}
+}
+.icon{
+	transition: transform 0.2s ease-in-out;
+
+	display: flex;
+	align-items: center;
+}

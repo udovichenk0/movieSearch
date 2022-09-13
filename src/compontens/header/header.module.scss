@@ -1,0 +1,20 @@
+.header__box{
+	display: flex;
+}
+
+.header__login_box{
+	display: flex;
+	align-items: center;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 600;
+	justify-self: flex-end
+}
+.empty{
+	flex: 1;
+}
+.logo{
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}

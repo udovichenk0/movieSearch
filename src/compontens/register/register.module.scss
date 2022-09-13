@@ -1,0 +1,7 @@
+.register__body{
+	max-width: 400px;
+	gap: 15px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: space-between;
+}
