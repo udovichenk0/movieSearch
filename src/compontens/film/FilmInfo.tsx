@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import { Container } from "../../common/containerStyle/container"
@@ -14,6 +14,8 @@ import { ButtonWatch } from "./components/ButtonWatch/ButtonWatch"
 import { FooterTabs } from "../UI/Tabs/FooterTabs"
 import style from './info.module.scss'
 import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
+import { RatingContext } from "../../utils/context/imbContext"
+import { Rating } from "../UI/Rating/Rating"
 
 type QuizParams = {
 	id: string;
@@ -24,6 +26,7 @@ name: string
 export const FilmInfo = () => {
 	const id = useParams<QuizParams>()
 	const {data, isLoading, isError} = useGetMovieByIdQuery(id.id)
+	const [kpRating, setRate] = useState(0)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
@@ -49,9 +52,8 @@ export const FilmInfo = () => {
 		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'name'}/>, condition:actors?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}
 	]
-	
 	return (
-		<div className={style.wrapper}>
+			<div className={style.wrapper}>
 			<Container>
 			<section className={style.section__body}>
 				<button className={style.buttonBack} onClick={() => navigate(-1)}>Назад</button>
@@ -60,7 +62,8 @@ export const FilmInfo = () => {
 						<div className={style.image__container}>
 							<img className={style.poster} src={poster?.url} alt="" />
 						</div>
-						<div className={style.body__rating}>{rating?.kp}</div>
+						{/* <div className={style.body__rating}>{rating?.kp}</div> */}
+						<Rating ratingStyle={style.body__rating} rating={rating}/>
 					</div>
 					<div className={style.body__info}>
 						<h1 className={style.body__title}>{name}</h1>
@@ -78,6 +81,7 @@ export const FilmInfo = () => {
 			<SimilarMovies similarMovies={similarMovies} title={'Похожее кино'} redirect={'film'}/>
 			</section>
 		</Container>
-		</div>	
+		</div>
+			
 	)
 }

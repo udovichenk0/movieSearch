@@ -4,9 +4,10 @@ import { routes } from './pages/routes'
 import './App.css'
 import { Provider } from 'react-redux'
 import { store } from './reduxStore/store'
+import { useState } from 'react'
 function App() {
-
   return (
+    <>
     <Provider store={store()}>
     <Routes>
         <Route>
@@ -16,7 +17,9 @@ function App() {
           )})}
         </Route>
      </Routes>  
-    </Provider>    
+    </Provider>   
+    </>
+     
   )
 }
 

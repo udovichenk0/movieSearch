@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
+    "@tanem/react-nprogress": "^5.0.13",
     "@types/babel__generator": "^7.6.4",
     "@types/react-html-parser": "^2.0.2",
     "@types/styled-components": "^5.1.26",
