@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 export const SwiperSlider = ({content, title, redirect}: any) => {
-	console.log("rerender")
 	return <div className='wrapper'>
 			<h1 className='title'>{title} <span>({content?.length})</span></h1>
 		<Swiper

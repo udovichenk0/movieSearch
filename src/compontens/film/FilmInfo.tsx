@@ -13,6 +13,7 @@ import { ButtonStore } from "./components/Button/ButtonStore"
 import { ButtonWatch } from "./components/ButtonWatch/ButtonWatch"
 import { FooterTabs } from "../UI/Tabs/FooterTabs"
 import style from './info.module.scss'
+import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
 
 type QuizParams = {
 	id: string;
@@ -24,10 +25,9 @@ export const FilmInfo = () => {
 	const id = useParams<QuizParams>()
 	const {data, isLoading, isError} = useGetMovieByIdQuery(id.id)
 	//@ts-ignore
-	const {name,description,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
+	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
 	const navigate = useNavigate()
-	console.log(facts)
 	const items = [
 		{leftItem: 'Страны', rightItem: countries?.map((action:countriesType) => action.name).join(', ')},
 		{leftItem: 'Жанр', rightItem: genres?.map((action:any) => action.name).join(', ')},
@@ -75,6 +75,7 @@ export const FilmInfo = () => {
 					</div>
 				</div>	
 			<FooterTabs tabInfo={tabInfo}/>
+			<SimilarMovies similarMovies={similarMovies} title={'Похожее кино'} redirect={'film'}/>
 			</section>
 		</Container>
 		</div>	
