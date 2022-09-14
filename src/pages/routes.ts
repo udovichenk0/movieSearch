@@ -25,3 +25,4 @@ export const routes = [
 		component: InfoPerson
 	}
 ]
+console.log(1)
