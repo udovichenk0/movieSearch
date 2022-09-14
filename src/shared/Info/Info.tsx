@@ -3,7 +3,7 @@ import { Container } from "../../common/containerStyle/container"
 import { InfoTable } from "../../compontens/film/components/AboutFilm/FactsAboutFilm"
 import { ButtonStore } from "../../compontens/film/components/Button/ButtonStore"
 import { ButtonWatch } from "../../compontens/film/components/ButtonWatch/ButtonWatch"
-import { FooterTabs } from "../../compontens/film/components/Tabs/FooterTabs"
+import { FooterTabs } from "../../compontens/UI/Tabs/FooterTabs"
 import style from './info.module.scss'
 export const Info = ({actors,items,filmInfo}:any) => {
 	const navigate = useNavigate()

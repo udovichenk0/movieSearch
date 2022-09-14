@@ -5,7 +5,7 @@ import { useGetMoviesByIdQuery, useGetPersonByIdQuery } from "../../services/api
 import { SwiperSlider } from "../../shared/slider/Slider"
 import { dateConverter } from "../../utils/stringToDate/dateConverter"
 import { InfoTable } from "../film/components/AboutFilm/FactsAboutFilm"
-import { FooterTabs } from "../film/components/Tabs/FooterTabs"
+import { FooterTabs } from "../UI/Tabs/FooterTabs"
 import { Facts } from "../UI/Facts/Facts"
 import style from './personInfo.module.scss'
 export const Person = () => {

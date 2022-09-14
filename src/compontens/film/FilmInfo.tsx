@@ -11,7 +11,7 @@ import { Facts } from "../UI/Facts/Facts"
 import { InfoTable } from "./components/AboutFilm/FactsAboutFilm"
 import { ButtonStore } from "./components/Button/ButtonStore"
 import { ButtonWatch } from "./components/ButtonWatch/ButtonWatch"
-import { FooterTabs } from "./components/Tabs/FooterTabs"
+import { FooterTabs } from "../UI/Tabs/FooterTabs"
 import style from './info.module.scss'
 
 type QuizParams = {
@@ -27,6 +27,7 @@ export const FilmInfo = () => {
 	const {name,description,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
 	const navigate = useNavigate()
+	console.log(facts)
 	const items = [
 		{leftItem: 'Страны', rightItem: countries?.map((action:countriesType) => action.name).join(', ')},
 		{leftItem: 'Жанр', rightItem: genres?.map((action:any) => action.name).join(', ')},
@@ -45,7 +46,7 @@ export const FilmInfo = () => {
 	})
 	const tabInfo = [
 		{title: 'Описание', content: <h2 className={style.description}>{description}</h2>, condition: description?.length},
-		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'person'}/>, condition:actors?.length},
+		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'name'}/>, condition:actors?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}
 	]
 	

@@ -21,7 +21,7 @@ export const routes = [
 		component: InfoPage
 	},
 	{
-		path: '/person/:id',
+		path: '/name/:id',
 		component: InfoPerson
 	}
 ]
