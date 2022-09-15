@@ -51,7 +51,6 @@ export const FilmInfo = () => {
 		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'name'}/>, condition:actors?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}
 	]
-	console.log(data)
 	return (
 			<div className={style.wrapper}>
 			<Container>
@@ -78,7 +77,7 @@ export const FilmInfo = () => {
 				</div>	
 			<FooterTabs tabInfo={tabInfo}/>
 			<SimilarMovies similarMovies={similarMovies} title={'Похожее кино'} redirect={'film'}/>
-			<Review/>
+			<Review id={id.id}/>
 			</section>
 		</Container>
 		</div>

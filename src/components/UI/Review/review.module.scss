@@ -9,81 +9,11 @@
 .main_block{
 	display: flex;
 }
-
-.main{
-	&__reviews{
-		background-color: #087fc428;
-		flex:0 0 80%;
-	}
-	&__name{
-		font-size: 17px;
-		font-weight: 600;
-		margin-bottom: 21px;
-	}
-	&__top{
-		padding: 35px 30px;
-	}
-	&__comments{
-		margin-bottom: 29px;
-	}
-	&__comment{
-		font-size: 15px;
-		&:not(:last-child){
-			margin-bottom: 23px;
-		}
-	}
-	&__button{
-		background-color: rgba(0,0,0,.1);
-		padding: 5px;
-		border-radius: 5px;
-		margin-bottom: 20px;
-	}
-	&__bottom{
-		border-top: 1px solid rgba(0,0,0,.1);
-	}
-	&__container{
-		padding: 35px 30px;
-		display: flex;
-		justify-content: space-between;
-		align-content: center;
-	}
-	&__estimates{
-		display: flex;
-		gap: 20px;
-	}
+.toggle{
+	height: 110px;
 }
-
-.statistics{
-	padding: 35px 36px;
-}
-
-.review__statistic{
-	&:not(:last-child){
-		margin-bottom: 10px;
-	}
-}
-
-.votes{
+.showMore{
+	width: 100%;
 	display: flex;
-	align-items: flex-end;
-	margin-bottom: 3px;
-	&__allNumbers, &__likedNumber, &__dislidedNumber, &__neutralNumber{
-		font-weight: 700;
-		font-size: 20px;
-		margin-right: 8px;
-	}
-	&__precent{
-		font-size: 14px;
-		color: rgba(0,0,0,.4);
-	}
-	&__likedNumber{
-		color: #00a340;
-	}
-	&__dislidedNumber{
-		color:#ff0000;
-		
-	}
-	&__neutralNumber{
-		color: rgb(119, 119, 119);
-	}
+	justify-content: center;
 }

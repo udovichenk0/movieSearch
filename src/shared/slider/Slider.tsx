@@ -2,10 +2,9 @@ import swiper, { Navigation,  Pagination, Scrollbar, A11y, Lazy  } from 'swiper'
 import './slider.scss'
 // import "swiper/css";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 export const SwiperSlider = ({content, title, redirect}: any) => {
-	console.log(content)
 	return <div className='wrapper'>
 			<h1 className='title'>{title} <span>({content?.length})</span></h1>
 		<Swiper
@@ -37,7 +36,7 @@ export const SwiperSlider = ({content, title, redirect}: any) => {
 	{content?.map(({name, enName, photo, poster, id, rating}:any, index: number) => {
 		return <SwiperSlide className='swiper__body' key={index}>
 			<div className={'card'}>
-			<NavLink to={`/${redirect}/${id}`}><img className={'image swiper-lazy'}  src={photo || poster?.url} alt="" /></NavLink>
+			<Link to={`/${redirect}/${id}`}><img className={'image swiper-lazy'}  src={photo || poster?.url} alt="" /></Link>
 			<div className={'name'}>{name}</div>
 	</div></SwiperSlide>
 	})}

@@ -1,0 +1,57 @@
+.main{
+	&__reviews{
+		flex:0 0 80%;
+		margin-bottom: 20px;
+	}
+	&__name{
+		font-size: 17px;
+		font-weight: 600;
+		margin-bottom: 21px;
+	}
+	&__top{
+		padding: 35px 30px;
+	}
+	&__comments{
+		margin-bottom: 29px;
+		font-size: 16px;
+		overflow: hidden;
+	}
+	&__comment{
+		font-size: 15px;
+		white-space: pre-wrap;
+		&:not(:last-child){
+			margin-bottom: 23px;
+		}
+	}
+	&__button{
+		background-color: rgba(0,0,0,.1);
+		padding: 5px;
+		border-radius: 5px;
+		margin-bottom: 20px;
+	}
+	&__bottom{
+		border-top: 1px solid rgba(0,0,0,.1);
+	}
+	&__container{
+		padding: 35px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+	}
+	&__estimates{
+		display: flex;
+		gap: 20px;
+	}
+}
+
+.good__review{
+	background-color: #087fc428;
+}
+
+.bad__review{
+	background-color: #ff242428;
+}
+
+.neutral__review{
+	background-color: #5a5a5a28;
+}

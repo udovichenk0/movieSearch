@@ -1,0 +1,34 @@
+.statistics{
+	padding: 35px 36px;
+}
+
+.review__statistic{
+	&:not(:last-child){
+		margin-bottom: 10px;
+	}
+}
+
+.votes{
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 3px;
+	&__allNumbers, &__likedNumber, &__dislidedNumber, &__neutralNumber{
+		font-weight: 700;
+		font-size: 30px;
+		margin-right: 8px;
+	}
+	&__precent{
+		font-size: 18px;
+		color: rgba(0,0,0,.4);
+	}
+	&__likedNumber{
+		color: #00a340;
+	}
+	&__dislidedNumber{
+		color:#ff0000;
+		
+	}
+	&__neutralNumber{
+		color: rgb(119, 119, 119);
+	}
+}

@@ -23,8 +23,9 @@ export const Person = () => {
 		{leftItem: 'Дата рождения', rightItem: dateConverter(birthday)},
 		{leftItem: 'Дата смерти', rightItem: dateConverter(death)},
 		{leftItem: 'Всего фильмов', rightItem: movies?.length || '—'},
-		{leftItem: 'Супруга', rightItem: spouses?.map(({name}:  {name: string}) => name) || '—'},
+		{leftItem: 'Супруга', rightItem: spouses.length? spouses?.map(({name}:  {name: string}) => name) : '—'},
 	], [name, enName, sex,death,growth,birthday, profession, movies, facts, spouses, photo])
+	console.log(spouses)
 	const filmSerials = filmsData?.docs?.filter((el:any) => {
 		if (el.name?.length) {
 			return el

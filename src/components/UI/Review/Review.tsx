@@ -1,63 +1,33 @@
 import classnames from 'classnames'
-import style from './review.module.scss'
-export const Review = () => {
+import { useState } from 'react'
+import { useGetReviewByIdQuery } from '../../../services/apiConfig'
+import { dateConverter } from '../../../utils/stringToDate/dateConverter'
+import { useAppSelector } from '../../../utils/typedHooks/useAppHooks'
+import { ShowMore } from '../ShowMoreButton/ShowMore'
+import { EstimatesInfo } from './components/Estimate/EstimateInfo'
+import { ReviewItem } from './components/ReviewItem/ReviewItem'
+import style from './review.module.scss' 
+interface IReview {
+	title: string
+	review: string
+	date: string
+}
+	export const Review = ({id}:any) => {
+	const [limit, setLimit] = useState(3)
+	const {data} = useGetReviewByIdQuery({id, limit})	
+	if(!data?.docs?.length)return <></>
+	const {total}:{total:number} = {...data}
 	return (
 		<div>
 			<div className={style.title}>Рецензии кинокритиков</div>
 			<div className={classnames(style.main_block, 'main')}>
-				<div className={style.main__reviews}>
-					<div className={style.main__review}>
-						<div className={style.main__top}>
-							<div className={style.main__name}>Я - возмездие.</div>
-							<div className={style.main__comments}>
-								<p className={style.main__comment}>Только вышел с сеанса.</p>
-								<p className={style.main__comment}>Ну очень интересная работа.</p>
-								<p className={style.main__comment}>Начну с моментов, который мне хочется описать и поговорить об.</p>
-							</div>
-						
-						<button className={style.main__button}>показать всю рецензию</button>
-						</div>
-						<div className={style.main__bottom}>
-							<div className={style.main__container}>
-								<div className={style.main__data}>2 марта 2022</div>
-								<div className={style.main__estimates}>
-									<div className={style.main__like}>Like</div>
-									<div className={style.main__dislike}>Dislike</div>
-								</div>
-							</div>
-							
-						</div>
-					</div>
+				<div className={style.main__block}>
+					{data?.docs?.map((item:IReview, ind: number) => <ReviewItem key={ind} ind={ind} item={item} />)}
+			<div className={style.showMore}>
+			<ShowMore limit={limit} setLimit={setLimit}/>
+			</div>
 				</div>
-				<div className={style.statistics}>
-					<div className={style.review__statistic}>
-						<div className={style.votes}>
-							<div className={style.votes__allNumbers}>132</div>
-						</div>
-						<p className={style.undertext}>Всего</p>
-					</div>
-					<div className={style.review__statistic}>
-						<div className={style.votes}>
-							<div className={style.votes__likedNumber}>132</div>
-							<div className={style.votes__precent}>100.00%</div>
-						</div>
-						<p className={style.undertext}>Всего</p>
-					</div>
-					<div className={style.review__statistic}>
-						<div className={style.votes}>
-							<div className={style.votes__dislidedNumber}>0</div>
-							<div className={style.votes__precent}>0.00%</div>
-						</div>
-						<p className={style.undertext}>Всего</p>
-					</div>
-					<div className={style.review__statistic}>
-						<div className={style.votes}>
-							<div className={style.votes__neutralNumber}>0</div>
-							<div className={style.votes__precent}>0.00%</div>
-						</div>
-						<p className={style.undertext}>Всего</p>
-					</div>
-				</div>
+				<EstimatesInfo total={total} id={id}/>
 			</div>
 		</div>
 	)
