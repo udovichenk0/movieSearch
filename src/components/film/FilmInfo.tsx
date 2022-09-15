@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+import { useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Container } from "../../common/containerStyle/container"
 import { useGetMovieByIdQuery } from "../../services/apiConfig"
 import { SwiperSlider } from "../../shared/slider/Slider"
 import { dateConverter } from "../../utils/stringToDate/dateConverter"
-import { useAppDispatch, useAppSelector } from "../../utils/typedHooks/useAppHooks"
 import { validValue } from "../../utils/validValue/validValue"
 import { Facts } from "../UI/Facts/Facts"
 import { InfoTable } from "./components/AboutFilm/FactsAboutFilm"
@@ -16,6 +14,7 @@ import style from './info.module.scss'
 import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
 import { RatingContext } from "../../utils/context/imbContext"
 import { Rating } from "../UI/Rating/Rating"
+import { Review } from "../UI/Review/Review"
 
 type QuizParams = {
 	id: string;
@@ -52,6 +51,7 @@ export const FilmInfo = () => {
 		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'name'}/>, condition:actors?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}
 	]
+	console.log(data)
 	return (
 			<div className={style.wrapper}>
 			<Container>
@@ -62,7 +62,6 @@ export const FilmInfo = () => {
 						<div className={style.image__container}>
 							<img className={style.poster} src={poster?.url} alt="" />
 						</div>
-						{/* <div className={style.body__rating}>{rating?.kp}</div> */}
 						<Rating ratingStyle={style.body__rating} rating={rating}/>
 					</div>
 					<div className={style.body__info}>
@@ -79,6 +78,7 @@ export const FilmInfo = () => {
 				</div>	
 			<FooterTabs tabInfo={tabInfo}/>
 			<SimilarMovies similarMovies={similarMovies} title={'Похожее кино'} redirect={'film'}/>
+			<Review/>
 			</section>
 		</Container>
 		</div>

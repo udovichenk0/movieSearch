@@ -1,4 +1,4 @@
-import { Home } from "../../compontens/Home/Home"
+import { Home } from "../../components/Home/Home"
 import { Layout } from "../../shared/Layout/Layout"
 
 export const HomePage = () => {

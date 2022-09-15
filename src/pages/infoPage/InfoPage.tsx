@@ -1,5 +1,5 @@
 import { Layout } from "../../shared/Layout/Layout"
-import { FilmInfo } from "../../compontens/film/FilmInfo"
+import { FilmInfo } from "../../components/film/FilmInfo"
 export const InfoPage = () => {
 	return <Layout>
 				<FilmInfo/>

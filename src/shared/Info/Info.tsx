@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom"
 import { Container } from "../../common/containerStyle/container"
-import { InfoTable } from "../../compontens/film/components/AboutFilm/FactsAboutFilm"
-import { ButtonStore } from "../../compontens/film/components/Button/ButtonStore"
-import { ButtonWatch } from "../../compontens/film/components/ButtonWatch/ButtonWatch"
-import { FooterTabs } from "../../compontens/UI/Tabs/FooterTabs"
+import { InfoTable } from "../../components/film/components/AboutFilm/FactsAboutFilm"
+import { ButtonStore } from "../../components/film/components/Button/ButtonStore"
+import { ButtonWatch } from "../../components/film/components/ButtonWatch/ButtonWatch"
+import { FooterTabs } from "../../components/UI/Tabs/FooterTabs"
 import style from './info.module.scss'
 export const Info = ({actors,items,filmInfo}:any) => {
 	const navigate = useNavigate()

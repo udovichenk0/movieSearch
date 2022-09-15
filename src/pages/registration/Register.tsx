@@ -1,5 +1,5 @@
-import { LoginForm } from "../../compontens/Login/LoginForm"
-import { RegistrationForm } from "../../compontens/register/RegisterForm" 
+import { LoginForm } from "../../components/Login/LoginForm"
+import { RegistrationForm } from "../../components/register/RegisterForm" 
 import { Layout } from "../../shared/Layout/Layout"
 import { LoginContainerStyle } from "../login/LoginContainerStyled"
 

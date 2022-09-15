@@ -13,7 +13,7 @@ export const movieApi = createApi({
 	reducerPath: 'moviesApi',
 	baseQuery: fetchBaseQuery({baseUrl: 'https://api.kinopoisk.dev'}),
 	endpoints: builder => ({
-		getMovieById: builder.query<any, string | string[] | undefined>({
+		getMovieById: builder.query({
 			query: id => {
 				console.log(id)
 				return `/movie?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
@@ -24,7 +24,7 @@ export const movieApi = createApi({
 		}),
 		getMoviesById: builder.query<any,any>({
 			query: ({query, limit}:any) => {
-				return `/movie?${query}&limit=${limit}&token=ZQQ8GMN-TN54SGK-NB3MKEC-ZKB8V06`
+				return `/movie?${query}&limit=${limit}&token=${import.meta.env.VITE_TOKEN}`
 			}
 		})
 	})

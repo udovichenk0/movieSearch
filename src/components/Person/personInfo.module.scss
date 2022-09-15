@@ -60,18 +60,6 @@
 		gap: 20px;
 	}
 }
-.info{
-	display: flex;
-	&:not(:last-child){
-		margin-bottom: 20px;
-	};
-	&__leftSide{
-		flex: 0 0 170px;
-	}
-	&__rightSide{
-		max-width: 600px;
-	}
-}
 
 .body__poster{
 	width: 300px;

@@ -1,5 +1,5 @@
 import { LoginContainerStyle } from "./LoginContainerStyled"
-import { LoginForm } from "../../compontens/Login/LoginForm"
+import { LoginForm } from "../../components/Login/LoginForm"
 import { Layout } from "../../shared/Layout/Layout"
 export const Login = () => {
 	return (
