@@ -15,6 +15,7 @@ import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
 import { RatingContext } from "../../utils/context/imbContext"
 import { Rating } from "../UI/Rating/Rating"
 import { Review } from "../UI/Review/Review"
+import { PersonType } from "../../types/PersonType"
 
 type QuizParams = {
 	id: string;
@@ -24,8 +25,7 @@ name: string
 }
 export const FilmInfo = () => {
 	const id = useParams<QuizParams>()
-	const {data, isLoading, isError} = useGetMovieByIdQuery(id.id)
-	const [kpRating, setRate] = useState(0)
+	const {data, isLoading} = useGetMovieByIdQuery(id.id)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
@@ -41,7 +41,7 @@ export const FilmInfo = () => {
 		{leftItem: 'Сборы в мире', rightItem: `${fees?.world?.currency || ''} ${validValue(fees?.world.value || '—')}`},
 		{leftItem: 'Премьера в мире', rightItem: dateConverter(premiere?.world)},
 	]
-	const actors = persons?.filter((el:any) => {
+	const actors = persons?.filter((el:PersonType) => {
 		if (el.enProfession === 'actor' && el?.name?.length) {
 			return el
         }
@@ -63,7 +63,7 @@ export const FilmInfo = () => {
 						<div className={style.image__container}>
 							<img className={style.poster} src={poster?.url} alt="" />
 						</div>
-						<Rating ratingStyle={style.body__rating} rating={rating}/>
+						<Rating ratingStyle={style.body__rating} rating={rating?.kp}/>
 					</div>
 					<div className={style.body__info}>
 						<h1 className={style.body__title}>{titleName}</h1>

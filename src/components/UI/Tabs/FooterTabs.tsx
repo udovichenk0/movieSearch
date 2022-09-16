@@ -1,11 +1,18 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import style from './tabs.module.scss'
-export const FooterTabs = ({tabInfo}: any) => {
+//check
+type TabInfoType = {
+  title: string
+  content: any  
+  condition: number
+}
+
+export const FooterTabs = ({tabInfo}: {tabInfo: TabInfoType[]}) => {
 	return (
 		<Tabs className={style.tab}>
     <TabList className={style.tab__buttons}>
-      {tabInfo?.map(({title, condition}: any, id: number) =>  {
+      {tabInfo?.map(({title, condition}: {title: string, condition: number}, id: number) =>  {
       if(!condition) return
       return <React.Fragment key={title}>
       <Tab key={id} className={style.tab__button}>{title}</Tab>
@@ -13,7 +20,7 @@ export const FooterTabs = ({tabInfo}: any) => {
       })}
     </TabList>
 
-     {tabInfo.map((item: any, id:number) => {
+     {tabInfo.map((item: TabInfoType, id:number) => {
       if(!item.condition) return
       return <TabPanel key={id}>{item.content}</TabPanel>
      })}

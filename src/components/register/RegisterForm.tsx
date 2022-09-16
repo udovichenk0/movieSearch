@@ -4,8 +4,15 @@ import style from './register.module.scss'
 import commonStyle from '../../common/Styles/FormStyles.module.scss'
 import { NavLink } from "react-router-dom"
 import { LoginContainerStyle } from "../../pages/login/LoginContainerStyled"
+
+type FormType = {
+	name: string
+	email: string
+	secondname: string
+	password: string
+}
 export const RegistrationForm = () => {
-	const {register, handleSubmit, formState: {errors}} = useForm<any>()
+	const {handleSubmit, formState: {errors}} = useForm<FormType>()
 	function onSubmit(data:any){
 		console.log(data)
 	}

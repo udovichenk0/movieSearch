@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import style from './input.module.scss'
 export const Input = ({label}: {label: string}) => {
-	const {register, handleSubmit, formState: {errors}} = useForm()
+	const {register, formState: {errors}} = useForm()
 
 	return (
 		<div className={style.email__form}>

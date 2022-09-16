@@ -10,7 +10,7 @@ type formType = {
 	password: string
 }
 export const LoginForm = ({children}:any) => {
-const {handleSubmit} = useForm<any>()
+const {handleSubmit} = useForm<formType>()
 function onSubmit(data:any){
 	console.log(data)
 }

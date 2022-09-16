@@ -1,10 +1,15 @@
 import classNames from "classnames"
 import style from './rating.module.scss'
 
-export const Rating = ({rating,ratingStyle}:any) => {
+type RatingType = {
+	rating: number | undefined
+	ratingStyle: string
+}
+
+export const Rating = ({rating,ratingStyle}:RatingType) => {
 	if(!rating) return <></>
-	const isMovieGood = rating?.kp >= 5? 'good' : 'bad'
+	const isMovieGood = rating >= 5? 'good' : 'bad'
 	return (
-		<div className={classNames(ratingStyle, style[isMovieGood])}>{rating?.kp}</div>
+		<div className={classNames(ratingStyle, style[isMovieGood])}>{rating}</div>
 	)
 }

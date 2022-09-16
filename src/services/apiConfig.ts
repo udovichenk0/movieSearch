@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+import { FilmType } from '../types/FilmType';
 
 
 const instance = axios.create({
@@ -13,7 +14,7 @@ export const movieApi = createApi({
 	reducerPath: 'moviesApi',
 	baseQuery: fetchBaseQuery({baseUrl: 'https://api.kinopoisk.dev'}),
 	endpoints: builder => ({
-		getMovieById: builder.query({
+		getMovieById: builder.query<FilmType, string | undefined>({
 			query: id => {
 				return `/movie?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
 			}
@@ -28,7 +29,6 @@ export const movieApi = createApi({
 		}),
 		getReviewById: builder.query<any,any>({
 			query: ({id, limit}:any) => {
-				console.log(limit)
 				return `/review?search=${id}&field=movieId&limit=${limit}&page=1&token=${import.meta.env.VITE_TOKEN}`
 			}
 		})

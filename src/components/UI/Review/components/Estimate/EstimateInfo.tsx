@@ -1,13 +1,14 @@
 import { useGetReviewByIdQuery } from '../../../../../services/apiConfig'
+import { MovieType } from '../../../../../types/MovieType'
 import { getPercent } from '../../../../../utils/getPercent/getPercent'
 import style from './estimate.module.scss'
 
 export const EstimatesInfo = ({total, id}: {total: number, id: string}) => {
 
 	const {data} = useGetReviewByIdQuery({id, limit: total})
-	const goodReview = data?.docs?.filter((item:any) => !item.type || item.type === 'Позитивный').length
-	const badReview = data?.docs?.filter((item:any) =>  item.type === 'Негативный').length
-	const neutralReview = data?.docs?.filter((item:any) =>  item.type === 'Нейтральный').length
+	const goodReview = data?.docs?.filter((item:MovieType) => !item.type || item.type === 'Позитивный').length
+	const badReview = data?.docs?.filter((item:MovieType) =>  item.type === 'Негативный').length
+	const neutralReview = data?.docs?.filter((item:MovieType) =>  item.type === 'Нейтральный').length
 	return (
 		<div className={style.statistics}>
 					<div className={style.review__statistic}>
