@@ -5,14 +5,15 @@ import style from './tabs.module.scss'
 type TabInfoType = {
   title: string
   content: any  
-  condition: number
+  condition: number | undefined
 }
 
 export const FooterTabs = ({tabInfo}: {tabInfo: TabInfoType[]}) => {
+  console.log(tabInfo)
 	return (
 		<Tabs className={style.tab}>
     <TabList className={style.tab__buttons}>
-      {tabInfo?.map(({title, condition}: {title: string, condition: number}, id: number) =>  {
+      {tabInfo?.map(({title, condition}: TabInfoType, id: number) =>  {
       if(!condition) return
       return <React.Fragment key={title}>
       <Tab key={id} className={style.tab__button}>{title}</Tab>

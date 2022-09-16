@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import { FilmType } from '../types/FilmType';
+import { PersonType } from '../types/PersonType';
 
 
 const instance = axios.create({
@@ -19,7 +20,7 @@ export const movieApi = createApi({
 				return `/movie?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
-		getPersonById: builder.query({
+		getPersonById: builder.query<PersonType, string | undefined>({
 			query: id => `/person?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
 		}),
 		getMoviesById: builder.query<any,any>({

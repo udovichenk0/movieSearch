@@ -1,4 +1,4 @@
-import { PersonType } from "./PersonType"
+import { FactsType } from "./FactsType"
 import { RatingType } from "./RatingType"
 
 type BackdropType = {
@@ -25,7 +25,6 @@ type ExternalIdType = {
 	_id: string
 	imdb: string
 }
-export type FactsType = any
 type FeesType = {
 	russia: {
 		currency: string
@@ -102,6 +101,15 @@ type TechnologyType = {
 	hasImax: boolean
 	_id: string
 }
+type PersonType = {
+	description: null | string
+	enName: string
+	enProfession: string
+	id: number
+	name:string
+	photo: string
+}
+
 type VideosType = {
 	teasers: []
 	trailers: {
@@ -124,8 +132,13 @@ type WatchabilityType = {
 	_id: string
 	}[]
 }
+type ImagesType = {
+	postersCount: number
+	backdropsCount: number
+	framesCount: number
+}
 export type FilmType = {
-	ageRating: null
+	ageRating: number
 	alternativeName: string
 	backdrop:BackdropType
 	budget: BudgetType
@@ -140,7 +153,7 @@ export type FilmType = {
 	fees: FeesType
 	genres:GenresType[]
 	id: number
-	images: {postersCount: 59, backdropsCount: 11, framesCount: 51}
+	images: ImagesType
 	imagesInfo: ImagesInfoType
 	lists: []
 	logo: LogoType

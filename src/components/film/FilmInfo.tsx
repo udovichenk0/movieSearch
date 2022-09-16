@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Container } from "../../common/containerStyle/container"
 import { useGetMovieByIdQuery } from "../../services/apiConfig"
@@ -12,10 +11,8 @@ import { ButtonWatch } from "./components/ButtonWatch/ButtonWatch"
 import { FooterTabs } from "../UI/Tabs/FooterTabs"
 import style from './info.module.scss'
 import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
-import { RatingContext } from "../../utils/context/imbContext"
 import { Rating } from "../UI/Rating/Rating"
 import { Review } from "../UI/Review/Review"
-import { PersonType } from "../../types/PersonType"
 
 type QuizParams = {
 	id: string;
@@ -26,6 +23,7 @@ name: string
 export const FilmInfo = () => {
 	const id = useParams<QuizParams>()
 	const {data, isLoading} = useGetMovieByIdQuery(id.id)
+	console.log(data)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
@@ -41,7 +39,7 @@ export const FilmInfo = () => {
 		{leftItem: 'Сборы в мире', rightItem: `${fees?.world?.currency || ''} ${validValue(fees?.world.value || '—')}`},
 		{leftItem: 'Премьера в мире', rightItem: dateConverter(premiere?.world)},
 	]
-	const actors = persons?.filter((el:PersonType) => {
+	const actors = persons?.filter(el => {
 		if (el.enProfession === 'actor' && el?.name?.length) {
 			return el
         }
