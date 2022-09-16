@@ -51,6 +51,8 @@ export const FilmInfo = () => {
 		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'name'}/>, condition:actors?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}
 	]
+	const titleName = isLoading? 'Загрузка..' : name
+	const alternativeTitleName = isLoading? 'Загрузка..' : alternativeName
 	return (
 			<div className={style.wrapper}>
 			<Container>
@@ -64,8 +66,8 @@ export const FilmInfo = () => {
 						<Rating ratingStyle={style.body__rating} rating={rating}/>
 					</div>
 					<div className={style.body__info}>
-						<h1 className={style.body__title}>{name}</h1>
-						<p className={style.body__secondTitle}>{alternativeName}</p>
+						<h1 className={style.body__title}>{titleName}</h1>
+						<p className={style.body__secondTitle}>{alternativeTitleName}</p>
 						<div className={style.body__buttons}>
 							<ButtonWatch title={'Смотреть'}/>
 							<ButtonStore title={'Буду смотреть'}> </ButtonStore>

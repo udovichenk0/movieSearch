@@ -32,7 +32,11 @@
 		position: relative;
 		margin-right: 50px;
 	}
-
+	&__title{
+		font-size: 40px;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
 	&__rating{
 		position: absolute;
 		top: 13px;

@@ -10,7 +10,7 @@ import { Facts } from "../UI/Facts/Facts"
 import style from './personInfo.module.scss'
 export const Person = () => {
 	const id = useParams()
-	const {data} = useGetPersonByIdQuery(id.id)
+	const {data, isLoading} = useGetPersonByIdQuery(id.id)
 	//@ts-ignore
 	const {name, enName, sex,death,growth,birthday, profession, movies, facts, spouses, photo} = {...data}
 	const query = movies?.map((el:any) => `search=${el.id}&field=id`).join('&')
@@ -23,9 +23,8 @@ export const Person = () => {
 		{leftItem: 'Дата рождения', rightItem: dateConverter(birthday)},
 		{leftItem: 'Дата смерти', rightItem: dateConverter(death)},
 		{leftItem: 'Всего фильмов', rightItem: movies?.length || '—'},
-		{leftItem: 'Супруга', rightItem: spouses.length? spouses?.map(({name}:  {name: string}) => name) : '—'},
+		{leftItem: 'Супруга', rightItem: spouses?.length? spouses?.map(({name}:  {name: string}) => name) : '—'},
 	], [name, enName, sex,death,growth,birthday, profession, movies, facts, spouses, photo])
-	console.log(spouses)
 	const filmSerials = filmsData?.docs?.filter((el:any) => {
 		if (el.name?.length) {
 			return el
@@ -35,6 +34,8 @@ export const Person = () => {
 		{title: 'Фильмы и сериалы', content:  <SwiperSlider content={filmSerials} redirect={'film'} title={'Фильмы и сериалы'}/>, condition:movies?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}
 	]
+	const actorName = isLoading? 'Загрузка..' : name
+	const actorEnName = isLoading? 'Загрузка..' : enName
 	return (
 		<div className={style.wrapper}>
 			<Container>
@@ -45,8 +46,8 @@ export const Person = () => {
 						<img className={style.poster} src={photo} alt="" />
 					</div>
 					<div className={style.body__info}>
-						<h1 className={style.body__title}>{name}</h1>
-						<p className={style.body__secondTitle}>{enName}</p>
+						<h1 className={style.body__title}>{actorName}</h1>
+						<p className={style.body__secondTitle}>{actorEnName}</p>
 						<div className="info">
 							<InfoTable items={items}/>
 						</div>
