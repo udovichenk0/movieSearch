@@ -18,12 +18,11 @@ type SwiperType = {
 }
 type SwiperSliderType = {
 	title: string
-	content?: FilmType[]
+	content?: any
 	redirect: string
   }
 
 export const SwiperSlider = ({content, title, redirect}: SwiperSliderType) => {
-	console.log(content)
 	return <div className='wrapper'>
 			<h1 className='title'>{title} <span>({content?.length})</span></h1>
 		<Swiper
@@ -55,7 +54,7 @@ export const SwiperSlider = ({content, title, redirect}: SwiperSliderType) => {
 	{content?.map(({name, photo, poster, id}:SwiperType, index: number) => {
 		return <SwiperSlide className='swiper__body' key={index}>
 			<div className={'card'}>
-			<Link to={`/${redirect}/${id}`}><img className={'image swiper-lazy'}  src={photo || poster?.url} alt="" /></Link>
+			<Link to={`/${redirect}/${id}`}><img className={'image'}  src={photo || poster?.url} alt="" /></Link>
 			<div className={'name'}>{name}</div>
 	</div></SwiperSlide>
 	})}

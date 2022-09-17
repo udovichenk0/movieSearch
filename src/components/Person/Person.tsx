@@ -9,6 +9,7 @@ import { FooterTabs } from "../UI/Tabs/FooterTabs"
 import { Facts } from "../UI/Facts/Facts"
 import style from './personInfo.module.scss'
 import { FilmType } from "../../types/FilmType"
+import { BackButton } from "../UI/BackButton/BackButton"
 
 type queryType = { 
 	description: string
@@ -50,7 +51,7 @@ export const Person = () => {
 		<div className={style.wrapper}>
 			<Container>
 			<section className={style.section__body}>
-				<button className={style.buttonBack} onClick={() => navigate(-1)}>Назад</button>
+				<BackButton/>
 				<div className={style.box__body}>
 					<div className={style.body__poster}>
 						<img className={style.poster} src={photo} alt="" />

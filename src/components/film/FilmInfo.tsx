@@ -13,6 +13,7 @@ import style from './info.module.scss'
 import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
 import { Rating } from "../UI/Rating/Rating"
 import { Review } from "../UI/Review/Review"
+import { BackButton } from "../UI/BackButton/BackButton"
 
 type QuizParams = {
 	id: string;
@@ -54,7 +55,7 @@ export const FilmInfo = () => {
 			<div className={style.wrapper}>
 			<Container>
 			<section className={style.section__body}>
-				<button className={style.buttonBack} onClick={() => navigate(-1)}>Назад</button>
+				<BackButton/>
 				<div className={style.box__body}>
 					<div className={style.body__poster}>
 						<div className={style.image__container}>

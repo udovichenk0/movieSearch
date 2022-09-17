@@ -12,7 +12,7 @@ const navigate = useNavigate()
 					<h2 className={style.main__title}>Тор: Любовь и гром</h2>
 					<div className={style.main__description}>Джейн Фостер берет на себя обязанности Бога-громовержца и становится обладательницей молота Мьёльнира.</div>
 					<Button onClick={() => navigate('film/1282688')}  title='Подробнее' icon={<FiArrowRight/>}/>
-						</div>
+					</div>
 			</Container>
 		</section>
 	)

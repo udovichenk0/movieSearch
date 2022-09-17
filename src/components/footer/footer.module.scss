@@ -1,0 +1,24 @@
+.footer{
+	background-color: #1f1f1f;
+
+	&__block{
+		height: 124px;
+		display: flex;
+		align-items: center;
+		padding: 0 40px;
+		justify-content: space-between;
+	}
+
+	&__links{
+		display: flex;
+		gap: 20px;
+		color: #fff;
+		font-size: 17px;
+		font-weight: 600;
+	}
+
+	&__watermark{
+		color: #fff;
+		// font-size: 17px;
+	}
+}
