@@ -1,23 +1,14 @@
 import { SwiperSlider } from '../../../../shared/slider/Slider'
+import { SimilarMoviesType } from '../../../../types/FilmType'
 import style from './similarMovies.module.scss'
-type SimilarMovieType = {
+
+type PropsType = {
 	redirect: string
-	similarMovies: {
-		alternativeName: string
-		enName: string
-		id: number
-		name: string
-		poster: {
-			previewUrl: string
-			url: string
-			_id: string
-		}[]
-	}[]
+	similarMovies: SimilarMoviesType[] | undefined
 	title: string
 }
 
-
-export const SimilarMovies = ({redirect, similarMovies, title}:any) => {
+export const SimilarMovies = ({redirect, similarMovies, title}:PropsType) => {
 
 		if(!similarMovies || !similarMovies?.length) return <></>
 return (

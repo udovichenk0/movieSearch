@@ -13,9 +13,8 @@ interface IReview {
 	date: string
 	type: string
 }
-	export const Review = ({id}:{id: string}) => {
-	const [limit, setLimit] = useState<any>(3)
-	console.log(limit)
+	export const Review = ({id}:{id: string | undefined}) => {
+	const [limit, setLimit] = useState<number>(3)
 	const {data} = useGetReviewByIdQuery({id, limit})	
 	if(!data?.docs?.length)return <></>
 	const {total}:{total:number} = {...data}

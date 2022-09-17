@@ -38,9 +38,9 @@ export const FilmInfo = () => {
 		{leftItem: 'Сборы в мире', rightItem: `${fees?.world?.currency || ''} ${validValue(fees?.world.value || '—')}`},
 		{leftItem: 'Премьера в мире', rightItem: dateConverter(premiere?.world)},
 	]
-	const actors = persons?.filter(el => {
-		if (el.enProfession === 'actor' && el?.name?.length) {
-			return el
+	const actors = persons?.filter(item => {
+		if (item.enProfession === 'actor' && item?.name?.length) {
+			return item
         }
 	})
 	const tabInfo = [
@@ -67,7 +67,7 @@ export const FilmInfo = () => {
 						<p className={style.body__secondTitle}>{alternativeTitleName}</p>
 						<div className={style.body__buttons}>
 							<ButtonWatch title={'Смотреть'}/>
-							<ButtonStore title={'Буду смотреть'}> </ButtonStore>
+							<ButtonStore title={'Буду смотреть'}/>
 						</div>
 						<div className="info">
 							<InfoTable items={items}/>

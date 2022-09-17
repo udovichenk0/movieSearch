@@ -4,15 +4,10 @@ import './slider.scss'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { RatingType } from '../../types/RatingType';
-// type SwiperType = {
-// 	content: any
-// 	title: string
-// 	redirect: string
-// }
-
+import { FilmType } from '../../types/FilmType';
 type SwiperType = {
 	name: string
-	photo: any
+	photo?: string
 	poster: {
 		previewUrl: string
 		url: string
@@ -21,8 +16,14 @@ type SwiperType = {
 	id: number
 	rating: RatingType
 }
+type SwiperSliderType = {
+	title: string
+	content?: FilmType[]
+	redirect: string
+  }
 
-export const SwiperSlider = ({content, title, redirect}: any) => {
+export const SwiperSlider = ({content, title, redirect}: SwiperSliderType) => {
+	console.log(content)
 	return <div className='wrapper'>
 			<h1 className='title'>{title} <span>({content?.length})</span></h1>
 		<Swiper
@@ -51,7 +52,7 @@ export const SwiperSlider = ({content, title, redirect}: any) => {
 		}
 	}}
     >
-	{content?.map(({name, photo, poster, id, rating}:SwiperType, index: number) => {
+	{content?.map(({name, photo, poster, id}:SwiperType, index: number) => {
 		return <SwiperSlide className='swiper__body' key={index}>
 			<div className={'card'}>
 			<Link to={`/${redirect}/${id}`}><img className={'image swiper-lazy'}  src={photo || poster?.url} alt="" /></Link>

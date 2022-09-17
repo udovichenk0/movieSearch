@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react'
 import './burger.scss'
 export const Burger = ({reference, isClicked, setClick}:any) => {
-	console.log(reference)
 	const onBurgerClick = () => {
 		setClick(!isClicked)
 	}

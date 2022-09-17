@@ -9,7 +9,7 @@ type formType = {
 	email: string
 	password: string
 }
-export const LoginForm = ({children}:any) => {
+export const LoginForm = ({children}:{children: React.ReactNode}) => {
 const {handleSubmit} = useForm<formType>()
 function onSubmit(data:any){
 	console.log(data)

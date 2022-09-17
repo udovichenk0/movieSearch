@@ -84,7 +84,7 @@ type SequelsAndPrequels = {
 	name: string
 	poster: PosterType
 }
-type SimilarMoviesType = {
+export type SimilarMoviesType = {
 	alternativeName: string
 	enName: string
 	id: number

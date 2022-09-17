@@ -4,7 +4,7 @@ import style from './tabs.module.scss'
 //check
 type TabInfoType = {
   title: string
-  content: any  
+  content: React.ReactNode | undefined
   condition: number | undefined
 }
 

@@ -8,12 +8,22 @@ import { InfoTable } from "../film/components/AboutFilm/FactsAboutFilm"
 import { FooterTabs } from "../UI/Tabs/FooterTabs"
 import { Facts } from "../UI/Facts/Facts"
 import style from './personInfo.module.scss'
+import { FilmType } from "../../types/FilmType"
+
+type queryType = { 
+	description: string
+	general: boolean
+	id: number
+	name: string
+	rating: number
+}
 export const Person = () => {
 	const id = useParams()
 	const {data, isLoading} = useGetPersonByIdQuery(id.id)
 	//@ts-ignore
 	const {name, enName, sex,death,growth,birthday, profession, movies, facts, spouses, photo} = {...data}
-	const query = movies?.map((el:any) => `search=${el.id}&field=id`).join('&')
+	const query = movies?.map((item:queryType) => {
+		return `search=${item.id}&field=id`}).join('&')
 	const {data: filmsData} = useGetMoviesByIdQuery({query, limit: movies?.length})
 	const navigate = useNavigate()
 	const items = useMemo(() => [
@@ -25,9 +35,9 @@ export const Person = () => {
 		{leftItem: 'Всего фильмов', rightItem: movies?.length || '—'},
 		{leftItem: 'Супруга', rightItem: spouses?.length? spouses?.map(({name}:  {name: string}) => name) : '—'},
 	], [name, enName, sex,death,growth,birthday, profession, movies, facts, spouses, photo])
-	const filmSerials = filmsData?.docs?.filter((el:any) => {
-		if (el.name?.length) {
-			return el
+	const filmSerials = filmsData?.docs?.filter((item:FilmType) => {
+		if (item.name?.length) {
+			return item
         }
 	})
 	const tabInfo = [

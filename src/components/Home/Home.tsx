@@ -1,6 +1,5 @@
 import { Container } from "../../common/containerStyle/container"
 import style from './home.module.scss'
-import heroImage from '../../assets/heroImg/heroImg.jpg'
 import { Button } from "./components/button/Button"
 import {FiArrowRight} from 'react-icons/fi';
 import { useLocation, useNavigate } from "react-router-dom"

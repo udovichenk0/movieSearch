@@ -8,7 +8,7 @@ const categories = [
 	{title: 'Избранное', icon: FavoriteSvg},
 ]
 
-export const DropDown = ({isClicked}:any) => {
+export const DropDown = ({isClicked}:{isClicked: boolean}) => {
 	return (
 			<div className={`block__menu menu ${isClicked? 'open' : ''}`}>
 				<ul className="menu__list">

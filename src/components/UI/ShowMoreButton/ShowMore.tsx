@@ -2,10 +2,10 @@ import { Dispatch, SetStateAction } from 'react'
 import style from './showmore.module.scss'
 
 type setLimitType = {
-	setLimit: (prevState: string) => number
+	setLimit: (prevState: number) => void
+	limit: number
 }
-export const ShowMore = ({limit, setLimit}:any) => {
-	console.log(setLimit)
+export const ShowMore = ({limit, setLimit}:setLimitType) => {
 	function handleOnClick(){
 		setLimit(limit + 3)
 	}

@@ -8,7 +8,7 @@ import style from './header.module.scss'
 import { Search } from "./components/search/Search"
 import { NavLink, useNavigate } from "react-router-dom"
 export const Header = () => {
-	const ref = useRef<any>(null)
+	const ref = useRef<null>(null)
 	const [isClicked, setClick] = useState(false)
 	const navigate = useNavigate()
 	function onLogoClick(){
