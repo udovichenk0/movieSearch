@@ -9,7 +9,6 @@ type TabInfoType = {
 }
 
 export const FooterTabs = ({tabInfo}: {tabInfo: TabInfoType[]}) => {
-  console.log(tabInfo)
 	return (
 		<Tabs className={style.tab}>
     <TabList className={style.tab__buttons}>

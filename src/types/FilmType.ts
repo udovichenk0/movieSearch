@@ -149,7 +149,7 @@ export type FilmType = {
 	distributors: DistributorsType
 	enName: null | string
 	externalId: ExternalIdType
-	facts: FactsType
+	facts: FactsType[]
 	fees: FeesType
 	genres:GenresType[]
 	id: number

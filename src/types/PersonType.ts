@@ -1,24 +1,5 @@
-// age: 38
-// birthPlace: (3) [{…}, {…}, {…}]
-// birthday: "1983-08-11T00:00:00.000Z"
-// countAwards: 1
-// death: null
-// deathPlace: null
-// enName: "Chris Hemsworth"
-// facts: (3) [{…}, {…}, {…}]
-// growth: 190
-// id: 1300401
-// movies: (135) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, …]
-// name: "Крис Хемсворт"
-// photo: "https://st.kp.yandex.net/images/actor_iphone/iphone360_1300401.jpg"
-// profession: (2) [{…}, {…}]
-// sex: "Мужской"
-// spouses: [{…}]
-// updatedAt: "2022-08-09T10:26:22.730Z"
-
 import { FactsType } from "./FactsType"
 
-// __v: 0
 type BirthPlaceType = {
 	value: string
 }
@@ -54,7 +35,7 @@ export type PersonType = {
 	death: string
 	deathPlace: DeathPlaceType[]
 	enName: string
-	facts: FactsType
+	facts: FactsType[]
 	growth: number
 	id: number
 	movies: MoviesType[]

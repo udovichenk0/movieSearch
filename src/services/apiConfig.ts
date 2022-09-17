@@ -2,6 +2,7 @@ import axios from 'axios'
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import { FilmType } from '../types/FilmType';
 import { PersonType } from '../types/PersonType';
+import { ReviewType } from '../types/ReviewType';
 
 
 const instance = axios.create({
@@ -11,6 +12,14 @@ const instance = axios.create({
 	}
 })
 
+type MoviesByIdTypeProps = {
+	query?: string
+	limit?: number
+}
+type ReviewByIdTypeProps = {
+	id?: string
+	limit?: number
+}
 export const movieApi = createApi({
 	reducerPath: 'moviesApi',
 	baseQuery: fetchBaseQuery({baseUrl: 'https://api.kinopoisk.dev'}),
@@ -23,13 +32,13 @@ export const movieApi = createApi({
 		getPersonById: builder.query<PersonType, string | undefined>({
 			query: id => `/person?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
 		}),
-		getMoviesById: builder.query<any,any>({
-			query: ({query, limit}:any) => {
+		getMoviesById: builder.query<{docs: FilmType[]}, MoviesByIdTypeProps>({
+			query: ({query, limit}) => {
 				return `/movie?${query}&limit=${limit}&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
-		getReviewById: builder.query<any,any>({
-			query: ({id, limit}:any) => {
+		getReviewById: builder.query<ReviewType,ReviewByIdTypeProps>({
+			query: ({id, limit}) => {
 				return `/review?search=${id}&field=movieId&limit=${limit}&page=1&token=${import.meta.env.VITE_TOKEN}`
 			}
 		})

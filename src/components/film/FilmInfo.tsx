@@ -23,7 +23,6 @@ name: string
 export const FilmInfo = () => {
 	const id = useParams<QuizParams>()
 	const {data, isLoading} = useGetMovieByIdQuery(id.id)
-	console.log(data)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}

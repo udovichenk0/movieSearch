@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useMemo } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Container } from "../../common/containerStyle/container"
 import { useGetMoviesByIdQuery, useGetPersonByIdQuery } from "../../services/apiConfig"
