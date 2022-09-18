@@ -1,10 +1,11 @@
-import { LoginContainerStyle } from "./LoginContainerStyled"
 import { LoginForm } from "../../components/Login/LoginForm"
 import { Layout } from "../../shared/Layout/Layout"
-export const Login = () => {
+const Login = () => {
 	return (
 		<Layout>
 			<LoginForm children={undefined}/>
 		</Layout>
 	)
 }
+
+export default Login

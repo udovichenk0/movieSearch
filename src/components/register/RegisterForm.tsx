@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form"
 import { Input } from "../../shared/loginInput/inputForm"
 import style from './register.module.scss'
 import commonStyle from '../../common/Styles/FormStyles.module.scss'
-import { NavLink, useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import { LoginContainerStyle } from "../../pages/login/LoginContainerStyled"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -53,7 +53,7 @@ export const RegistrationForm = () => {
 			)
 		})}
 					<button className={commonStyle.login__button} onSubmit={handleSubmit(onSubmit)}>Register</button>
-					<div>Have an account? <NavLink to='/login'>Login</NavLink></div>
+					<div>Have an account? <Link to='/login'>Login</Link></div>
 			</div>
 		</form>
 	</div>

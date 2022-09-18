@@ -6,7 +6,7 @@ import { DropDown } from "./components/dropDown/dropDown"
 import { LogoSvg } from "../../assets/logo/LogoSvg"
 import style from './header.module.scss'
 import { Search } from "./components/search/Search"
-import { NavLink, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../hooks/useAuth"
 import { useAppDispatch } from "../../utils/typedHooks/useAppHooks"
 import { logOutUser } from "../../reduxStore/Auth/auth.slice"
@@ -32,9 +32,9 @@ export const Header = () => {
 
 				<div className={style.empty}></div>
 				{!isAuth
-				? <NavLink className={style.header__login_box} to={'/login'}>
+				? <Link className={style.header__login_box} to={'/login'}>
 					<div className={style.header__login}>Login</div>
-				</NavLink>
+				</Link>
 				: <button onClick={() => dispatch(logOutUser())} className={style.header__login}>Logout</button>
 				}
 			</div>

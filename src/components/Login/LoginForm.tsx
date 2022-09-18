@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import commonStyle from '../../common/Styles/FormStyles.module.scss'
-import { NavLink, useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import { LoginContainerStyle } from "../../pages/login/LoginContainerStyled"
 import style from './login.module.scss'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -37,12 +37,13 @@ return (
 				<div className={style.email__form}>
 					<label className={style.label__form} htmlFor={item}>{item}</label>
 					<input className={style.input} placeholder={`Enter ${item}`} type="text"{...register(`${item}`, {required:true })} />
+					{/* @ts-ignore */}
 					<div className={style.form__error}>{errors[item] && `${ errors[item].type}`}</div>
 				</div>
 				)
 				})}
 				<button className={commonStyle.login__button} onSubmit={handleSubmit(onSubmit)}>Login</button>
-				<div>Doesn't have an account? <NavLink to='/register'>Register</NavLink></div>
+				<div>Doesn't have an account? <Link to='/register'>Register</Link></div>
 			</div>
 		</form>
 	</div>
