@@ -17,6 +17,7 @@ const navigate = useNavigate()
 					</div>
 			</Container>
 		</section>
+			<NewFilms/>
 		</div>
 		
 	)

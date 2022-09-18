@@ -1,0 +1,16 @@
+.cards{
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	gap: 30px;
+	row-gap: 90px;
+	align-items: center;
+	margin-bottom: 100px;
+}
+.card{
+	&__image{
+		margin-bottom: 10px;
+	}
+	&__title{
+		margin-bottom: 10px;
+	}
+}
