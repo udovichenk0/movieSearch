@@ -1,13 +1,13 @@
-.info{
+.block{
 	display: flex;
 	&:not(:last-child){
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	};
 	&__leftSide{
 		flex: 0 0 170px;
 		color: rgb(139, 139, 139)
 	}
 	&__rightSide{
-		width: 200px;
+		max-width: 600px;
 	}
 }

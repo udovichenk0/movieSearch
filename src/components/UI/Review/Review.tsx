@@ -7,11 +7,13 @@ import { ShowMore } from '../ShowMoreButton/ShowMore'
 import { EstimatesInfo } from './components/Estimate/EstimateInfo'
 import { ReviewItem } from './components/ReviewItem/ReviewItem'
 import style from './review.module.scss' 
-interface IReview {
+export interface IReview {
 	title: string
+	type: string
 	review: string
 	date: string
-	type: string
+	reviewLikes: number
+	reviewDislikes: number
 }
 	export const Review = ({id}:{id: string | undefined}) => {
 	const [limit, setLimit] = useState<number>(3)

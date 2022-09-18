@@ -42,6 +42,11 @@
 		display: flex;
 		gap: 20px;
 	}
+	&__like, &__dislike{
+		padding: 4px 9px;
+		background-color: #fff;
+		border-radius: 5px;
+	}
 }
 
 .good__review{

@@ -1,8 +1,7 @@
 .footer{
 	background-color: #1f1f1f;
-
 	&__block{
-		height: 124px;
+		height: 100px;
 		display: flex;
 		align-items: center;
 		padding: 0 40px;
@@ -16,7 +15,26 @@
 		font-size: 17px;
 		font-weight: 600;
 	}
-
+	&__link{
+		position: relative;
+		padding: 10px;
+		&::after{
+			content: '';
+			position: absolute;
+			width: 0%;
+			transition: width .2s ease;
+			height: 4px;
+			border-radius: 2px;
+			left: 0;
+			bottom: 0;
+			background-color: rgba(110, 110, 247, 0.829);
+		}
+		&:hover{
+			&::after{
+				width: 100%;
+			}
+		}
+	}
 	&__watermark{
 		color: #fff;
 		// font-size: 17px;

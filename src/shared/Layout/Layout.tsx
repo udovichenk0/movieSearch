@@ -4,12 +4,12 @@ import style from './layout.module.scss'
 
 export const Layout = ({children}:{children: React.ReactNode}) => {
 	return (
-		<>
-		<Header/>
 		<div className={style.wrapper}>
+			<Header/>
 			{children}
-		</div>
 		<Footer/>
-		</>
+		</div>
+		
+		
 	)
 }

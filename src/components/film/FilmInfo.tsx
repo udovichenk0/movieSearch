@@ -14,6 +14,7 @@ import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
 import { Rating } from "../UI/Rating/Rating"
 import { Review } from "../UI/Review/Review"
 import { BackButton } from "../UI/BackButton/BackButton"
+import classnames from "classnames"
 
 type QuizParams = {
 	id: string;
@@ -70,9 +71,7 @@ export const FilmInfo = () => {
 							<ButtonWatch title={'Смотреть'}/>
 							<ButtonStore title={'Буду смотреть'}/>
 						</div>
-						<div className="info">
 							<InfoTable items={items}/>
-						</div>
 					</div>
 				</div>	
 			<FooterTabs tabInfo={tabInfo}/>

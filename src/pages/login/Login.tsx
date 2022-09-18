@@ -4,7 +4,7 @@ import { Layout } from "../../shared/Layout/Layout"
 export const Login = () => {
 	return (
 		<Layout>
-			<LoginForm/>
+			<LoginForm children={undefined}/>
 		</Layout>
 	)
 }

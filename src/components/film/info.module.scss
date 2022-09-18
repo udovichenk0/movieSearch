@@ -1,31 +1,32 @@
 
 
 .wrapper{
-	// padding: 40px 0;	
 	background-color: #f4f4f4;
+	height: 100%;
 }
 .filmWrapper{
 	width: 100%;
 }
 
 .box__body{
+	height: 100%;
 	margin-top: 26px;
-
 	@media(min-width: 768px){
 		display: flex;
 	}
 }
 .section__body{
-	background-color: #fff;
-	padding: 40px 40px;
-	padding-bottom: 100px;
+	padding: 40px 0 100px 0;
+
+}
+.container{
+	padding: 40px;
+    background-color:#fff;
+    height: 100%;
+	margin: 0 auto;
+	max-width: 1230px;
 }
 
-.fake{
-	width: 250px;
-	height: 400px;
-	background-color: rgb(141, 219, 141);
-}
 .body{
 	margin-bottom: 20px;
 	&__poster{
@@ -74,18 +75,6 @@
 	}
 }
 
-.info{
-	display: flex;
-	&:not(:last-child){
-		margin-bottom: 20px;
-	};
-	&__leftSide{
-		flex: 0 0 170px;
-	}
-	&__rightSide{
-		max-width: 600px;
-	}
-}
 
 .image__container{
 	width: 300px;

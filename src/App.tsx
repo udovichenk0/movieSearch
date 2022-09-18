@@ -5,6 +5,9 @@ import './App.css'
 import { Provider } from 'react-redux'
 import { store } from './reduxStore/store'
 import { useState } from 'react'
+import  './services/authFireBase'
+
+// console.log(firebaseConfig)
 function App() {
   return (
     <>

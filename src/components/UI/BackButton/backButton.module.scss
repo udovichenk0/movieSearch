@@ -2,4 +2,17 @@
 	font-size: 18px;
 	font-weight: 500;
 	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	.icon__back{
+		transition: transform 0.1s ease;
+		font-size: 17px;
+	}
+
+	&:hover{
+		.icon__back{
+			transform: translateX(-2px)
+		}
+	}
 }

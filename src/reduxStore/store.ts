@@ -2,9 +2,11 @@ import { combineReducers, configureStore, PreloadedState } from '@reduxjs/toolki
 import HeroSlice from './Swiper/InfoSlice'
 import { movieApi } from '../services/apiConfig'
 import showMoreSlice from './ShowMore/showMore.slice'
+import authSlice from './Auth/auth.slice'
 const reducers = combineReducers({
 	heroSlice: HeroSlice,
 	showMoreSlice,
+	authSlice,
 	[movieApi.reducerPath]: movieApi.reducer
 })
 

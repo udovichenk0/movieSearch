@@ -1,14 +1,26 @@
 .header__box{
 	display: flex;
+	align-items: center;
+	min-height: 70px;
 }
-
+.block{
+	display: flex;
+	justify-content: space-between;
+}
+.wrapper{
+	display: flex;
+}
 .header__login_box{
 	display: flex;
 	align-items: center;
 	color: #fff;
+	justify-self: flex-end;
+	color: #fff;
+}
+.header__login{
+	color: #fff;
 	font-size: 17px;
 	font-weight: 600;
-	justify-self: flex-end
 }
 .empty{
 	flex: 1;

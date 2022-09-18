@@ -3,14 +3,10 @@ import { useState } from "react"
 import { ReviewType } from "../../../../../types/ReviewType"
 import { reviewColor } from "../../../../../utils/reviewColor/reviewColor"
 import { dateConverter } from "../../../../../utils/stringToDate/dateConverter"
+import { IReview } from "../../Review"
 import style from './ReviewItem.module.scss'
 type ReviewItem = {
-	item:{
-		title: string
-		type: string
-		review: string
-		date: string
-	}
+	item: IReview
 	ind: number
 }
 export const ReviewItem = ({item, ind}:ReviewItem) => {
@@ -39,8 +35,8 @@ export const ReviewItem = ({item, ind}:ReviewItem) => {
 					<div className={style.main__container}>
 						<div className={style.main__data}>{dateConverter(item?.date)}</div>
 						<div className={style.main__estimates}>
-							<div className={style.main__like}>Like</div>
-							<div className={style.main__dislike}>Dislike</div>
+							<button className={style.main__like}>Likes {item.reviewLikes}</button>
+							<button className={style.main__dislike}>Dislikes {item.reviewDislikes}</button>
 						</div>
 					</div>
 				</div>

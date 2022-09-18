@@ -6,4 +6,5 @@ margin-top: 80px;
 display: flex;
 justify-content: center;
 padding: 0 20px;
+padding-bottom: 130px;
 `

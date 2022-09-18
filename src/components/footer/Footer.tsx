@@ -16,7 +16,9 @@ export const Footer = () => {
 						<LogoSvg/>
 					</div>
 					<div className={style.footer__links}>
-						{links.map(({name, link}:any) => <Link key={name} className={style.link} to={link}>{name}</Link>)}
+						{links.map(({name, link}:any) => <Link key={name} 
+						className={style.footer__link} to={link}>{name}
+						</Link>)}
 					</div>
 					<p className={style.footer__watermark}>© 2022 Kinomore</p>
 				</div>

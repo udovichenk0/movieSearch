@@ -41,6 +41,11 @@ export const movieApi = createApi({
 			query: ({id, limit}) => {
 				return `/review?search=${id}&field=movieId&limit=${limit}&page=1&token=${import.meta.env.VITE_TOKEN}`
 			}
+		}),
+		getNewFilms: builder.query({
+			query: () => {
+				return `/movie?search=${2022}&field=year&token=${import.meta.env.VITE_TOKEN}`
+			}
 		})
 	})
 })
@@ -50,4 +55,6 @@ export const {
 	useGetPersonByIdQuery,
 	useGetMoviesByIdQuery,
 	useGetReviewByIdQuery,
+	useGetNewFilmsQuery,
 } = movieApi
+

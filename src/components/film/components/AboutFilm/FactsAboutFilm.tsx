@@ -10,11 +10,11 @@ export const InfoTable = ({items}:{items: PropTypes[]}) => {
 	return <>
 		{items.map(({leftItem, rightItem}:PropTypes) => {
 		return (
-			<div className={style.info} key={leftItem}>
-				<div  className={style.info__leftSide}>{leftItem}</div>
-				<div className={style.info__rightSide}>{rightItem}</div>
+			<div className={style.block} key={leftItem}>
+				<div  className={style.block__leftSide}>{leftItem}</div>
+				<div className={style.block__rightSide}>{rightItem}</div>
 			</div>
 		)
-	})}
+	})}	
 	</>	
 }
