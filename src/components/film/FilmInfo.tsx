@@ -23,8 +23,8 @@ type countriesType ={
 name: string
 }
 export const FilmInfo = () => {
-	const id = useParams<QuizParams>()
-	const {data, isLoading} = useGetMovieByIdQuery(id.id)
+	const {id} = useParams<string>()
+	const {data, isLoading} = useGetMovieByIdQuery(id)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
@@ -76,7 +76,7 @@ export const FilmInfo = () => {
 				</div>	
 			<FooterTabs tabInfo={tabInfo}/>
 			<SimilarMovies similarMovies={similarMovies} title={'Похожее кино'} redirect={'film'}/>
-			<Review id={id.id}/>
+			<Review id={id}/>
 			</section>
 		</Container>
 		</div>

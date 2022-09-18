@@ -2,12 +2,7 @@ import classNames from "classnames"
 import { arountNumber } from "../../../utils/arountNumber/aroundNumber"
 import style from './rating.module.scss'
 
-type RatingType = {
-	rating: number | undefined
-	ratingStyle: string
-}
-
-export const Rating = ({rating,ratingStyle}:RatingType) => {
+export const Rating = ({rating,ratingStyle}:{rating?:number, ratingStyle: string}) => {
 	if(!rating) return <></>
 	const isMovieGood = rating >= 5? 'good' : 'bad'
 	return (

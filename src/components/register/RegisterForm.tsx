@@ -36,6 +36,7 @@ export const RegistrationForm = () => {
 				<div className={style.email__form}>
 					<label className={style.label__form} htmlFor={item}>{item}</label>
 					<input className={style.login} placeholder={`Enter ${item}`} type="text"{...register(`${item}`, {required:true })} />
+					{/* @ts-ignore */}
 					<div className={style.form__error}>{errors[item] && `${errors[item].type}`}</div>
 				</div>
 			)
@@ -47,7 +48,7 @@ export const RegistrationForm = () => {
 				<div className={style.email__form}>
 					<label className={style.label__form} htmlFor={item}>{item}</label>
 					<input className={style.login} placeholder={`Enter ${item}`} type="text"{...register(`${item}`, {required:true })} />
-					<div className={style.form__error}>{errors[item] && `${errors[item].type}`}</div>
+					<div className={style.form__error}>{errors[item] && `${errors[item]?.type}`}</div>
 				</div>
 			)
 		})}

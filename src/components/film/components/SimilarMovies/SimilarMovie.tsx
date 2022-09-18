@@ -4,7 +4,7 @@ import style from './similarMovies.module.scss'
 
 type PropsType = {
 	redirect: string
-	similarMovies: SimilarMoviesType[] | undefined
+	similarMovies?: SimilarMoviesType[]
 	title: string
 }
 

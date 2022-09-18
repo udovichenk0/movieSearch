@@ -4,8 +4,8 @@ import style from './tabs.module.scss'
 //check
 type TabInfoType = {
   title: string
-  content: React.ReactNode | undefined
-  condition: number | undefined
+  content?: React.ReactNode
+  condition?: number
 }
 
 export const FooterTabs = ({tabInfo}: {tabInfo: TabInfoType[]}) => {
