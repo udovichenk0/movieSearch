@@ -1,5 +1,5 @@
 import { FactsType } from "./FactsType"
-import { RatingType } from "./RatingType"
+import { RatingType } from "./someTypes/RatingType"
 
 type BackdropType = {
 	_id: string
@@ -137,50 +137,54 @@ type ImagesType = {
 	backdropsCount: number
 	framesCount: number
 }
-export type FilmType = {
-	ageRating: number
+
+export type movieTypes = {
 	alternativeName: string
+	description: string
+	enName: null | string
+	externalId: ExternalIdType
+	id: number
+	logo: LogoType
+	movieLength: number
+	name: string | null
+	names: NamesType[]
+	poster: PosterType
+	rating: RatingType
+	shortDescription: string | null
+	type: string
+	votes: RatingType
+	year: number
+}
+
+export interface FilmType extends movieTypes{
+	ageRating: number
 	backdrop:BackdropType
 	budget: BudgetType
 	collections: []
 	countries: CountriesType[]
 	createDate: string
-	description: string
 	distributors: DistributorsType
-	enName: null | string
-	externalId: ExternalIdType
 	facts: FactsType[]
 	fees: FeesType
 	genres:GenresType[]
-	id: number
 	images: ImagesType
 	imagesInfo: ImagesInfoType
 	lists: []
-	logo: LogoType
-	movieLength: 127
-	name: string
-	names: NamesType[]
 	persons: PersonType[]
-	poster: PosterType
 	premiere: PremiereType
 	productionCompanies: ProductionCompaniesType[]
-	rating: RatingType
 	ratingMpaa: string
 	seasonsInfo: []
 	sequelsAndPrequels: SequelsAndPrequels[]
-	shortDescription: string
 	similarMovies: SimilarMoviesType[] | undefined
 	slogan: string
 	spokenLanguages: SpokenLanguages[]
 	status: string
 	technology: TechnologyType
 	ticketsOnSale: false
-	type: string
 	typeNumber: number
 	updateDates: string[]
 	updatedAt: string
 	videos: VideosType
-	votes: RatingType
 	watchability: WatchabilityType
-	year: number
 }

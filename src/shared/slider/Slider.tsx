@@ -3,7 +3,7 @@ import './slider.scss'
 // import "swiper/css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-import { RatingType } from '../../types/RatingType';
+import { RatingType } from '../../types/someTypes/RatingType';
 import { FilmType } from '../../types/FilmType';
 type SwiperType = {
 	name: string
