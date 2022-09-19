@@ -3,7 +3,7 @@ import style from './home.module.scss'
 import { Button } from "./components/button/Button"
 import {FiArrowRight} from 'react-icons/fi';
 import { useNavigate } from "react-router-dom"
-import { NewFilms } from "../films/films";
+import { HeroCards } from "../films/films";
 export const Home = () => {
 const navigate = useNavigate()
 	return (
@@ -17,7 +17,7 @@ const navigate = useNavigate()
 					</div>
 			</Container>
 		</section>
-			<NewFilms/>
+			<HeroCards/>
 		</div>
 		
 	)

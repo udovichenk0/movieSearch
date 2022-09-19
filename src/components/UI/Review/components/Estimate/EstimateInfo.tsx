@@ -9,35 +9,27 @@ export const EstimatesInfo = ({total, id}: {total: number, id: string | undefine
 	const goodReview = data?.docs?.filter((item:MovieType) => !item.type || item.type === 'Позитивный').length
 	const badReview = data?.docs?.filter((item:MovieType) =>  item.type === 'Негативный').length
 	const neutralReview = data?.docs?.filter((item:MovieType) =>  item.type === 'Нейтральный').length
+	const items = [
+		{styleReview: 'votes__allNumbers', value: total},
+		{styleReview: 'votes__likedNumber', value: goodReview},
+		{styleReview: 'votes__dislidedNumber', value: badReview},
+		{styleReview: 'votes__neutralNumber', value: neutralReview},
+	]
 	return (
 		<div className={style.statistics}>
-					<div className={style.review__statistic}>
+			{items.map(({styleReview, value}) => {
+				return (
+					<div key={styleReview} className={style.review__statistic}>
 						<div className={style.votes}>
-							<div className={style.votes__allNumbers}>{total}</div>
+							<div className={style[styleReview]}>{value}</div>
+							<div className={style.votes__precent}>{getPercent({total,value})}</div>
 						</div>
 						<p className={style.undertext}>Всего</p>
 					</div>
-					<div className={style.review__statistic}>
-						<div className={style.votes}>
-							<div className={style.votes__likedNumber}>{goodReview}</div>
-							<div className={style.votes__precent}>{getPercent({total, value: goodReview})}</div>
-						</div>
-						<p className={style.undertext}>Всего</p>
-					</div>
-					<div className={style.review__statistic}>
-						<div className={style.votes}>
-							<div className={style.votes__dislidedNumber}>{badReview}</div>
-							<div className={style.votes__precent}>{getPercent({total, value: badReview})}</div>
-						</div>
-						<p className={style.undertext}>Всего</p>
-					</div>
-					<div className={style.review__statistic}>
-						<div className={style.votes}>
-							<div className={style.votes__neutralNumber}>{neutralReview}</div>
-							<div className={style.votes__precent}>{getPercent({total, value: neutralReview})}</div>
-						</div>
-						<p className={style.undertext}>Всего</p>
-					</div>
+				)
+			})}
+					
+					
 				</div>
 	)
 }

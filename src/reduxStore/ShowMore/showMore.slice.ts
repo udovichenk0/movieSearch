@@ -3,15 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const showMoreSlice = createSlice({
 	name: 'showMore',
 	initialState: {
-		limit: 3
+		filmLimit: 10,
+		serialLimit: 10,
 	},
 	reducers: {
-		showMore(state){
-			state.limit += 3
+		showMoreFilms(state){
+			state.filmLimit += 10
 		}
 	}
 })
 
-export const {showMore} = showMoreSlice.actions
+export const {showMoreFilms} = showMoreSlice.actions
 
 export default showMoreSlice.reducer

@@ -43,8 +43,13 @@ export const movieApi = createApi({
 			}
 		}),
 		getNewFilms: builder.query({
-			query: () => {
-				return `/movie?search=${2022}&field=year&token=${import.meta.env.VITE_TOKEN}`
+			query: ({limit}) => {
+				return `/movie?field=rating.kp&search=1-10&field=year&search=2022&field=typeNumber&search=1&sortField=year&sortType=-1&sortField=votes.imdb&sortType=-1&token=${import.meta.env.VITE_TOKEN}`
+			}
+		}),
+		getNewSerials: builder.query({
+			query: ({limit}) => {
+				return `/movie?field=rating.kp&search=7-10&field=year&search=2022&field=typeNumber&search=2&sortField=year&sortType=-1&sortField=votes.imdb&sortType=-1&token=${import.meta.env.VITE_TOKEN}`
 			}
 		})
 	})
@@ -56,5 +61,6 @@ export const {
 	useGetMoviesByIdQuery,
 	useGetReviewByIdQuery,
 	useGetNewFilmsQuery,
+	useGetNewSerialsQuery
 } = movieApi
 

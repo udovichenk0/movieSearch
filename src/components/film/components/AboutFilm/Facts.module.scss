@@ -1,7 +1,7 @@
 .block{
 	display: flex;
 	&:not(:last-child){
-		margin-bottom: 20px;
+		margin-bottom: 35px;
 	};
 	&__leftSide{
 		flex: 0 0 170px;

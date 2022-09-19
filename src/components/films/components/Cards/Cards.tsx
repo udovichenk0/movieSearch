@@ -2,70 +2,22 @@ import style from './cards.module.scss'
 import poster from '../../../../assets/poster/poster.jpg'
 import { useGetNewFilmsQuery } from '../../../../services/apiConfig'
 import { Link } from 'react-router-dom'
-export const Cards = () => {
-	const {data} = useGetNewFilmsQuery({})
+import { useAppSelector } from '../../../../utils/typedHooks/useAppHooks'
+export const Cards = ({data}:any) => {
 	console.log(data)
 	return (
 		<div className={style.cards}>
-			<div className={style.card}>
+			{data?.docs.map((item:any) => {
+				return <div key={item.id} className={style.card}>
 				<Link to='#' className={style.card__image}>
-					<img src={poster} alt="" />
+					<div className={style.card__image}>
+						<img className={style.image} src={item?.poster?.previewUrl} alt="" />
+					</div>
 				</Link>
-				<div className={style.card__title}>Бэтмен</div>
-				<p className={style.card__substring}>2022, фильм</p>
+				<div className={style.card__title}>{item?.name}</div>
+				<p className={style.card__substring}>{item?.year}, {item?.type}</p>
 			</div>
-
-			<div className={style.card}>
-				<Link to='#' className={style.card__image}>
-					<img src={poster} alt="" />
-				</Link>
-				<div className={style.card__title}>Бэтмен</div>
-				<p className={style.card__substring}>2022, фильм</p>
-			</div>
-			<div className={style.card}>
-				<Link to='#' className={style.card__image}>
-					<img src={poster} alt="" />
-				</Link>
-				<div className={style.card__title}>Бэтмен</div>
-				<p className={style.card__substring}>2022, фильм</p>
-			</div>
-			<div className={style.card}>
-				<Link to='#' className={style.card__image}>
-					<img src={poster} alt="" />
-				</Link>
-				<div className={style.card__title}>Бэтмен</div>
-				<p className={style.card__substring}>2022, фильм</p>
-			</div>
-			<div className={style.card}>
-				<Link to='#' className={style.card__image}>
-					<img src={poster} alt="" />
-				</Link>
-				<div className={style.card__title}>Бэтмен</div>
-				<p className={style.card__substring}>2022, фильм</p>
-			</div>
-			<div className={style.card}>
-				<Link to='#' className={style.card__image}>
-					<img src={poster} alt="" />
-				</Link>
-				<div className={style.card__title}>Бэтмен</div>
-				<p className={style.card__substring}>2022, фильм</p>
-			</div>
-
-			<div className={style.card}>
-				<Link to='#' className={style.card__image}>
-					<img src={poster} alt="" />
-				</Link>
-				<div className={style.card__title}>Бэтмен</div>
-				<p className={style.card__substring}>2022, фильм</p>
-			</div>
-			<div className={style.card}>
-				<Link to='#' className={style.card__image}>
-					<img src={poster} alt="" />
-				</Link>
-				<div className={style.card__title}>Бэтмен</div>
-				<p className={style.card__substring}>2022, фильм</p>
-			</div>
-			
+			})}			
 		</div>
 	)
 }

@@ -25,6 +25,7 @@ name: string
 export const FilmInfo = () => {
 	const {id} = useParams<string>()
 	const {data, isLoading} = useGetMovieByIdQuery(id)
+	console.log(data)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
@@ -36,8 +37,8 @@ export const FilmInfo = () => {
 		{leftItem: 'Возраст', rightItem: ageRating || '—'},
 		{leftItem: 'Бюджет', rightItem: `${budget?.currency || ``} ${validValue(budget?.value || '—')}`},
 		{leftItem: 'Время', rightItem: `${movieLength} 	min`},
-		{leftItem: 'Сборы в США', rightItem: `${fees?.usa?.currency || ''} ${validValue(fees?.usa.value || '—')}`},
-		{leftItem: 'Сборы в мире', rightItem: `${fees?.world?.currency || ''} ${validValue(fees?.world.value || '—')}`},
+		{leftItem: 'Сборы в США', rightItem: `${fees?.usa?.currency || ''} ${validValue(fees?.usa?.value || '—')}`},
+		{leftItem: 'Сборы в мире', rightItem: `${fees?.world?.currency || ''} ${validValue(fees?.world?.value || '—')}`},
 		{leftItem: 'Премьера в мире', rightItem: dateConverter(premiere?.world)},
 	]
 	const actors = persons?.filter(item => {
@@ -57,12 +58,13 @@ export const FilmInfo = () => {
 			<Container>
 			<section className={style.section__body}>
 				<BackButton/>
+				<div>
 				<div className={style.box__body}>
 					<div className={style.body__poster}>
 						<div className={style.image__container}>
 							<img className={style.poster} src={poster?.url} alt="" />
 						</div>
-						<Rating ratingStyle={style.body__rating} rating={rating?.kp}/>
+						<Rating ratingStyle={style.body__rating} rating={rating?.kp? rating.kp : 0}/>
 					</div>
 					<div className={style.body__info}>
 						<h1 className={style.body__title}>{titleName}</h1>
@@ -77,6 +79,7 @@ export const FilmInfo = () => {
 			<FooterTabs tabInfo={tabInfo}/>
 			<SimilarMovies similarMovies={similarMovies} title={'Похожее кино'} redirect={'film'}/>
 			<Review id={id}/>
+				</div>
 			</section>
 		</Container>
 		</div>
