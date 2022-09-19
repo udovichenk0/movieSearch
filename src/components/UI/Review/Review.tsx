@@ -1,9 +1,7 @@
 import classnames from 'classnames'
 import { useState } from 'react'
 import { useGetReviewByIdQuery } from '../../../services/apiConfig'
-import { dateConverter } from '../../../utils/stringToDate/dateConverter'
-import { useAppSelector } from '../../../utils/typedHooks/useAppHooks'
-import { ShowMore } from '../ShowMoreButton/ShowMore'
+import { LoadMoreButton } from '../LoadMoreBtn/LoadMore'
 import { EstimatesInfo } from './components/Estimate/EstimateInfo'
 import { ReviewItem } from './components/ReviewItem/ReviewItem'
 import style from './review.module.scss' 
@@ -18,6 +16,9 @@ export interface IReview {
 	export const Review = ({id}:{id: string | undefined}) => {
 	const [limit, setLimit] = useState<number>(3)
 	const {data} = useGetReviewByIdQuery({id, limit})	
+	function handleOnClick(){
+		setLimit(limit + 3)
+	}
 	if(!data?.docs?.length)return <></>
 	const {total}:{total:number} = {...data}
 	return (
@@ -27,7 +28,7 @@ export interface IReview {
 				<div className={style.main__block}>
 					{data?.docs?.map((item:IReview, ind: number) => <ReviewItem key={ind} ind={ind} item={item} />)}
 			<div className={style.showMore}>
-			<ShowMore limit={limit} setLimit={setLimit}/>
+			<LoadMoreButton handleOnClick={handleOnClick}/>
 			</div>
 				</div>
 				<EstimatesInfo total={total} id={id}/>

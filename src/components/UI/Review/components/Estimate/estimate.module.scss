@@ -1,7 +1,10 @@
 .statistics{
 	padding: 35px 36px;
 }
-
+.stickyBlock{
+	position: sticky;
+	top: 80px;
+}
 .review__statistic{
 	&:not(:last-child){
 		margin-bottom: 10px;

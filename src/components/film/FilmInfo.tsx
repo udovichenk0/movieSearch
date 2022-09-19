@@ -55,7 +55,6 @@ export const FilmInfo = () => {
 	const alternativeTitleName = isLoading? 'Загрузка..' : alternativeName
 	return (
 			<div className={style.wrapper}>
-			<Container>
 			<section className={style.section__body}>
 				<BackButton/>
 				<div>
@@ -81,7 +80,6 @@ export const FilmInfo = () => {
 			<Review id={id}/>
 				</div>
 			</section>
-		</Container>
 		</div>
 			
 	)

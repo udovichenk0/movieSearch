@@ -4,7 +4,6 @@ import { useGetNewFilmsQuery } from '../../../../services/apiConfig'
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '../../../../utils/typedHooks/useAppHooks'
 export const Cards = ({data}:any) => {
-	console.log(data)
 	return (
 		<div className={style.cards}>
 			{data?.docs.map((item:any) => {

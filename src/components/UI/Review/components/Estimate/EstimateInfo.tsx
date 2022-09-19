@@ -17,7 +17,8 @@ export const EstimatesInfo = ({total, id}: {total: number, id: string | undefine
 	]
 	return (
 		<div className={style.statistics}>
-			{items.map(({styleReview, value}) => {
+			<div className={style.stickyBlock}>
+				{items.map(({styleReview, value}) => {
 				return (
 					<div key={styleReview} className={style.review__statistic}>
 						<div className={style.votes}>
@@ -28,8 +29,8 @@ export const EstimatesInfo = ({total, id}: {total: number, id: string | undefine
 					</div>
 				)
 			})}
-					
-					
-				</div>
+			</div>
+			
+		</div>
 	)
 }

@@ -1,7 +1,6 @@
 import classnames from "classnames"
 import { Container } from "../../common/containerStyle/container"
 import { Cards } from "./components/Cards/Cards"
-import { LoadMoreButton } from "./components/loadMoreBtn/LoadMoreBtn"
 import { NewFilms } from "./components/newFilms/newFilms"
 import { NewSerials } from "./components/newSerials/NewSerials"
 import { Panel } from "./components/Panel/Panel"

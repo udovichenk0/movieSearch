@@ -49,7 +49,6 @@ export const Person = () => {
 	const actorEnName = isLoading? 'Загрузка..' : enName
 	return (
 		<div className={style.wrapper}>
-			<Container>
 			<section className={style.section__body}>
 				<BackButton/>
 				<div className={style.box__body}>
@@ -66,7 +65,6 @@ export const Person = () => {
 				</div>	
 			<FooterTabs tabInfo={tabInfo}/>
 			</section>
-		</Container>
 		</div>	
 	)
 	
