@@ -1,7 +1,8 @@
-import { Layout } from "../../shared/Layout/Layout"
+import { Layout } from "../../shared/ui/Layout/Layout"
 import { FilmInfo } from "../../components/film/FilmInfo"
 import './test.scss'
-const MoviePage = () => {
+export const MoviePage = () => {
+	
 	return (
 		<Layout>
 			<FilmInfo/>
@@ -9,4 +10,4 @@ const MoviePage = () => {
 	)
 }
 
-export default MoviePage
+// export default MoviePage

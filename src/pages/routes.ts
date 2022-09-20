@@ -1,11 +1,11 @@
 import { HomePage } from "./home/Home"
 import React from "react"
+import { MoviePage } from "./infoPage/InfoPage"
 
 const LoginPageLazy = React.lazy(() => import('./login/Login'))
 const RegisterPageLazy = React.lazy(() => import('./registration/Register'))
-const MoviePageLazy = React.lazy(() => import('./infoPage/InfoPage'))
+// const MoviePageLazy = React.lazy(() => import('./infoPage/InfoPage'))
 const PersonPageLazy = React.lazy(() => import('./Person/InfoPerson'))
-
 export const routes = [
 	{
 		path: '/',
@@ -21,7 +21,7 @@ export const routes = [
 	},
 	{
 		path: '/film/:id',
-		component: MoviePageLazy
+		component: MoviePage
 	},
 	{
 		path: '/name/:id',

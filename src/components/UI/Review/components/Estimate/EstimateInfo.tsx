@@ -1,4 +1,4 @@
-import { useGetReviewByIdQuery } from '../../../../../services/apiConfig'
+import { useGetReviewByIdQuery } from '../../../../../shared/api/apiConfig'
 import { MovieType } from '../../../../../types/MovieType'
 import { getPercent } from '../../../../../utils/getPercent/getPercent'
 import style from './estimate.module.scss'

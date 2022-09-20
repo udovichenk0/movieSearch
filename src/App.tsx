@@ -3,7 +3,7 @@ import { routes } from './pages/routes'
 import './App.css'
 import { Provider } from 'react-redux'
 import { store } from './reduxStore/store'
-import  './services/authFireBase'
+import  './shared/api/authFireBase'
 import React, { Suspense } from 'react';
 
 function App() {
