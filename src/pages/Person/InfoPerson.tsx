@@ -8,7 +8,7 @@ import { Layout } from "../../shared/ui/Layout/Layout"
 import { FooterTabs } from "../../shared/ui/Tabs/FooterTabs"
 import { FilmType } from "../../types/FilmType"
 import { dateConverter } from "../../utils/stringToDate/dateConverter"
-import { SwiperSlider } from "../../widgets/slider/Slider"
+import { SwiperSlider } from "../../widgets/sliderBlock/Slider"
 import style from './personInfo.module.scss'
 const InfoPerson = () => {
 	const id = useParams()

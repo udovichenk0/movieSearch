@@ -1,4 +1,4 @@
-import { SwiperSlider } from '../../../../widgets/slider/Slider'
+import { SwiperSlider } from '../../../../widgets/sliderBlock/Slider'
 import { SimilarMoviesType } from '../../../../types/FilmType'
 import style from './similarMovies.module.scss'
 

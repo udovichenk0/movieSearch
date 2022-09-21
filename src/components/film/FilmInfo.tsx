@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { Container } from "../../common/containerStyle/container"
 import { useGetMovieByIdQuery } from "../../shared/api/apiConfig"
-import { SwiperSlider } from "../../widgets/slider/Slider"
+import { SwiperSlider } from "../../widgets/sliderBlock/Slider"
 import { dateConverter } from "../../utils/stringToDate/dateConverter"
 import { validValue } from "../../utils/validValue/validValue"
 import { Facts } from "../../shared/ui/Facts/Facts"
