@@ -28,7 +28,7 @@ export const Header = () => {
 			<div className={style.logo} onClick={() => navigate('/', {replace: true})}>
 				<LogoSvg/>
 			</div>
-			<Search/>
+			<Search/> 
 
 				<div className={style.empty}></div>
 				{!isAuth

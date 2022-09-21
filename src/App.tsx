@@ -1,5 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
-import { routes } from './pages/routes'
+import { routes } from './pages/index'
 import './App.css'
 import { Provider } from 'react-redux'
 import { store } from './reduxStore/store'

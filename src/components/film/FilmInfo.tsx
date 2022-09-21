@@ -14,11 +14,7 @@ import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
 import { Rating } from "../../shared/ui/Rating/Rating"
 import { Review } from "../UI/Review/Review"
 import { BackButton } from "../../shared/ui/BackButton/BackButton"
-import classnames from "classnames"
 
-type QuizParams = {
-	id: string;
-  };
 type countriesType ={
 name: string
 }
@@ -29,7 +25,6 @@ export const FilmInfo = () => {
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
-	const navigate = useNavigate()
 	const items = [
 		{leftItem: 'Страны', rightItem: countries?.map((action:countriesType) => action.name).join(', ')},
 		{leftItem: 'Жанр', rightItem: genres?.map((action:any) => action.name).join(', ')},

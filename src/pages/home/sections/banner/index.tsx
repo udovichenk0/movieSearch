@@ -1,17 +1,11 @@
 import { FiArrowRight } from "react-icons/fi"
 import { useNavigate } from "react-router-dom"
-import { Container } from "../../common/containerStyle/container"
-import { Button } from "./ui/button/Button"
-import { Layout } from "../../shared/ui/Layout/Layout"
-import style from './home.module.scss'
-import { NewFilms } from "./ui/newFilms/newFilms"
-import { NewSerials } from "./ui/newSerials/NewSerials"
-export const HomePage = () => {
+import { Container } from "../../../../common/containerStyle/container"
+import style from './styles.module.scss'
+export const Banner = () => {
 	const navigate = useNavigate()
 	return (
-		<Layout>
-			<div>
-			<section className={style.wrapper}>
+		<section className={style.wrapper}>
 			<Container>
 				<div className={style.main__body}>
 				<h2 className={style.main__title}>Тор: Любовь и гром</h2>
@@ -21,17 +15,8 @@ export const HomePage = () => {
 			<FiArrowRight/>
 			</div>
 		</button>
-					</div>
+			</div>
 			</Container>
 		</section>
-		<div className={style.cards__body}>
-		<Container>
-			<NewFilms/>
-			<NewSerials/>
-		</Container>
-			</div>
-		</div>
-		</Layout>
-		
 	)
 }

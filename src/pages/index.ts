@@ -1,4 +1,4 @@
-import { HomePage } from "./home/Home"
+import { HomePage } from "./home"
 import React from "react"
 import { MoviePage } from "./infoPage/InfoPage"
 

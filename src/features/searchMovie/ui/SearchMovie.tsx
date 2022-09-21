@@ -4,7 +4,6 @@ import searchBtn from '../../../assets/buttonSearch/search.svg'
 interface formInterface{
 	search: string
 }
-
 export const Search = () => {
 	const {register, handleSubmit} = useForm<formInterface>()
 	const onSubmit = (data: any) => {

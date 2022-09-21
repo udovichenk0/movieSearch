@@ -6,13 +6,6 @@ import { ReviewType } from '../../types/ReviewType';
 import { cardType, MoviesByIdTypeProps, ReviewByIdTypeProps } from '../../types/someTypes/someTypes';
 
 
-const instance = axios.create({
-	baseURL: 'https://api.kinopoisk.dev/',
-	headers: {
-		'Content-Type': 'application/json'
-	}
-})
-
 
 export const movieApi = createApi({
 	reducerPath: 'moviesApi',
