@@ -1,32 +1,26 @@
-import { useNavigate, useParams } from "react-router-dom"
-import { Container } from "../../common/containerStyle/container"
+import { Layout } from "../../shared/ui/Layout/Layout"
+import { useParams } from "react-router-dom"
 import { useGetMovieByIdQuery } from "../../shared/api/apiConfig"
-import { SwiperSlider } from "../../widgets/sliderBlock/Slider"
-import { dateConverter } from "../../utils/stringToDate/dateConverter"
 import { validValue } from "../../utils/validValue/validValue"
+import { dateConverter } from "../../utils/stringToDate/dateConverter"
+import { SwiperSlider } from "../../widgets/sliderBlock/Slider"
+import style from './styles.module.scss'
 import { Facts } from "../../shared/ui/Facts/Facts"
-import { InfoTable } from "./components/AboutFilm/FactsAboutFilm"
-import { ButtonStore } from "./components/Button/ButtonStore"
-import { ButtonWatch } from "./components/ButtonWatch/ButtonWatch"
-import { FooterTabs } from "../../shared/ui/Tabs/FooterTabs"
-import style from './info.module.scss'
-import { SimilarMovies } from "./components/SimilarMovies/SimilarMovie"
-import { Rating } from "../../shared/ui/Rating/Rating"
-import { Review } from "../UI/Review/Review"
 import { BackButton } from "../../shared/ui/BackButton/BackButton"
-
-type countriesType ={
-name: string
-}
-export const FilmInfo = () => {
+import { Rating } from "../../shared/ui/Rating/Rating"
+import { ButtonWatch } from "./ui/ButtonWatch/ButtonWatch"
+import { InfoTable } from "../../shared/ui/AboutFilm/FactsAboutFilm"
+import { ButtonStore } from "./ui/Button/ButtonStore"
+import { FooterTabs } from "../../shared/ui/Tabs/FooterTabs"
+import { Review } from "../../components/UI/Review/Review"
+export const MoviePage = () => {
 	const {id} = useParams<string>()
 	const {data, isLoading} = useGetMovieByIdQuery(id)
-	console.log(data)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
 	const items = [
-		{leftItem: 'Страны', rightItem: countries?.map((action:countriesType) => action.name).join(', ')},
+		{leftItem: 'Страны', rightItem: countries?.map((action:{name: string}) => action.name).join(', ')},
 		{leftItem: 'Жанр', rightItem: genres?.map((action:any) => action.name).join(', ')},
 		{leftItem: 'Слоган', rightItem: slogan || '—'},
 		{leftItem: 'Возраст', rightItem: ageRating || '—'},
@@ -49,6 +43,7 @@ export const FilmInfo = () => {
 	const titleName = isLoading? 'Загрузка..' : name
 	const alternativeTitleName = isLoading? 'Загрузка..' : alternativeName
 	return (
+		<Layout>
 			<div className={style.wrapper}>
 			<section className={style.section__body}>
 				<BackButton/>
@@ -71,11 +66,13 @@ export const FilmInfo = () => {
 					</div>
 				</div>	
 			<FooterTabs tabInfo={tabInfo}/>
-			<SimilarMovies similarMovies={similarMovies} title={'Похожее кино'} redirect={'film'}/>
+			{similarMovies?.length != 0 && <SwiperSlider content={similarMovies} title={'Похожее кино'} redirect={'film'}/>}
 			<Review id={id}/>
 				</div>
 			</section>
 		</div>
-			
+		</Layout>
 	)
 }
+
+// export default MoviePage

@@ -1,10 +1,8 @@
-import swiper, { Navigation,  Pagination, Scrollbar, A11y  } from 'swiper';
+import { Navigation, Scrollbar, A11y  } from 'swiper';
 import './slider.scss'
-// import "swiper/css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { RatingType } from '../../types/someTypes/RatingType';
-import { SwiperCard } from '../../Entities/Slider';
 type SwiperType = {
 	name: string
 	photo?: string
@@ -52,13 +50,12 @@ export const SwiperSlider = ({content, title, redirect}: SwiperSliderType) => {
 	}}
     >
 	{content?.map(({name, photo, poster, id}:SwiperType, index: number) => {
-	return <SwiperCard key={id}
-	name={name}
-	photo={photo}
-	poster={poster}
-	id={id}
-	redirect={redirect}
-	/>
+	return <SwiperSlide key={id} className='swiper__body'>
+	<div className={'card'}>
+		<Link to={`/${redirect}/${id}`}><img className={'image'}  src={photo || poster?.url} alt="" /></Link>
+		<div className={'name'}>{name}</div>
+	</div>
+</SwiperSlide>
 	})}
     </Swiper>
 	</div>

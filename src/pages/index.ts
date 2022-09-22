@@ -1,6 +1,6 @@
 import { HomePage } from "./home"
 import React from "react"
-import { MoviePage } from "./infoPage/InfoPage"
+import { MoviePage } from "./film"
 
 const LoginPageLazy = React.lazy(() => import('./login/Login'))
 const RegisterPageLazy = React.lazy(() => import('./registration/Register'))

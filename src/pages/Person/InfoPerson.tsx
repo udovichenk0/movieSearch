@@ -1,6 +1,6 @@
 import { useMemo } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { InfoTable } from "../../components/film/components/AboutFilm/FactsAboutFilm"
+import { InfoTable } from "../../shared/ui/AboutFilm/FactsAboutFilm"
 import { useGetMoviesByIdQuery, useGetPersonByIdQuery } from "../../shared/api/apiConfig"
 import { BackButton } from "../../shared/ui/BackButton/BackButton"
 import { Facts } from "../../shared/ui/Facts/Facts"
