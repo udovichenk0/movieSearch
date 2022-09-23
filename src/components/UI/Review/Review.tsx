@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import { useState } from 'react'
+// import { LoadMoreButton } from '../../../features/loadMore'
 import { useGetReviewByIdQuery } from '../../../shared/api/apiConfig'
-import { LoadMoreButton } from '../../../shared/ui/LoadMoreBtn/LoadMore'
 import { EstimatesInfo } from './components/Estimate/EstimateInfo'
 import { ReviewItem } from './components/ReviewItem/ReviewItem'
 import style from './review.module.scss' 
@@ -28,7 +28,7 @@ export interface IReview {
 				<div className={style.main__block}>
 					{data?.docs?.map((item:IReview, ind: number) => <ReviewItem key={ind} ind={ind} item={item} />)}
 			<div className={style.showMore}>
-			<LoadMoreButton handleOnClick={handleOnClick}/>
+			{/* <LoadMoreButton handleOnClick={handleOnClick}/> */}
 			</div>
 				</div>
 				<EstimatesInfo total={total} id={id}/>

@@ -1,9 +1,8 @@
 import { useForm } from "react-hook-form"
-import { Input } from "../../loginInput/ui/inputForm"
 import style from './register.module.scss'
-import commonStyle from '../../common/Styles/FormStyles.module.scss'
-import { Link, NavLink, useNavigate } from "react-router-dom"
-import { LoginContainerStyle } from "../../../pages/login/LoginContainerStyled"
+import commonStyle from '../../../../common/Styles/FormStyles.module.scss'
+import { Link, useNavigate } from "react-router-dom"
+import { LoginContainerStyle } from "../../../../pages/login/LoginContainerStyled"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 type FormType = {
@@ -28,7 +27,7 @@ export const RegistrationForm = () => {
 	return (
 		<LoginContainerStyle>
 			<div className={style.login__form}>
-		<h1 className={commonStyle.login__title}>Sigh Up</h1>
+		<h1 className={commonStyle.login__title}>Sign Up</h1>
 		<form action="" onSubmit={handleSubmit(onSubmit)}>
 		<div className={style.register__body}>
 		{namesField.map(item => {

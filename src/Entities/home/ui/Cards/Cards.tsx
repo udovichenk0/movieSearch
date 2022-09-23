@@ -1,6 +1,6 @@
 import style from './cards.module.scss'
 import { Link } from 'react-router-dom'
-import { movieTypes } from '../../../types/FilmType'
+import { movieTypes } from '../../../../types/FilmType'
 
 export const Cards = ({item}:{item: movieTypes}) => {
 	return (

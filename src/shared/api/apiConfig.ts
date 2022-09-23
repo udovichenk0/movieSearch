@@ -7,7 +7,7 @@ import { cardType, MoviesByIdTypeProps, ReviewByIdTypeProps } from '../../types/
 
 
 
-export const movieApi = createApi({
+export const commonApi = createApi({
 	reducerPath: 'moviesApi',
 	baseQuery: fetchBaseQuery({baseUrl: 'https://api.kinopoisk.dev'}),
 	endpoints: builder => ({
@@ -29,16 +29,6 @@ export const movieApi = createApi({
 				return `/review?search=${id}&field=movieId&limit=${limit}&page=1&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
-		getNewFilms: builder.query<cardType, {limit: number}>({
-			query: ({limit}) => {
-				return `/movie?limit=${limit}&field=rating.kp&search=1-10&field=year&search=2022&field=typeNumber&search=1&sortField=year&sortType=-1&sortField=votes.imdb&sortType=-1&token=${import.meta.env.VITE_TOKEN}`
-			}
-		}),
-		getNewSerials: builder.query<cardType, {limit: number}>({
-			query: ({limit}) => {
-				return `/movie?limit=${limit}&field=rating.kp&search=7-10&field=year&search=2022&field=typeNumber&search=2&sortField=year&sortType=-1&sortField=votes.imdb&sortType=-1&token=${import.meta.env.VITE_TOKEN}`
-			}
-		})
 	})
 })
 
@@ -47,7 +37,5 @@ export const {
 	useGetPersonByIdQuery,
 	useGetMoviesByIdQuery,
 	useGetReviewByIdQuery,
-	useGetNewFilmsQuery,
-	useGetNewSerialsQuery
-} = movieApi
+} = commonApi
 
