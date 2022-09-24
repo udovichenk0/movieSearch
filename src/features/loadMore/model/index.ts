@@ -1,3 +1,3 @@
 import {showMoreFilms, showMoreSerial} from './action'
-
-export {showMoreFilms, showMoreSerial}
+import showMoreSlice from './action'
+export {showMoreFilms, showMoreSerial, showMoreSlice}

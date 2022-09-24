@@ -1,11 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import HeroSlice from '../../reduxStore/Swiper/InfoSlice'
 import { commonApi } from '../../shared/api/apiConfig'
-import showMoreSlice from '../../reduxStore/ShowMore/showMore.slice'
 import authSlice from '../../reduxStore/Auth/auth.slice'
+import { loadMoreModel } from '../../features/loadMore'
 export const reducers = combineReducers({
 	heroSlice: HeroSlice,
-	showMoreSlice,
+	showMoreSlice: loadMoreModel.showMoreSlice,
 	authSlice,
 	[commonApi.reducerPath]: commonApi.reducer
 })

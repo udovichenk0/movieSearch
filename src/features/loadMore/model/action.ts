@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const showMoreSlice = createSlice({
-	name: 'showMore',
+	name: 'model/showMore',
 	initialState: {
 		filmLimit: 10,
 		serialLimit: 10,
