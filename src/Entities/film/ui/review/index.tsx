@@ -1,10 +1,8 @@
-import classnames from 'classnames'
-import { useState } from 'react'
-// import { LoadMoreButton } from '../../../features/loadMore'
-import { useGetReviewByIdQuery } from '../../../shared/api/apiConfig'
-import { EstimatesInfo } from './components/Estimate/EstimateInfo'
-import { ReviewItem } from './components/ReviewItem/ReviewItem'
-import style from './review.module.scss' 
+import classnames from "classnames"
+import { useState } from "react"
+import { useGetReviewByIdQuery } from "../../../../shared/api/apiConfig"
+import style from './review.module.scss'
+import { ReviewItem, StatisticItem } from "./ui"
 export interface IReview {
 	title: string
 	type: string
@@ -13,12 +11,9 @@ export interface IReview {
 	reviewLikes: number
 	reviewDislikes: number
 }
-	export const Review = ({id}:{id: string | undefined}) => {
+	export const Review = ({id}:{id?: string}) => {
 	const [limit, setLimit] = useState<number>(3)
 	const {data} = useGetReviewByIdQuery({id, limit})	
-	function handleOnClick(){
-		setLimit(limit + 3)
-	}
 	if(!data?.docs?.length)return <></>
 	const {total}:{total:number} = {...data}
 	return (
@@ -31,8 +26,9 @@ export interface IReview {
 			{/* <LoadMoreButton handleOnClick={handleOnClick}/> */}
 			</div>
 				</div>
-				<EstimatesInfo total={total} id={id}/>
+				<StatisticItem total={total} id={id}/>
 			</div>
 		</div>
 	)
 }
+// take review to the film page

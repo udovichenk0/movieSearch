@@ -1,9 +1,8 @@
-import { useGetReviewByIdQuery } from '../../../../../shared/api/apiConfig'
-import { MovieType } from '../../../../../types/MovieType'
-import { getPercent } from '../../../../../utils/getPercent/getPercent'
-import style from './estimate.module.scss'
-
-export const EstimatesInfo = ({total, id}: {total: number, id: string | undefined}) => {
+import { useGetReviewByIdQuery } from "../../../../../../shared/api/apiConfig"
+import { MovieType } from "../../../../../../types/MovieType"
+import { getPercent } from "../../../../../../utils/getPercent/getPercent"
+import style from './styles.module.scss'
+export const StatisticItem = ({total, id}: {total: number, id: string | undefined}) => {
 
 	const {data} = useGetReviewByIdQuery({id, limit: total})
 	const goodReview = data?.docs?.filter((item:MovieType) => !item.type || item.type === 'Позитивный').length

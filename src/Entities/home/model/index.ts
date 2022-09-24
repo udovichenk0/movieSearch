@@ -1,3 +1,7 @@
-import {useGetNewMoviesQuery, useGetNewSerialsQuery} from './movies'
+import {useGetNewMoviesQuery, 
+	useGetNewSerialsQuery,
+	getMovieLimit,
+	getSerialLimit
+} from './movies'
 
-export {useGetNewMoviesQuery, useGetNewSerialsQuery}
+export {useGetNewMoviesQuery, useGetNewSerialsQuery,getMovieLimit,getSerialLimit}

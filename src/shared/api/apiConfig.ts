@@ -11,11 +11,6 @@ export const commonApi = createApi({
 	reducerPath: 'moviesApi',
 	baseQuery: fetchBaseQuery({baseUrl: 'https://api.kinopoisk.dev'}),
 	endpoints: builder => ({
-		getMovieById: builder.query<FilmType, string | undefined>({
-			query: id => {
-				return `/movie?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
-			}
-		}),
 		getPersonById: builder.query<PersonType, string | undefined>({
 			query: id => `/person?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
 		}),
@@ -33,7 +28,6 @@ export const commonApi = createApi({
 })
 
 export const {
-	useGetMovieByIdQuery,
 	useGetPersonByIdQuery,
 	useGetMoviesByIdQuery,
 	useGetReviewByIdQuery,

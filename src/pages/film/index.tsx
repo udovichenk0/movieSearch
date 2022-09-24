@@ -1,6 +1,5 @@
 import { Layout } from "../../shared/ui/Layout/Layout"
 import { useParams } from "react-router-dom"
-import { useGetMovieByIdQuery } from "../../shared/api/apiConfig"
 import { validValue } from "../../utils/validValue/validValue"
 import { dateConverter } from "../../utils/stringToDate/dateConverter"
 import { SwiperSlider } from "../../widgets/sliderBlock/Slider"
@@ -8,14 +7,15 @@ import style from './styles.module.scss'
 import { Facts } from "../../shared/ui/Facts/Facts"
 import { BackButton } from "../../shared/ui/BackButton/BackButton"
 import { Rating } from "../../shared/ui/Rating/Rating"
-import { ButtonWatch } from "./ui/ButtonWatch/ButtonWatch"
+import { ButtonWatch } from "./ui"
 import { InfoTable } from "../../shared/ui/AboutFilm/FactsAboutFilm"
 import { ButtonStore } from "./ui/Button/ButtonStore"
 import { FooterTabs } from "../../shared/ui/Tabs/FooterTabs"
-import { Review } from "../../components/UI/Review/Review"
+import { Review,filmModel } from "../../Entities/film"
+import { LoadMoreButton, loadMoreModel } from "../../features/loadMore"
 export const MoviePage = () => {
 	const {id} = useParams<string>()
-	const {data, isLoading} = useGetMovieByIdQuery(id)
+	const {data, isLoading} = filmModel.useGetMovieByIdQuery(id)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
@@ -45,10 +45,9 @@ export const MoviePage = () => {
 	return (
 		<Layout>
 			<div className={style.wrapper}>
-			<section className={style.section__body}>
+			<div className={style.section__body}>
 				<BackButton/>
-				<div>
-				<div className={style.box__body}>
+				<section className={style.box__body}>
 					<div className={style.body__poster}>
 						<div className={style.image__container}>
 							<img className={style.poster} src={poster?.url} alt="" />
@@ -64,12 +63,12 @@ export const MoviePage = () => {
 						</div>
 							<InfoTable items={items}/>
 					</div>
-				</div>	
+				</section>	
 			<FooterTabs tabInfo={tabInfo}/>
-			{similarMovies?.length != 0 && <SwiperSlider content={similarMovies} title={'Похожее кино'} redirect={'film'}/>}
+			{similarMovies?.length !=0 && <SwiperSlider content={similarMovies} title={'Похожее кино'} redirect={'film'}/>}
 			<Review id={id}/>
-				</div>
-			</section>
+			<LoadMoreButton action={loadMoreModel.showMoreReview}/>
+			</div>
 		</div>
 		</Layout>
 	)

@@ -1,10 +1,9 @@
 import classnames from "classnames"
 import { useState } from "react"
-import { ReviewType } from "../../../../../types/ReviewType"
-import { reviewColor } from "../../../../../utils/reviewColor/reviewColor"
-import { dateConverter } from "../../../../../utils/stringToDate/dateConverter"
-import { IReview } from "../../Review"
-import style from './ReviewItem.module.scss'
+import { IReview } from "../.."
+import { reviewColor } from "../../../../../../utils/reviewColor/reviewColor"
+import { dateConverter } from "../../../../../../utils/stringToDate/dateConverter"
+import style from './styles.module.scss'
 type ReviewItem = {
 	item: IReview
 	ind: number

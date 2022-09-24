@@ -23,7 +23,6 @@
 }
 
 .slider{
-	// width: 100%;
 	.swiper-button-next, .swiper-button-prev{
 		width: 50px;
 		height: 50px;
@@ -76,13 +75,6 @@
     list-style: none;
     padding: 0;
     z-index: 1;
-}
-.image{
-	margin-bottom: 15px;
-}
-.name{
-	font-size: 17px;
-	font-weight: 600;
 }
 .swiper-wrapper{
 	position: relative;

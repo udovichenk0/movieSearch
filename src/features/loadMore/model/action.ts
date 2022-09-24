@@ -5,6 +5,7 @@ const showMoreSlice = createSlice({
 	initialState: {
 		filmLimit: 10,
 		serialLimit: 10,
+		reviewLimit: 3,
 	},
 	reducers: {
 		showMoreFilms(state){
@@ -12,10 +13,13 @@ const showMoreSlice = createSlice({
 		},
 		showMoreSerial(state){
 			state.serialLimit += 10
+		},
+		showMoreReview(state){
+			state.reviewLimit += 3
 		}
 	}
 })
 
-export const {showMoreFilms, showMoreSerial} = showMoreSlice.actions
+export const {showMoreFilms, showMoreSerial, showMoreReview} = showMoreSlice.actions
 
 export default showMoreSlice.reducer
