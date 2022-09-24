@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { LogoSvg } from "../../../../assets/logo/LogoSvg"
+import { LogoSvg } from "../../../assets/logo/LogoSvg"
 import { Container } from "../../../../common/containerStyle/container"
 import style from './footer.module.scss'
 const links = [

@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
+import { searchIcon } from "../../../shared/assets"
 import style from './search.module.scss'
-import searchBtn from '../../../assets/buttonSearch/search.svg'
 interface formInterface{
 	search: string
 }
@@ -16,7 +16,7 @@ export const Search = () => {
 
 			<button className={style.form__button}onSubmit={handleSubmit(onSubmit)}>
 				<div className={style.searchImage__container}>
-					<img className={style.search} src={searchBtn} alt="" />
+					<img className={style.search} src={searchIcon} alt="" />
 				</div>
 			</button>
 		</form>
