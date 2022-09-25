@@ -9,6 +9,7 @@ const showMoreSlice = createSlice({
 	},
 	reducers: {
 		showMoreFilms(state){
+			console.log(1)
 			state.filmLimit += 10
 		},
 		showMoreSerial(state){

@@ -1,6 +1,6 @@
 import { commonApi } from "../../../shared/api/apiConfig";
+import { useAppSelector } from "../../../shared/lib";
 import { cardType } from "./types";
-import { useAppSelector } from "../../../utils/typedHooks/useAppHooks";
 
 const newMovies = commonApi.injectEndpoints({
 	endpoints: builder => ({
@@ -25,14 +25,11 @@ const getSerialLimit = () =>
 	useAppSelector(state => state.showMoreSlice.serialLimit)
 
 
-const getReviewLimit = () => 
-	useAppSelector(state => state.showMoreSlice.reviewLimit)
 
 
 export {
 	getMovieLimit,
 	getSerialLimit,
-	getReviewLimit
 }
 
 

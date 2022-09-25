@@ -1,3 +1,3 @@
 import {Cards} from './ui'
-import * as movieModel from './model'
-export {Cards, movieModel}
+import * as homeModel from './model'
+export {Cards, homeModel}

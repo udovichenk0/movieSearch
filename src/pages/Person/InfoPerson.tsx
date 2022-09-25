@@ -7,9 +7,9 @@ import { Facts } from "../../shared/ui/Facts/Facts"
 import { Layout } from "../../shared/ui/Layout/Layout"
 import { FooterTabs } from "../../shared/ui/Tabs/FooterTabs"
 import { FilmType } from "../../types/FilmType"
-import { dateConverter } from "../../utils/stringToDate/dateConverter"
 import { SwiperSlider } from "../../widgets/sliderBlock/Slider"
 import style from './personInfo.module.scss'
+import { dateConverter } from "../../shared/lib"
 const InfoPerson = () => {
 	const id = useParams()
 	const {data, isLoading} = useGetPersonByIdQuery(id.id)

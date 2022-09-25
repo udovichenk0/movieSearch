@@ -1,14 +1,12 @@
 import classnames from "classnames"
 import { useState } from "react"
-import { IReview } from "../.."
-import { reviewColor } from "../../../../../../utils/reviewColor/reviewColor"
-import { dateConverter } from "../../../../../../utils/stringToDate/dateConverter"
+import { dateConverter, reviewColor } from "../../../../../../shared/lib"
 import style from './styles.module.scss'
 type ReviewItem = {
-	item: IReview
+	item: any
 	ind: number
 }
-export const ReviewItem = ({item, ind}:ReviewItem) => {
+export const ReviewCard = ({item, ind}:ReviewItem) => {
 	const [isClosed, toggleClose] = useState<any>({})
 	function handleChange(ind: number, value:boolean){
 		toggleClose((prevState:any) => ({

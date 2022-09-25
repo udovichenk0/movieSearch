@@ -1,4 +1,5 @@
-import { useAppSelector } from "../../../utils/typedHooks/useAppHooks"
+import { useAppSelector } from "../lib"
+
 
 
 export const useAuth = () => {

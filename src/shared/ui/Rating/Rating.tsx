@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import { arountNumber } from "../../../utils/arountNumber/aroundNumber"
+import { arountNumber } from "../../lib"
 import style from './rating.module.scss'
 
 export const Rating = ({rating,ratingStyle}:{rating:number, ratingStyle: string}) => {

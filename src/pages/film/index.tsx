@@ -1,7 +1,5 @@
 import { Layout } from "../../shared/ui/Layout/Layout"
 import { useParams } from "react-router-dom"
-import { validValue } from "../../utils/validValue/validValue"
-import { dateConverter } from "../../utils/stringToDate/dateConverter"
 import { SwiperSlider } from "../../widgets/sliderBlock/Slider"
 import style from './styles.module.scss'
 import { Facts } from "../../shared/ui/Facts/Facts"
@@ -11,8 +9,12 @@ import { ButtonWatch } from "./ui"
 import { InfoTable } from "../../shared/ui/AboutFilm/FactsAboutFilm"
 import { ButtonStore } from "./ui/Button/ButtonStore"
 import { FooterTabs } from "../../shared/ui/Tabs/FooterTabs"
-import { Review,filmModel } from "../../Entities/film"
+import { filmModel, Review } from "../../Entities/film"
 import { LoadMoreButton, loadMoreModel } from "../../features/loadMore"
+import { useGetReviewByIdQuery } from "../../shared/api/apiConfig"
+import classnames from "classnames"
+import { useActors } from "./lib"
+import { dateConverter, validValue } from "../../shared/lib"
 export const MoviePage = () => {
 	const {id} = useParams<string>()
 	const {data, isLoading} = filmModel.useGetMovieByIdQuery(id)
@@ -24,17 +26,18 @@ export const MoviePage = () => {
 		{leftItem: 'Жанр', rightItem: genres?.map((action:any) => action.name).join(', ')},
 		{leftItem: 'Слоган', rightItem: slogan || '—'},
 		{leftItem: 'Возраст', rightItem: ageRating || '—'},
-		{leftItem: 'Бюджет', rightItem: `${budget?.currency || ``} ${validValue(budget?.value || '—')}`},
+		{leftItem: 'Бюджет', rightItem: `${budget?.currency || ``} ${validValue(budget?.value)}`},
 		{leftItem: 'Время', rightItem: `${movieLength} 	min`},
-		{leftItem: 'Сборы в США', rightItem: `${fees?.usa?.currency || ''} ${validValue(fees?.usa?.value || '—')}`},
-		{leftItem: 'Сборы в мире', rightItem: `${fees?.world?.currency || ''} ${validValue(fees?.world?.value || '—')}`},
+		{leftItem: 'Сборы в США', rightItem: `${fees?.usa?.currency || ''} ${validValue(fees?.usa?.value)}`},
+		{leftItem: 'Сборы в мире', rightItem: `${fees?.world?.currency || ''} ${validValue(fees?.world?.value)}`},
 		{leftItem: 'Премьера в мире', rightItem: dateConverter(premiere?.world)},
 	]
-	const actors = persons?.filter(item => {
-		if (item.enProfession === 'actor' && item?.name?.length) {
-			return item
-        }
-	})
+	// const actors = persons?.filter(item => {
+	// 	if (item.enProfession === 'actor' && item?.name?.length) {
+	// 		return item
+    //     }
+	// })
+	const actors = useActors(persons)
 	const tabInfo = [
 		{title: 'Описание', content: <h2 className={style.description}>{description}</h2>, condition: description?.length},
 		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'name'}/>, condition:actors?.length},
@@ -66,8 +69,7 @@ export const MoviePage = () => {
 				</section>	
 			<FooterTabs tabInfo={tabInfo}/>
 			{similarMovies?.length !=0 && <SwiperSlider content={similarMovies} title={'Похожее кино'} redirect={'film'}/>}
-			<Review id={id}/>
-			<LoadMoreButton action={loadMoreModel.showMoreReview}/>
+			<Comments id={id}/>
 			</div>
 		</div>
 		</Layout>
@@ -75,3 +77,26 @@ export const MoviePage = () => {
 }
 
 // export default MoviePage
+
+
+const Comments = ({id}:{id?: string}) => {
+	const limit = filmModel.getReviewLimit()
+	const {data} = useGetReviewByIdQuery({id, limit})	
+	if(!data?.docs?.length)return <></>
+	const {total}:{total:number} = {...data}
+	return (
+		<div>
+			<div className={style.title}>Рецензии кинокритиков</div>
+			<div className={classnames(style.review__block)}>
+				<div className={style.main__block}>
+			{data?.docs?.map((item:any, ind: number) => <Review.ReviewCard key={ind} ind={ind} item={item} />)}
+			<div className={style.showMore}>
+			<LoadMoreButton action={loadMoreModel.showMoreReview}/>
+			</div>
+				</div>
+			<Review.StatisticItem total={total} id={id}/>
+				{/* <StatisticItem total={total} id={id}/> */}
+			</div>
+		</div>
+	)
+}

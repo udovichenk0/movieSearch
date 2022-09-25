@@ -7,9 +7,9 @@ import style from './header.module.scss'
 import { Search } from "../../../../features/searchMovie/ui/SearchMovie"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../../../shared/lib/hooks/useAuth"
-import { useAppDispatch } from "../../../../utils/typedHooks/useAppHooks"
 import { logOutUser } from "../../../../reduxStore/Auth/auth.slice"
 import { LogoSvg } from "../../../assets"
+import { useAppDispatch } from "../../../lib"
 export const Header = () => {
 	const ref = useRef<null>(null)
 	const [isClicked, setClick] = useState(false)

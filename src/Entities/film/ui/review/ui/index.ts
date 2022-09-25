@@ -1,3 +1,3 @@
-import {ReviewItem} from './row'
+import {ReviewCard} from './row'
 import {StatisticItem} from './statistic'
-export {ReviewItem, StatisticItem}
+export {ReviewCard, StatisticItem}

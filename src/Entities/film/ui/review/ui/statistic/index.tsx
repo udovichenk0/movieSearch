@@ -1,6 +1,7 @@
 import { useGetReviewByIdQuery } from "../../../../../../shared/api/apiConfig"
+import { getPercent } from "../../../../../../shared/lib"
 import { MovieType } from "../../../../../../types/MovieType"
-import { getPercent } from "../../../../../../utils/getPercent/getPercent"
+import { useVotes } from "../../../../lib"
 import style from './styles.module.scss'
 export const StatisticItem = ({total, id}: {total: number, id: string | undefined}) => {
 
@@ -14,6 +15,7 @@ export const StatisticItem = ({total, id}: {total: number, id: string | undefine
 		{styleReview: 'votes__dislidedNumber', value: badReview},
 		{styleReview: 'votes__neutralNumber', value: neutralReview},
 	]
+	// useVotes(data, total)
 	return (
 		<div className={style.statistics}>
 			<div className={style.stickyBlock}>

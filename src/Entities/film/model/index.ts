@@ -1,6 +1,7 @@
 import { commonApi, useGetReviewByIdQuery } from "../../../shared/api/apiConfig";
+import { useAppSelector } from "../../../shared/lib";
 import { FilmType } from "../../../types/FilmType";
-import { useAppSelector } from "../../../utils/typedHooks/useAppHooks";
+
 
 const ReviewApi = commonApi.injectEndpoints({
 	endpoints: builder => ({
@@ -11,7 +12,8 @@ const ReviewApi = commonApi.injectEndpoints({
 		}),
 	})
 })
-
+export const getReviewLimit = () => 
+	useAppSelector(state => state.showMoreSlice.reviewLimit)
 
 export const {
 	useGetMovieByIdQuery
