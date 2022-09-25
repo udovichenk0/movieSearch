@@ -24,6 +24,11 @@ export const commonApi = createApi({
 				return `/review?search=${id}&field=movieId&limit=${limit}&page=1&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
+		getMovieById: builder.query<FilmType, string | undefined>({
+			query: id => {
+				return `/movie?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
+			}
+		}),
 	})
 })
 
@@ -31,5 +36,6 @@ export const {
 	useGetPersonByIdQuery,
 	useGetMoviesByIdQuery,
 	useGetReviewByIdQuery,
+	useGetMovieByIdQuery
 } = commonApi
 

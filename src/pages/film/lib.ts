@@ -5,3 +5,6 @@ export const useActors = (persons:any) => {
 	}
 })
 }
+
+export const preload = ({isLoading, data}:any) => isLoading? 'Загрузка..' : data
+

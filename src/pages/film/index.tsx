@@ -11,13 +11,14 @@ import { ButtonStore } from "./ui/Button/ButtonStore"
 import { FooterTabs } from "../../shared/ui/Tabs/FooterTabs"
 import { filmModel, Review } from "../../Entities/film"
 import { LoadMoreButton, loadMoreModel } from "../../features/loadMore"
-import { useGetReviewByIdQuery } from "../../shared/api/apiConfig"
+import { useGetMovieByIdQuery, useGetReviewByIdQuery } from "../../shared/api"
 import classnames from "classnames"
-import { useActors } from "./lib"
+import { preload, useActors } from "./lib"
 import { dateConverter, validValue } from "../../shared/lib"
+import { useInfo } from "./config"
 export const MoviePage = () => {
 	const {id} = useParams<string>()
-	const {data, isLoading} = filmModel.useGetMovieByIdQuery(id)
+	const {data, isLoading} = useGetMovieByIdQuery(id)
 	//@ts-ignore
 	const {name,description,similarMovies,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster,persons,facts
 	}= {...data}
@@ -43,8 +44,9 @@ export const MoviePage = () => {
 		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'name'}/>, condition:actors?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}
 	]
-	const titleName = isLoading? 'Загрузка..' : name
-	const alternativeTitleName = isLoading? 'Загрузка..' : alternativeName
+	const info = useInfo({description, actors, facts, style})
+	// const titleName = isLoading? 'Загрузка..' : name
+	// const alternativeTitleName = isLoading? 'Загрузка..' : alternativeName
 	return (
 		<Layout>
 			<div className={style.wrapper}>
@@ -58,8 +60,8 @@ export const MoviePage = () => {
 						<Rating ratingStyle={style.body__rating} rating={rating?.kp? rating.kp : 0}/>
 					</div>
 					<div className={style.body__info}>
-						<h1 className={style.body__title}>{titleName}</h1>
-						<p className={style.body__secondTitle}>{alternativeTitleName}</p>
+						<h1 className={style.body__title}>{preload({isLoading,name})}</h1>
+						<p className={style.body__secondTitle}>{preload({isLoading,alternativeName})}</p>
 						<div className={style.body__buttons}>
 							<ButtonWatch title={'Смотреть'}/>
 							<ButtonStore title={'Буду смотреть'}/>
@@ -95,7 +97,6 @@ const Comments = ({id}:{id?: string}) => {
 			</div>
 				</div>
 			<Review.StatisticItem total={total} id={id}/>
-				{/* <StatisticItem total={total} id={id}/> */}
 			</div>
 		</div>
 	)
