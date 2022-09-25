@@ -16,6 +16,7 @@ import classnames from "classnames"
 import { preload, useActors } from "./lib"
 import { dateConverter, validValue } from "../../shared/lib"
 import { useInfo } from "./config"
+import { Comments } from "./sections/comments"
 export const MoviePage = () => {
 	const {id} = useParams<string>()
 	const {data, isLoading} = useGetMovieByIdQuery(id)
@@ -43,10 +44,10 @@ export const MoviePage = () => {
 		{title: 'Описание', content: <h2 className={style.description}>{description}</h2>, condition: description?.length},
 		{title: 'Актёры', content:  <SwiperSlider content={actors} title={'Актёры'} redirect={'name'}/>, condition:actors?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}
-	]
-	const info = useInfo({description, actors, facts, style})
-	// const titleName = isLoading? 'Загрузка..' : name
-	// const alternativeTitleName = isLoading? 'Загрузка..' : alternativeName
+	] //change for info
+	// const info = useInfo({description, actors, facts, style})
+	const titleName = isLoading? 'Загрузка..' : name
+	const alternativeTitleName = isLoading? 'Загрузка..' : alternativeName
 	return (
 		<Layout>
 			<div className={style.wrapper}>
@@ -75,29 +76,5 @@ export const MoviePage = () => {
 			</div>
 		</div>
 		</Layout>
-	)
-}
-
-// export default MoviePage
-
-
-const Comments = ({id}:{id?: string}) => {
-	const limit = filmModel.getReviewLimit()
-	const {data} = useGetReviewByIdQuery({id, limit})	
-	if(!data?.docs?.length)return <></>
-	const {total}:{total:number} = {...data}
-	return (
-		<div>
-			<div className={style.title}>Рецензии кинокритиков</div>
-			<div className={classnames(style.review__block)}>
-				<div className={style.main__block}>
-			{data?.docs?.map((item:any, ind: number) => <Review.ReviewCard key={ind} ind={ind} item={item} />)}
-			<div className={style.showMore}>
-			<LoadMoreButton action={loadMoreModel.showMoreReview}/>
-			</div>
-				</div>
-			<Review.StatisticItem total={total} id={id}/>
-			</div>
-		</div>
 	)
 }
