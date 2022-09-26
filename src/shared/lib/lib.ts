@@ -31,8 +31,9 @@ export const dateConverter = (data: string | undefined) => {
 	return (`${getDay} ${getMonth} ${getYear}`)
 }
 
-
-
 export const useAppDispatch: () => AppDispatch = useDispatch
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
+
+export const preload = ({isLoading, data}:any) => isLoading? 'Загрузка..' : data

@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom"
 import { SwiperSlider } from "../../widgets/sliderBlock"
 import style from './styles.module.scss'
 import { useGetMovieByIdQuery } from "../../shared/api"
-import { useActors } from "./lib"
-import { useInfo } from "./config"
+import { useActors, useInfo } from "./lib"
 import { Comments,MovieInfo } from "./sections"
 const MoviePage = () => {
 	const {id} = useParams<string>()

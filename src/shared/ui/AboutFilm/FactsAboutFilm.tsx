@@ -1,4 +1,3 @@
-import { ReactElement } from 'react'
 import style from './Facts.module.scss'
 
 type PropTypes = {

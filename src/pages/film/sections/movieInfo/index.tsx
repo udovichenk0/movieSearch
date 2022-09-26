@@ -1,8 +1,7 @@
 // import { useParams } from "react-router-dom"
 // import { useGetMovieByIdQuery } from "../../../../shared/api"
-import { dateConverter, validValue } from "../../../../shared/lib"
+import { dateConverter, preload, validValue } from "../../../../shared/lib"
 import { InfoTable,Rating } from "../../../../shared/ui"
-import { preload } from "../../lib"
 import { ButtonWatch } from "../../ui"
 import { ButtonStore } from "../../ui/Button/ButtonStore"
 import style from './styles.module.scss'
