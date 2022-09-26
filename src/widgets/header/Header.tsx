@@ -1,15 +1,15 @@
 import { HeaderStyled } from "./styledHeader"
-import { Container } from "../../../../common/containerStyle/container"
+import { Container } from "../../common/containerStyle/container"
 import { Burger } from "./burger/burgerButton/burder"
 import { useRef, useState } from "react"
 import { DropDown } from "./burger/burgerDropDown/dropDown"
 import style from './header.module.scss'
-import { Search } from "../../../../features/searchMovie/ui/SearchMovie"
+import { Search } from "../../features/searchMovie/ui/SearchMovie"
 import { Link, useNavigate } from "react-router-dom"
-import { useAuth } from "../../../../shared/lib/hooks/useAuth"
-import { logOutUser } from "../../../../reduxStore/Auth/auth.slice"
-import { LogoSvg } from "../../../assets"
-import { useAppDispatch } from "../../../lib"
+import { useAuth } from "../../shared/lib/hooks/useAuth"
+import { logOutUser } from "../../reduxStore/Auth/auth.slice"
+import { LogoSvg } from "../../shared/assets"
+import { useAppDispatch } from "../../shared/lib"
 export const Header = () => {
 	const ref = useRef<null>(null)
 	const [isClicked, setClick] = useState(false)

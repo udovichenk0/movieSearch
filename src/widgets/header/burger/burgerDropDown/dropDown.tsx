@@ -1,5 +1,5 @@
 import './dropdown.scss'
-import {CartoonSvg, MovieSvg, FavoriteSvg,SerialSvg, HomeSvg} from '../../../../../assets'
+import {CartoonSvg, MovieSvg, FavoriteSvg,SerialSvg, HomeSvg} from '../../../../shared/assets'
 const categories = [
 	{title: 'Главная', icon: HomeSvg},
 	{title: 'Фильмы', icon: MovieSvg},

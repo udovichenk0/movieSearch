@@ -1,17 +1,12 @@
-import { useParams } from "react-router-dom"
-import { useGetMovieByIdQuery } from "../../../../shared/api"
+// import { useParams } from "react-router-dom"
+// import { useGetMovieByIdQuery } from "../../../../shared/api"
 import { dateConverter, validValue } from "../../../../shared/lib"
-import { InfoTable } from "../../../../shared/ui/AboutFilm/FactsAboutFilm"
-import { Rating } from "../../../../shared/ui/Rating/Rating"
+import { InfoTable,Rating } from "../../../../shared/ui"
 import { preload } from "../../lib"
 import { ButtonWatch } from "../../ui"
 import { ButtonStore } from "../../ui/Button/ButtonStore"
 import style from './styles.module.scss'
-export const MovieInfo = () => {
-	const {id} = useParams<string>()
-	const {data, isLoading} = useGetMovieByIdQuery(id)
-	const {name,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster
-	}= {...data}
+export const MovieInfo = ({isLoading,name,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster}:any) => {
 	const items = [
 		{leftItem: 'Страны', rightItem: countries?.map((action:{name: string}) => action.name).join(', ')},
 		{leftItem: 'Жанр', rightItem: genres?.map((action:any) => action.name).join(', ')},

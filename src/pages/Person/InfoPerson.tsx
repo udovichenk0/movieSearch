@@ -10,6 +10,7 @@ import { FilmType } from "../../types/FilmType"
 import { SwiperSlider } from "../../widgets/sliderBlock/Slider"
 import style from './personInfo.module.scss'
 import { dateConverter } from "../../shared/lib"
+import { PersonInfo } from "./sections"
 const InfoPerson = () => {
 	const id = useParams()
 	const {data, isLoading} = useGetPersonByIdQuery(id.id)
@@ -41,22 +42,16 @@ const InfoPerson = () => {
 	const actorEnName = isLoading? 'Загрузка..' : enName
 	return <Layout>
 				<div className={style.wrapper}>
-			<section className={style.section__body}>
+			<div className={style.section__body}>
 				<BackButton/>
-				<div className={style.box__body}>
-					<div className={style.body__poster}>
-						<img className={style.poster} src={photo} alt="" />
-					</div>
-					<div className={style.body__info}>
-						<h1 className={style.body__title}>{actorName}</h1>
-						<p className={style.body__secondTitle}>{actorEnName}</p>
-						<div className="info">
-							<InfoTable items={items}/>
-						</div>
-					</div>
-				</div>	
+				<PersonInfo
+				photo={photo}
+				actorName={actorName}
+				actorEnName={actorEnName}
+				items={items}
+				/>	
 			<FooterTabs tabInfo={tabInfo}/>
-			</section>
+			</div>
 		</div>	
 			</Layout>
 }

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import './burger.scss'
 export const Burger = ({reference, isClicked, setClick}:any) => {
 	const onBurgerClick = () => {
