@@ -1,9 +1,9 @@
 // import { useParams } from "react-router-dom"
 // import { useGetMovieByIdQuery } from "../../../../shared/api"
+import { ButtonStore } from "../../../../features/Fav/action/ui/ui"
 import { dateConverter, preload, validValue } from "../../../../shared/lib"
 import { InfoTable,Rating } from "../../../../shared/ui"
 import { ButtonWatch } from "../../ui"
-import { ButtonStore } from "../../ui/Button/ButtonStore"
 import style from './styles.module.scss'
 export const MovieInfo = ({isLoading,name,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster}:any) => {
 	const items = [

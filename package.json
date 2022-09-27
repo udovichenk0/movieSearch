@@ -27,6 +27,7 @@
     "react-slick": "^0.29.0",
     "react-tabs": "^5.1.0",
     "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
     "sass": "^1.54.8",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2",

@@ -5,7 +5,7 @@ import React from "react"
 const LoginPageLazy = React.lazy(() => import('./login/Login'))
 const RegisterPageLazy = React.lazy(() => import('./registration/Register'))
 const MoviePageLazy = React.lazy(() => import('./film/index'))
-const PersonPageLazy = React.lazy(() => import('./Person/InfoPerson'))
+const PersonPageLazy = React.lazy(() => import('./Person/ui'))
 export const routes = [
 	{
 		path: '/',

@@ -4,12 +4,11 @@ import { Provider } from 'react-redux'
 import { store } from './app/store'
 // import './shared/api/authFireBase'
 import { Suspense } from 'react';
-
 function App() {
   return (
     <>
     <Provider store={store()}>
-    <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
     <Routes>
       <Route>
         {routes.map((item) => {
@@ -19,7 +18,7 @@ function App() {
       </Route>
           
     </Routes>  
-    </Suspense>
+    </Suspense> 
     </Provider>   
     </>
     )
