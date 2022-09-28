@@ -37,7 +37,7 @@ const MoviePage = () => {
 					id={id}
 					/>
 					<FooterTabs tabInfo={info}/>
-					{similarMovies?.length && <SwiperSlider content={similarMovies} title={'Похожее кино'} redirect={'film'}/>}
+					{similarMovies?.length != 0 && <SwiperSlider content={similarMovies} title={'Похожее кино'} redirect={'film'}/>}
 					<Comments id={id}/>
 				</div>
 			</div>
