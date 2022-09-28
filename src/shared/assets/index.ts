@@ -6,7 +6,8 @@ import {CartoonSvg,
 	MovieSvg,
 	HomeSvg,
 	SerialSvg,
-	FavoriteSvg} from './menuIcons'
+	FavoriteSvg,
+} from './menuIcons'
 export {searchIcon,
 	heroImage, 
 	LogoSvg, 
@@ -15,5 +16,5 @@ export {searchIcon,
 	HomeSvg,
 	SerialSvg,
 	FavoriteSvg,
-	posterIcon
+	posterIcon,
 }

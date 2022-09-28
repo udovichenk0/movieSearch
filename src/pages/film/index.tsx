@@ -34,6 +34,7 @@ const MoviePage = () => {
 					fees={fees}
 					poster={poster}
 					isLoading={isLoading}
+					id={id}
 					/>
 					<FooterTabs tabInfo={info}/>
 					{similarMovies?.length && <SwiperSlider content={similarMovies} title={'Похожее кино'} redirect={'film'}/>}

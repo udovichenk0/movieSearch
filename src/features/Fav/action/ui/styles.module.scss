@@ -1,15 +1,39 @@
-.button__store{
+.favorite, .notfavorite{
 	padding: 13px 20px;
-	background-color: #f2f2f2;
+	background-color: #fff;
 	font-size: 15px;
 	font-weight: 500;
 	border-radius: 30px;
 	display: flex;
 	align-items: center;
 	gap: 6px;
-	color: #000;
+	color: rgb(80, 80, 158);
 	transition: background-color 0.2s ease-in-out;
 	&:hover{
 		background-color: #dadada;
 	}
+}
+.notfavorite{
+	background-color: #f2f2f2;
+	border: 2px solid #f2f2f2;
+	color: #000;
+	&:hover{
+		background-color: #dadada;
+	}
+}
+
+.favorite{
+	border: 2px solid rgb(80, 80, 158);
+	&:hover{
+		background-color: rgb(80, 80, 158);
+		color: #fff;
+	}
+	img{
+		background-color: red;
+	}
+}
+
+.button{
+	display: flex;
+	align-items: center;
 }

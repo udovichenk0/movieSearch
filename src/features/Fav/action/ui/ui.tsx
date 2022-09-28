@@ -1,9 +1,14 @@
 import { useToggleMovie } from '../model'
 import style from './styles.module.scss'
-export const ButtonStore = ({title} :{title: string}) => {
-	const movieId = '123123'
-	const {handleToggle} = useToggleMovie({movieId: '333332222'})
+import { MdFavoriteBorder } from "react-icons/md";
+import { AiOutlineCheck } from "react-icons/ai";
+import classnames from 'classnames';
+export const ButtonStore = ({movieId} :{movieId: string}) => {
+	const {handleToggle, favorites} = useToggleMovie()
 	return (
-		<button onClick={handleToggle} className={style.button__store}>{title}</button>
+		<button onClick={() => handleToggle(movieId)} className={classnames(style.button, favorites.includes(movieId)? style.favorite : style.notfavorite)}>
+			{favorites.includes(movieId)? <AiOutlineCheck/> : <MdFavoriteBorder/>}
+			{favorites.includes(movieId)? 'Удалить из избранного' : 'Добавить в избранное'}
+		</button>
 	)
 }

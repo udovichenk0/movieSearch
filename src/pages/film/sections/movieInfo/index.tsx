@@ -5,7 +5,7 @@ import { dateConverter, preload, validValue } from "../../../../shared/lib"
 import { InfoTable,Rating } from "../../../../shared/ui"
 import { ButtonWatch } from "../../ui"
 import style from './styles.module.scss'
-export const MovieInfo = ({isLoading,name,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster}:any) => {
+export const MovieInfo = ({isLoading,id,name,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster}:any) => {
 	const items = [
 		{leftItem: 'Страны', rightItem: countries?.map((action:{name: string}) => action.name).join(', ')},
 		{leftItem: 'Жанр', rightItem: genres?.map((action:any) => action.name).join(', ')},
@@ -26,11 +26,11 @@ export const MovieInfo = ({isLoading,name,countries,rating,genres,slogan,ageRati
 					<Rating ratingStyle={style.body__rating} rating={rating?.kp? rating.kp : 0}/>
 			</div>
 			<div className={style.body__info}>
-				<h1 className={style.body__title}>{preload({isLoading,name})}</h1>
-				<p className={style.body__secondTitle}>{preload({isLoading,alternativeName})}</p>
+				<h1 className={style.body__title}>{preload({isLoading,data: name})}</h1>
+				<p className={style.body__secondTitle}>{preload({isLoading,data: alternativeName})}</p>
 				<div className={style.body__buttons}>
 					<ButtonWatch title={'Смотреть'}/>
-					<ButtonStore title={'Буду смотреть'}/>
+					<ButtonStore movieId={id}/>
 				</div>
 					<InfoTable items={items}/>
 			</div>
