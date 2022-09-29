@@ -3,7 +3,7 @@ import style from './styles.module.scss'
 import { MdFavoriteBorder } from "react-icons/md";
 import { AiOutlineCheck } from "react-icons/ai";
 import classnames from 'classnames';
-export const ButtonStore = ({movieId} :{movieId: string}) => {
+export const AddMovie = ({movieId} :{movieId: string}) => {
 	const {handleToggle, favorites} = useToggleMovie()
 	return (
 		<button onClick={() => handleToggle(movieId)} className={classnames(style.button, favorites.includes(movieId)? style.favorite : style.notfavorite)}>

@@ -1,6 +1,4 @@
-// import { useParams } from "react-router-dom"
-// import { useGetMovieByIdQuery } from "../../../../shared/api"
-import { ButtonStore } from "../../../../features/Fav/action/ui/ui"
+import { AddMovie } from "../../../../features/Fav"
 import { dateConverter, preload, validValue } from "../../../../shared/lib"
 import { InfoTable,Rating } from "../../../../shared/ui"
 import { ButtonWatch } from "../../ui"
@@ -30,7 +28,7 @@ export const MovieInfo = ({isLoading,id,name,countries,rating,genres,slogan,ageR
 				<p className={style.body__secondTitle}>{preload({isLoading,data: alternativeName})}</p>
 				<div className={style.body__buttons}>
 					<ButtonWatch title={'Смотреть'}/>
-					<ButtonStore movieId={id}/>
+					<AddMovie movieId={id}/>
 				</div>
 					<InfoTable items={items}/>
 			</div>

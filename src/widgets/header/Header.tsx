@@ -6,7 +6,7 @@ import { DropDown } from "./burger/burgerDropDown/dropDown"
 import style from './header.module.scss'
 import { Search } from "../../features/searchMovie/ui/SearchMovie"
 import { Link, useNavigate } from "react-router-dom"
-import { useAuth } from "../../shared/lib/hooks/useAuth"
+import { useAuth } from "../../shared/lib/auth/useAuth"
 import { logOutUser } from "../../reduxStore/Auth/auth.slice"
 import { LogoSvg } from "../../shared/assets"
 import { useAppDispatch } from "../../shared/lib"
