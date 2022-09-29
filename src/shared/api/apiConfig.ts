@@ -3,7 +3,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import { FilmType, movieTypes } from '../../types/FilmType';
 import { PersonType } from '../../types/PersonType';
 import { ReviewType } from '../../types/ReviewType';
-import { cardType, MoviesByIdTypeProps, ReviewByIdTypeProps } from '../../types/someTypes/someTypes';
+import { MoviesByIdTypeProps, ReviewByIdTypeProps } from '../../types/someTypes/someTypes';
 
 
 
@@ -29,13 +29,19 @@ export const commonApi = createApi({
 				return `/movie?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
+
+		getFilteredMovies: builder.query<{docs: movieTypes[]}, number>({
+			query: (limit) => {
+				return `/movie?limit=10&page=1&field=rating.kp&search=1-10&field=year&search=1960-2022&field=typeNumber&search=1&sortField=year&sortType=-1&sortField=votes.imdb&sortType=-1&token=${import.meta.env.VITE_TOKEN}`
+			}
+		}),
 	})
 })
-
 export const {
 	useGetPersonByIdQuery,
 	useGetMoviesByIdQuery,
 	useGetReviewByIdQuery,
-	useGetMovieByIdQuery
+	useGetMovieByIdQuery,
+	useGetFilteredMoviesQuery
 } = commonApi
 

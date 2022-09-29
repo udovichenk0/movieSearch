@@ -9,7 +9,6 @@
 	transform: translateX(-25px);
 	position: absolute;
 	z-index: 3;
-	transform: translateX(10px);
 	background-color: #1f1f1f;
 	border-bottom-left-radius: 12px;
 	border-bottom-right-radius: 12px;
@@ -19,8 +18,8 @@
 
 	&__link{
 		display: flex;
-		gap: 9px;
 		align-items: center;
+		color: #fff;
 		&:not(:last-child){
 			margin-bottom: 32px;
 		}
@@ -37,4 +36,9 @@
 .open{
 	visibility: visible;
 	opacity: 1;
+}
+.link{
+	display: flex;
+	gap: 10px;
+	align-items: center;
 }

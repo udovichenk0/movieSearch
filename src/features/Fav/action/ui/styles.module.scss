@@ -1,9 +1,7 @@
 .favorite, .notfavorite{
-	padding: 13px 20px;
 	background-color: #fff;
 	font-size: 15px;
 	font-weight: 500;
-	border-radius: 30px;
 	display: flex;
 	align-items: center;
 	gap: 6px;
@@ -13,12 +11,12 @@
 		background-color: #dadada;
 	}
 }
+
 .notfavorite{
-	background-color: #f2f2f2;
-	border: 2px solid #f2f2f2;
+	border: 2px solid #22222231;
 	color: #000;
 	&:hover{
-		background-color: #dadada;
+		background-color: #dadada41;
 	}
 }
 

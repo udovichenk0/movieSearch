@@ -1,0 +1,48 @@
+.body{
+	&__card{
+		border-top: 1px solid #a3a3a37a;
+		padding: 25px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__container{
+		display: flex;
+	}
+	&__image{
+		max-width: 64px;
+		margin-right: 20px;
+		.image{
+			aspect-ratio: 2/3;
+			width: 100%;
+		}
+	}
+	&__name{
+		font-weight: 600;
+		font-size: 18px;
+		margin-bottom: 5px;
+	}
+	&__info{
+		display: flex;
+		gap: 10px;
+		margin-bottom: 7px;
+	}
+	&__description{
+		max-width: 340px;
+	}
+	&__fav{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+}
+.mark{
+	font-size: 20px;
+	font-weight: 600;
+	&__good{
+		color: green
+	}
+	&__bad{
+		color: red
+	}
+}
