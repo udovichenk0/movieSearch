@@ -1,6 +1,6 @@
 import { FiArrowRight } from "react-icons/fi"
 import { useNavigate } from "react-router-dom"
-import { Container } from "../../../../common/containerStyle/container"
+import { Container } from "../../../../app/styles/container"
 import style from './styles.module.scss'
 export const Banner = () => {
 	const navigate = useNavigate()

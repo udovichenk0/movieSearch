@@ -1,4 +1,4 @@
-import { Container } from "../../common/containerStyle/container"
+import { Container } from "../../app/styles/container"
 import { Layout } from "../../shared/ui/Layout/Layout"
 import { Banner } from "./sections/banner"
 import style from './styles.module.scss'

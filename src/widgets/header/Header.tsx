@@ -1,5 +1,5 @@
 import { HeaderStyled } from "./styledHeader"
-import { Container } from "../../common/containerStyle/container"
+import { Container } from "../../app/styles/container"
 import { Burger } from "./burger/burgerButton/burder"
 import { useRef, useState } from "react"
 import { DropDown } from "./burger/burgerDropDown/dropDown"
@@ -7,9 +7,9 @@ import style from './header.module.scss'
 import { Search } from "../../features/searchMovie/ui/SearchMovie"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../shared/lib/auth/useAuth"
-import { logOutUser } from "../../reduxStore/Auth/auth.slice"
 import { LogoSvg } from "../../shared/assets"
 import { useAppDispatch } from "../../shared/lib"
+import { viewerModel } from "../../Entities/viewer"
 export const Header = () => {
 	const ref = useRef<null>(null)
 	const [isClicked, setClick] = useState(false)
@@ -35,7 +35,7 @@ export const Header = () => {
 				? <Link className={style.header__login_box} to={'/login'}>
 					<div className={style.header__login}>Login</div>
 				</Link>
-				: <button onClick={() => dispatch(logOutUser())} className={style.header__login}>Logout</button>
+				: <button onClick={() => dispatch(viewerModel.logOutUser())} className={style.header__login}>Logout</button>
 				}
 			</div>
 		</Container>

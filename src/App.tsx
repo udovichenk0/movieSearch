@@ -2,7 +2,7 @@ import {Routes, Route} from 'react-router-dom'
 import { routes } from './pages/index'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
-// import './shared/api/authFireBase'
+import './shared/api/authFireBase'
 import { Suspense } from 'react';
 function App() {
   return (
