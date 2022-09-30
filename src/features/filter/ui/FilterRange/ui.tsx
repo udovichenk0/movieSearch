@@ -3,11 +3,12 @@ import { getTrackBackground, Range } from 'react-range';
 import { validNumber } from '../../lib';
 import style from './styles.module.scss'
 
-export const FilterRange = ({onChange,step, min, max, values}:any) => {
+export const FilterRange = ({onChange,step, min, max, values,title}:any) => {
 const ref = useRef(null)
 return ( 
 
 	<div className={style.box}>
+		<h1 className={style.title}>{title}</h1>
 		<div className={style.input__container}>
 		<label htmlFor="" className={style.label}>
 		От
@@ -23,7 +24,6 @@ return (
 			onChange([values[0],validNumber(e?.target.value || min,min, max, values)])} ref={ref} 
 		/>
 		</label>
-		
 		</div>
 		<Range
         step={step}
@@ -40,7 +40,7 @@ return (
             width: '270px',
 			background: getTrackBackground({
                 values,
-                colors: ["#ccc", "#548BF4", "#ccc"],
+                colors: ["#ccc", "rgb(80, 80, 158)", "#ccc"],
                 min,
                 max
             }),

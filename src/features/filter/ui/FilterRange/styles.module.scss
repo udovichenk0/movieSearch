@@ -6,7 +6,7 @@
 }
 
 .input{
-	border: 1px solid rgba(34, 34, 34, 0.767);
+	border: 1px solid rgba(34, 34, 34, 0.5);
 	width: 120px;
 	padding: 10px 15px;
 	border-radius: 5px;
@@ -18,5 +18,11 @@
 	flex-direction: column;
 }
 .box{
-	margin-bottom: 30px;
+	margin-bottom: 45px;
+}
+
+.title{
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 15px;
 }
