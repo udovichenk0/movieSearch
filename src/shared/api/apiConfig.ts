@@ -1,9 +1,9 @@
-import axios from 'axios'
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import { FilmType, movieTypes } from '../../types/FilmType';
 import { PersonType } from '../../types/PersonType';
 import { ReviewType } from '../../types/ReviewType';
 import { MoviesByIdTypeProps, ReviewByIdTypeProps } from '../../types/someTypes/someTypes';
+import { getYear } from '../lib';
 
 
 
@@ -32,7 +32,7 @@ export const commonApi = createApi({
 
 		getFilteredMovies: builder.query<{docs: movieTypes[]}, number>({
 			query: (limit) => {
-				return `/movie?limit=10&page=1&field=rating.kp&search=1-10&field=year&search=1960-2022&field=typeNumber&search=1&sortField=year&sortType=-1&sortField=votes.imdb&sortType=-1&token=${import.meta.env.VITE_TOKEN}`
+				return `/movie?&field=year&search=1960-${getYear.getFullYear()}&field=rating.kp&search=1-10&field=name&search=!null&field=typeNumber&search=1&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=1&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
 	})

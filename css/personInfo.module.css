@@ -1,0 +1,48 @@
+.buttonBack {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.wrapper {
+  background-color: #f4f4f4;
+  background-color: #fff;
+  padding: 40px 40px;
+  height: 100%;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.filmWrapper {
+  width: 100%;
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px 40px;
+  height: 100%;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.body__rating {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  background-color: #00a340;
+  padding: 2px 8px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.body__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 35px;
+  gap: 20px;
+}

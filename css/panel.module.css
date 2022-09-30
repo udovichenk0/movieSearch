@@ -1,0 +1,27 @@
+.panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.panel__title {
+  font-size: 31px;
+  font-weight: 700;
+  color: #252525;
+}
+
+.panel__button {
+  background-color: #50509e;
+  color: #fff;
+  padding: 13px 20px;
+  line-height: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+}

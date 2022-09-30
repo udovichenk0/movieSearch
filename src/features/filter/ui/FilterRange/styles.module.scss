@@ -1,0 +1,22 @@
+.input__container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.input{
+	border: 1px solid rgba(34, 34, 34, 0.767);
+	width: 120px;
+	padding: 10px 15px;
+	border-radius: 5px;
+	margin-top: 6px;
+}
+
+.label{
+	display: flex;
+	flex-direction: column;
+}
+.box{
+	margin-bottom: 30px;
+}

@@ -1,0 +1,25 @@
+.buttonBack {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2px;
+}
+
+.buttonBack .icon__back {
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+  font-size: 17px;
+}
+
+.buttonBack:hover .icon__back {
+  -webkit-transform: translateX(-2px);
+          transform: translateX(-2px);
+}

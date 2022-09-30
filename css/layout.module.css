@@ -1,0 +1,9 @@
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  height: 100vh;
+}

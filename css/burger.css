@@ -1,0 +1,73 @@
+.burger {
+  width: 30px;
+  height: 1.5em;
+  z-index: 4;
+  cursor: pointer;
+  position: relative;
+  margin-right: 60px;
+}
+
+.burger__line {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.burger__line:nth-child(1) {
+  position: absolute;
+  top: 0;
+  height: 3px;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.15s ease;
+  transition: -webkit-transform 0.15s ease;
+  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
+}
+
+.burger__active .burger__line:nth-child(1) {
+  -webkit-transform: translateY(0.65em) rotate(45deg);
+          transform: translateY(0.65em) rotate(45deg);
+}
+
+.burger__line:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 4px;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.15s ease;
+  transition: -webkit-transform 0.15s ease;
+  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
+}
+
+.burger__active .burger__line:nth-child(2) {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.burger__line:nth-child(3) {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  -webkit-transition: -webkit-transform 0.15s ease;
+  transition: -webkit-transform 0.15s ease;
+  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
+}
+
+.burger__active .burger__line:nth-child(3) {
+  -webkit-transform: translateY(-0.65em) rotate(-45deg);
+          transform: translateY(-0.65em) rotate(-45deg);
+}
+
+.block__burger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}

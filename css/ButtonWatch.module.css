@@ -1,0 +1,21 @@
+.button__watch {
+  padding: 13px 20px;
+  background-color: #50509e;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  color: #fff;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button__watch:hover {
+  background-color: #3939a0;
+}
