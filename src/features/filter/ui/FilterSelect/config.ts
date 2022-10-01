@@ -1,26 +1,32 @@
-export const options = [
+export type MyOptionType = {
+	label: string;
+	value: string;
+  };
+
+
+export const options:MyOptionType[] = [
 	{ value: "", label: "Все жанры" },
-	{ value: "семейные", label: "Семейные" },
-	{ value: "биографии", label: "Биографии" },
-	{ value: "боевики", label: "Боевики" },
-	{ value: "вестерны", label: "Вестерны" },
-	{ value: "военные", label: "Военные" },
-	{ value: "детективы", label: "Детективы" },
-	{ value: "детские", label: "Детские" },
-	{ value: "драмы", label: "Драмы" },
-	{ value: "исторические", label: "Исторические" },
-	{ value: "комедии", label: "Комедии" },
-	{ value: "короткометражки", label: "Короткометражки"},
-	{ value: "Криминал", label: "Криминал" },
-	{ value: "мелодрамы", label: "Мелодрамы" },
-	{ value: "музыкальные", label: "Музыкальные" },
-	{ value: "мюзиклы", label: "Мюзиклы" },
+	{ value: "семейный", label: "Семейные" },
+	{ value: "биография", label: "Биографии" },
+	{ value: "боевик", label: "Боевики" },
+	{ value: "вестерн", label: "Вестерны" },
+	{ value: "военный", label: "Военные" },
+	{ value: "детектив", label: "Детективы" },
+	{ value: "детский", label: "Детские" },
+	{ value: "драма", label: "Драмы" },
+	{ value: "история", label: "Исторические" },
+	{ value: "комедия", label: "Комедии" },
+	{ value: "короткометражка", label: "Короткометражки"},
+	{ value: "криминал", label: "Криминал" },
+	{ value: "мелодрама", label: "Мелодрамы" },
+	{ value: "музыка", label: "Музыкальные" },
+	{ value: "мюзикл", label: "Мюзиклы" },
 	{ value: "новости", label: "Новости" },
 	{ value: "приключения", label: "Приключения" },
-	{ value: "спортивные", label: "Спортивные" },
-	{ value: "триллеры", label: "Триллеры" },
+	{ value: "спорт", label: "Спортивные" },
+	{ value: "триллер", label: "Триллеры" },
 	{ value: "ужасы", label: "Ужасы" },
 	{ value: "фантастика", label: "Фантастика" },
-	{ value: "фильмы-нуар", label: "Фильмы-нуар" },
+	{ value: "фильм-нуар", label: "Фильмы-нуар" },
 	{ value: "фэнтези", label: "Фэнтези" },
 ]

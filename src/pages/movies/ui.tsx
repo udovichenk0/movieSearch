@@ -1,12 +1,13 @@
-import { useGetFilteredMoviesQuery } from "../../shared/api"
+import { filterModel } from "../../Entities/filter"
 import { Layout } from "../../shared/ui"
 import { Panel } from "../../shared/ui/Panel/ui"
 import { FavCards } from "../../widgets/Cards"
 import { FilterForm } from "../../widgets/FilterForm/ui"
 import style from './styles.module.scss'
 const Movies = () => {
-	const limit = 10
-	const {data} = useGetFilteredMoviesQuery(limit)
+	const {ratingFilter, yearFilter, genreFilter} = filterModel.useFilterInfo()
+	const query = genreFilter? `field=genres.name&search=${genreFilter}` : ''
+	const {data} = filterModel.useGetFilteredMoviesQuery({ratingFilter, yearFilter, query})
 	return (
 		<Layout>
 			<div className={style.wrapper}>

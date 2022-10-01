@@ -1,5 +1,6 @@
 import { Controller, useForm } from "react-hook-form"
 import { Filter } from "../../features/filter";
+import { ButtonSubmit } from "../../features/filter/ui/ButtonFilter/Submit/ui";
 import { getYear } from "../../shared/lib";
 import style from './styles.module.scss'
 export const FilterForm = () => {
@@ -7,15 +8,11 @@ export const FilterForm = () => {
 		defaultValues: {
 			rating: [1,10],
 			year: [1960, getYear.getFullYear()],
-			ReactSelect: {value: "vanilla", label: "vanilla"}
+			genre: ""
 		}
 	});
-
-	const onSubmit = (data:any) => {
-		console.log(data)
-	}
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form>
 			<Controller
 			control={control}
 			name="rating"
@@ -49,18 +46,17 @@ export const FilterForm = () => {
 			)}
 			/>
 			<Controller
-			name="ReactSelect"
+			name="genre"
 			control={control}
 			render={({field: {onChange, value}}) => (
 				<Filter.ReactSelect
 				onChange={onChange}
-				value={value}
 				/>
 			)}
 			/>
 			<section className={style.select}>
 			</section>
-			<button onSubmit={handleSubmit(onSubmit)}>submit</button>
+			<Filter.ButtonSubmit handleSubmit={handleSubmit}/>
 		</form>
 	)
 }

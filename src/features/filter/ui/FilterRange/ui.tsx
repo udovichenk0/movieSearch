@@ -57,7 +57,7 @@ return (
             height: '17px',
             width: '17px',
 			backgroundColor: '#fff',
-			boxShadow: '0 1px 2px rgb(0 0 0 / 40%)',
+			boxShadow: 'rgb(0 0 0 / 40%) 0px 2px 8px',
 			borderRadius: '50%'
             }}
         />

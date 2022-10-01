@@ -1,3 +1,3 @@
-export * as viewerModel from './hooks'
-import AuthSlice from './hooks'
+export * as viewerModel from './viewer'
+import AuthSlice from './viewer'
 export {AuthSlice}
