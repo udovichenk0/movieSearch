@@ -57,6 +57,7 @@ export const FilterForm = () => {
 			<section className={style.select}>
 			</section>
 			<Filter.ButtonSubmit handleSubmit={handleSubmit}/>
+			<Filter.ResetButton handleSubmit={handleSubmit}/>
 		</form>
 	)
 }

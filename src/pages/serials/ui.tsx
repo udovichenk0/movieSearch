@@ -4,10 +4,10 @@ import { Panel } from "../../shared/ui/Panel/ui"
 import { FavCards } from "../../widgets/Cards"
 import { FilterForm } from "../../widgets/FilterForm/ui"
 import style from './styles.module.scss'
-const Movies = () => {
+const Serials = () => {
 	const {ratingFilter, yearFilter, genreFilter} = filterModel.useFilterInfo()
 	const query = genreFilter? `field=genres.name&search=${genreFilter}` : ''
-	const {data, isLoading} = filterModel.useGetFilteredMoviesQuery({ratingFilter, yearFilter, query})
+	const {data, isLoading} = filterModel.useGetFilteredSerialsQuery({ratingFilter, yearFilter, query})
 	return (
 		<Layout>
 			<div className={style.wrapper}>
@@ -45,4 +45,4 @@ const Movies = () => {
 	)
 }
 
-export default Movies
+export default Serials

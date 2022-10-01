@@ -4,16 +4,14 @@
 	align-items: center;
 	justify-content: center;
 	padding: 11px 0;
-	background-color: rgb(80, 80, 158);
 	border: 2px solid rgb(80, 80, 158);
-	color: #fff;
+	color: rgb(80, 80, 158);
 	border-radius: 5px;
 	font-size: 18px;
 	font-weight: 500;
-	margin-bottom: 20px;
-	transition: all 0.3s ease;
+	transition: background-color 0.3s ease;
 	&:hover{
-		background-color: rgb(62, 62, 139);
-		border: 2px solid rgb(62, 62, 139);
+		background-color: rgb(80, 80, 158);
+		color: #fff;
 	}
 }

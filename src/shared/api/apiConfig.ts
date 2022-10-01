@@ -29,16 +29,6 @@ export const commonApi = createApi({
 				return `/movie?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
-		getFilteredSerials: builder.query<{docs: movieTypes[]}, number>({
-			query: (limit) => {
-				return `/movie?&field=year&search=1960-${getYear.getFullYear()}&field=rating.kp&search=1-10&field=name&search=!null&field=typeNumber&search=2&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=1&token=${import.meta.env.VITE_TOKEN}`
-			}
-		}),
-		getFilteredCartoons: builder.query<{docs: movieTypes[]}, number>({
-			query: (limit) => {
-				return `/movie?&field=year&search=1960-${getYear.getFullYear()}&field=rating.kp&search=1-10&field=name&search=!null&field=typeNumber&search=3&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=1&token=${import.meta.env.VITE_TOKEN}`
-			}
-		}),
 	})
 })
 export const {
@@ -46,7 +36,5 @@ export const {
 	useGetMoviesByIdQuery,
 	useGetReviewByIdQuery,
 	useGetMovieByIdQuery,
-	useGetFilteredCartoonsQuery,
-	useGetFilteredSerialsQuery
 } = commonApi
 

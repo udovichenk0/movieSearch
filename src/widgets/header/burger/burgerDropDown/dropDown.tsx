@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 const categories = [
 	{title: 'Главная', icon: HomeSvg, link: '/'},
 	{title: 'Фильмы', icon: MovieSvg, link: '/movies'},
-	{title: 'Сериалы', icon: SerialSvg, link: '/series'},
+	{title: 'Сериалы', icon: SerialSvg, link: '/serials'},
 	{title: 'Мультики', icon: CartoonSvg, link: '/cartoons'},
 	{title: 'Избранное', icon: FavoriteSvg, link: '/favorites'},
 ]

@@ -38,6 +38,16 @@ const filteredApi = commonApi.injectEndpoints({
 				return `/movie?field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=!null&field=typeNumber&search=1&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=1&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
+		getFilteredCartoons: builder.query<{docs: movieTypes[]}, FilterType>({
+			query: ({ratingFilter, yearFilter, query}) => {
+				return `/movie?field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=!null&field=typeNumber&search=3&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=1&token=${import.meta.env.VITE_TOKEN}`
+			}
+		}),
+		getFilteredSerials: builder.query<{docs: movieTypes[]}, FilterType>({
+			query: ({ratingFilter, yearFilter, query}) => {
+				return `/movie?field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=!null&field=typeNumber&search=2&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=1&token=${import.meta.env.VITE_TOKEN}`
+			}
+		}),
 	})
 })
 
@@ -57,6 +67,8 @@ export const changeFilters = createAsyncThunk(
 export const {setRatingFilter,setGenreFilter,setYearFilter} = filterSlice.actions
 export default filterSlice.reducer
 export const {
-useGetFilteredMoviesQuery
+useGetFilteredMoviesQuery,
+useGetFilteredCartoonsQuery,
+useGetFilteredSerialsQuery
 } = filteredApi
 
