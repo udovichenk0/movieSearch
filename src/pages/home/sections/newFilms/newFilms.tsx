@@ -1,12 +1,11 @@
 import { Panel } from "../../ui/Panel/Panel"
 import style from './newFilms.module.scss'
-import { Cards, homeModel } from "../../../../Entities/home"
+import { Cards } from "../../../../Entities/home"
 import { loadMoreModel, LoadMoreButton } from "../../../../features/loadMore"
-
-export const NewFilms = () => {
-	const {data} = homeModel.useGetNewMoviesQuery(homeModel.getMovieLimit())
+import { cardType } from "../../../../types/someTypes/someTypes"
+export const NewFilms = ({data}: {data?: cardType}) => {
 	return (
-		<div className={style.filmsWrap}>
+			<div className={style.filmsWrap}>
 			<Panel title='фильмы'/>
 			<div className={style.cards}>
 			{data?.docs?.map((item:any) => <Cards item={item} key={item.id}/>)}

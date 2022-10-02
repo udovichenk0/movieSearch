@@ -1,9 +1,9 @@
 import style from './styles.module.scss'
-import { Cards,homeModel } from "../../../../Entities/home"
+import { Cards } from "../../../../Entities/home"
 import { LoadMoreButton,loadMoreModel } from "../../../../features/loadMore"
 import { Panel } from "../../ui/Panel/Panel"
-export const NewSerials = () => {
-	const {data} = homeModel.useGetNewSerialsQuery(homeModel.getSerialLimit())
+import { cardType } from '../../../../types/someTypes/someTypes'
+export const NewSerials = ({data}: {data?: cardType}) => {
 	return (
 		<div>
 			<Panel title='сериалы'/>

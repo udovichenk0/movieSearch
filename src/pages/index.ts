@@ -1,4 +1,4 @@
-import { HomePage } from "./home"
+import { HomePage } from "./home/ui"
 import React from "react"
 const MoviePageLazy = React.lazy(() => import('./film/index'))
 const PersonPageLazy = React.lazy(() => import('./Person/ui'))
