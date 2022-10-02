@@ -1,3 +1,4 @@
+import { InfoCard } from "../../../../Entities/infoCard"
 import { AddMovie } from "../../../../features/Fav"
 import { dateConverter, preload, validValue } from "../../../../shared/lib"
 import { InfoTable,Rating } from "../../../../shared/ui"
@@ -28,7 +29,7 @@ export const MovieInfo = ({isLoading,id,name,countries,rating,genres,slogan,ageR
 				<p className={style.body__secondTitle}>{preload({isLoading,data: alternativeName})}</p>
 				<div className={style.body__buttons}>
 					<ButtonWatch title={'Смотреть'}/>
-					<AddMovie customStyle={style.fav} movieId={+id}/>
+						<AddMovie customStyle={style.fav} movieId={+id}/>
 				</div>
 					<InfoTable items={items}/>
 			</div>

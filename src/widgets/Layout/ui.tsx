@@ -1,3 +1,4 @@
+import { InfoCard } from "../../Entities/infoCard"
 import { AddMovie } from "../../features/Fav"
 import { FilterForm } from "../../features/filter"
 import { Pagination } from "../../features/pagination"
@@ -19,7 +20,7 @@ export const Catalog = ({pages, data, isFetching, title, subtitle}:any) => {
 						</div>
 						: <div>
 							{data?.docs?.map(({poster,id, name, movieLength,year,description,rating}:any) => {
-							return <AddMovie key={id}
+							return <InfoCard key={id}
 							poster={poster}
 							id={id}
 							name={name}
@@ -28,7 +29,9 @@ export const Catalog = ({pages, data, isFetching, title, subtitle}:any) => {
 							description={description}
 							rating={rating}
 							customStyle={style.addToLS}
-							/>
+							>
+							<AddMovie id={id} customStyle={style.addToLS}/>
+							</InfoCard>
 						})}
 					</div>
 					}
