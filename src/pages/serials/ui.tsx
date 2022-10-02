@@ -1,13 +1,15 @@
 import { filterModel } from "../../Entities/filter"
+import { Pagination } from "../../features/pagination"
 import { Layout, Preloader } from "../../shared/ui"
 import { Panel } from "../../shared/ui/Panel/ui"
 import { FavCards } from "../../widgets/Cards"
 import { FilterForm } from "../../widgets/FilterForm/ui"
 import style from './styles.module.scss'
 const Serials = () => {
-	const {ratingFilter, yearFilter, genreFilter} = filterModel.useFilterInfo()
+	const {ratingFilter, yearFilter, genreFilter, currentPage} = filterModel.useFilterInfo()
 	const query = genreFilter? `field=genres.name&search=${genreFilter}` : ''
-	const {data, isLoading} = filterModel.useGetFilteredSerialsQuery({ratingFilter, yearFilter, query})
+	const {data, isLoading} = filterModel.useGetFilteredSerialsQuery({ratingFilter, yearFilter, query, currentPage})
+	const {pages}:any = {...data}
 	return (
 		<Layout>
 			<div className={style.wrapper}>
@@ -38,6 +40,7 @@ const Serials = () => {
 								}
 						</div>
 						</div>
+						<Pagination pages={pages}/>
 					</section>
 				</div>
 			</div>

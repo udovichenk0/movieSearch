@@ -1,6 +1,5 @@
 import { Controller, useForm } from "react-hook-form"
 import { Filter } from "../../features/filter";
-import { ButtonSubmit } from "../../features/filter/ui/ButtonFilter/Submit/ui";
 import { getYear } from "../../shared/lib";
 import style from './styles.module.scss'
 export const FilterForm = () => {
@@ -12,7 +11,7 @@ export const FilterForm = () => {
 		}
 	});
 	return (
-		<form>
+		<form style={{marginRight: '50px'}}>
 			<Controller
 			control={control}
 			name="rating"

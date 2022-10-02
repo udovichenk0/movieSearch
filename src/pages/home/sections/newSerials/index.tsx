@@ -6,7 +6,7 @@ import { cardType } from '../../../../types/someTypes/someTypes'
 export const NewSerials = ({data}: {data?: cardType}) => {
 	return (
 		<div>
-			<Panel title='сериалы'/>
+			<Panel title='сериалы' link={'serials'}/>
 			<div className={style.cards}>
 				{data?.docs?.map((item:any) => <Cards item={item} key={item.id}/>)}
 			</div>

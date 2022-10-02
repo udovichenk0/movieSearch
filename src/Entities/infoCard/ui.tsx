@@ -1,7 +1,6 @@
 import classnames from "classnames"
 import { Link } from "react-router-dom"
 import { arountNumber } from "../../shared/lib"
-import { movieTypes } from "../../types/FilmType"
 import { ratingColor, textSplitter } from "./lib"
 import style from './styles.module.scss'
 export const InfoCard = ({poster,id, name, movieLength,year,description,rating, children}:any) => {

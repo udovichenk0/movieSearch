@@ -1,13 +1,15 @@
 import { filterModel } from "../../Entities/filter"
+import { Pagination } from "../../features/pagination"
 import { Layout, Preloader } from "../../shared/ui"
 import { Panel } from "../../shared/ui/Panel/ui"
 import { FavCards } from "../../widgets/Cards"
 import { FilterForm } from "../../widgets/FilterForm/ui"
 import style from './styles.module.scss'
 const Cartoons = () => {
-	const {ratingFilter, yearFilter, genreFilter} = filterModel.useFilterInfo()
+	const {ratingFilter, yearFilter, genreFilter, currentPage} = filterModel.useFilterInfo()
 	const query = genreFilter? `field=genres.name&search=${genreFilter}` : ''
-	const {data, isLoading} = filterModel.useGetFilteredCartoonsQuery({ratingFilter, yearFilter, query})
+	const {data, isFetching} = filterModel.useGetFilteredCartoonsQuery({ratingFilter, yearFilter, query, currentPage})
+	const {pages}:any = {...data}
 	return (
 		<Layout>
 			<div className={style.wrapper}>
@@ -17,7 +19,7 @@ const Cartoons = () => {
 						<div className={style.block}>	
 						<FilterForm/>
 						<div className={style.box}>
-								{isLoading	
+								{isFetching	
 								? <div className={style.loader}>
 									<Preloader/>
 									</div>
@@ -38,6 +40,7 @@ const Cartoons = () => {
 								}
 						</div>
 						</div>
+						<Pagination pages={pages}/>
 					</section>
 				</div>
 			</div>
