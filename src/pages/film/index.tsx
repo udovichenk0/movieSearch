@@ -5,7 +5,6 @@ import style from './styles.module.scss'
 import { useGetMovieByIdQuery } from "../../shared/api"
 import { useActors, useInfo } from "./lib"
 import { Comments,MovieInfo } from "./sections"
-import { useLocalStorage } from "../../shared/lib/browser/useLocalStorage"
 const MoviePage = () => {
 	const {id} = useParams<string>()
 	const {data, isLoading} = useGetMovieByIdQuery(id)

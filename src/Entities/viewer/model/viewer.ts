@@ -25,7 +25,7 @@ export const {loginUser, logOutUser} = authSlice.actions
 export default authSlice.reducer
 
 export const useMovieFavStatus = () => {
-	const [favorites, setFavorite] = browser.useLocalStorage<string[]>('favorite', [])
+	const [favorites, setFavorite] = browser.useLocalStorage<number[]>('favorite', [])
 
 	return {favorites, setFavorite}
 }

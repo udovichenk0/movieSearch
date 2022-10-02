@@ -1,3 +1,3 @@
-export * as viewerModel from './viewer'
+export * from './viewer'
 import AuthSlice from './viewer'
 export {AuthSlice}

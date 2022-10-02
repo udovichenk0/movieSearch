@@ -30,7 +30,7 @@ const filterSlice = createSlice({
 	}
 })
 
-type FilterType = {
+interface FilterType {
 	ratingFilter: string
 	yearFilter: string
 	query: string
@@ -51,6 +51,11 @@ const filteredApi = commonApi.injectEndpoints({
 		getFilteredSerials: builder.query<{docs: movieTypes[]}, FilterType>({
 			query: ({ratingFilter, yearFilter, query,currentPage}) => {
 				return `/movie?field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=!null&field=typeNumber&search=2&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=${currentPage}&token=${import.meta.env.VITE_TOKEN}`
+			}
+		}),
+		getFilteredFavorite: builder.query<{docs: movieTypes[]}, FilterType>({
+			query: ({ratingFilter, yearFilter, query,currentPage}) => {
+				return `/movie?${query}&field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=!null&field=typeNumber&search=2&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=${currentPage}&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
 	})
@@ -74,6 +79,7 @@ export default filterSlice.reducer
 export const {
 useGetFilteredMoviesQuery,
 useGetFilteredCartoonsQuery,
-useGetFilteredSerialsQuery
+useGetFilteredSerialsQuery,
+useGetFilteredFavoriteQuery
 } = filteredApi
 

@@ -1,11 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { commonApi } from '../../shared/api/apiConfig'
 import { loadMoreModel } from '../../features/loadMore'
-import { AuthSlice } from '../../Entities/viewer'
 import { filterModel } from '../../Entities/filter'
+import { viewerModel } from '../../Entities/viewer'
 export const reducers = combineReducers({
 	showMoreSlice: loadMoreModel.showMoreSlice,
-	AuthSlice,
+	AuthSlice: viewerModel.AuthSlice,
 	filterSlice: filterModel.filterSlice,
 	[commonApi.reducerPath]: commonApi.reducer
 })

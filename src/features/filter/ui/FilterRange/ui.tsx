@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from 'react';
+import { useRef } from 'react';
 import { getTrackBackground, Range } from 'react-range';
 import { validNumber } from '../../lib';
 import style from './styles.module.scss'

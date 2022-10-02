@@ -1,7 +1,9 @@
 import { Controller, useForm } from "react-hook-form"
 import { Filter } from "../../features/filter";
 import { getYear } from "../../shared/lib";
-import style from './styles.module.scss'
+import { ButtonSubmit, ResetButton } from "./ui/ButtonFilter";
+import { FilterRange } from "./ui/FilterRange";
+import { ReactSelect } from "./ui/FilterSelect";
 export const FilterForm = () => {
 	const { handleSubmit, control } = useForm<any>({
 		defaultValues: {
@@ -18,7 +20,7 @@ export const FilterForm = () => {
 			render={({
 			field: { onChange, value },
 			}) => (
-				<Filter.FilterRange 
+				<FilterRange 
 				onChange={onChange}
 				values={value}
 				step={1}
@@ -34,7 +36,7 @@ export const FilterForm = () => {
 			render={({
 			field: { onChange, value },
 			}) => (
-				<Filter.FilterRange 
+				<FilterRange 
 				onChange={onChange}
 				values={value}
 				step={1}
@@ -48,15 +50,13 @@ export const FilterForm = () => {
 			name="genre"
 			control={control}
 			render={({field: {onChange, value}}) => (
-				<Filter.ReactSelect
+				<ReactSelect
 				onChange={onChange}
 				/>
 			)}
 			/>
-			<section className={style.select}>
-			</section>
-			<Filter.ButtonSubmit handleSubmit={handleSubmit}/>
-			<Filter.ResetButton handleSubmit={handleSubmit}/>
+			<ButtonSubmit handleSubmit={handleSubmit}/>
+			<ResetButton handleSubmit={handleSubmit}/>
 		</form>
 	)
 }
