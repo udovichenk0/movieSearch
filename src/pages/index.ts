@@ -1,11 +1,12 @@
 import { HomePage } from "./home/ui"
 import React from "react"
 const MoviePageLazy = React.lazy(() => import('./film/index'))
-const PersonPageLazy = React.lazy(() => import('./Person/ui'))
+const PersonPageLazy = React.lazy(() => import('./Person'))
 const MoviesPageLazy = React.lazy(() => import ('./movies/ui'))
 const SerialsPageLazy = React.lazy(() => import ('./serials/ui'))
 const CartoonsPageLazy = React.lazy(() => import ('./cartoons/ui'))
 const FavoritesPageLazy = React.lazy(() => import('./favorites/ui'))
+const RoomPlayerPageLazy = React.lazy(() => import('./room'))
 export const routes = [
 	{
 		path: '/',
@@ -34,5 +35,9 @@ export const routes = [
 	{
 		path: '/favorites',
 		component: FavoritesPageLazy
+	},
+	{
+		path: '/room/:id',
+		component: RoomPlayerPageLazy
 	}
 ]

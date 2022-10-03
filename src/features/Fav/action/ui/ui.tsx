@@ -3,7 +3,6 @@ import style from './styles.module.scss'
 import { MdFavoriteBorder } from "react-icons/md";
 import { AiOutlineCheck } from "react-icons/ai";
 import classnames from 'classnames';
-import { InfoCard } from '../../../../Entities/infoCard';
 export const AddMovie = ({id, customStyle}:any) => {
 	const {handleToggle, favorites} = useToggleMovie()
 	return (

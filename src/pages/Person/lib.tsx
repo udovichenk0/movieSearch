@@ -10,6 +10,5 @@ export const usePersonInfo = ({films, movies, facts}:any) => {
 }
 
 export const useFilms = (filmsData:any) => {
-
 	return filmsData?.docs?.filter((item:FilmType) => item.name?.length)
 }

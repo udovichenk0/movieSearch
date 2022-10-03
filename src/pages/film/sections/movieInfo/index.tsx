@@ -1,8 +1,7 @@
-import { InfoCard } from "../../../../Entities/infoCard"
+import { Link } from "react-router-dom"
 import { AddMovie } from "../../../../features/Fav"
 import { dateConverter, preload, validValue } from "../../../../shared/lib"
 import { InfoTable,Rating } from "../../../../shared/ui"
-import { ButtonWatch } from "../../ui"
 import style from './styles.module.scss'
 export const MovieInfo = ({isLoading,id,name,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster}:any) => {
 	const items = [
@@ -28,7 +27,7 @@ export const MovieInfo = ({isLoading,id,name,countries,rating,genres,slogan,ageR
 				<h1 className={style.body__title}>{preload({isLoading,data: name})}</h1>
 				<p className={style.body__secondTitle}>{preload({isLoading,data: alternativeName})}</p>
 				<div className={style.body__buttons}>
-					<ButtonWatch title={'Смотреть'}/>
+					<Link to={`/room/${id}`}><button className={style.button__watch}>Смотреть</button></Link>
 						<AddMovie customStyle={style.fav} movieId={+id}/>
 				</div>
 					<InfoTable items={items}/>
