@@ -2,8 +2,21 @@ import {Routes, Route} from 'react-router-dom'
 import { routes } from './pages/index'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
-import './shared/api/authFireBase'
-import { Suspense } from 'react';
+import { Suspense } from 'react'; 
+// import {swDev} from '../swDev'
+window.addEventListener('load', async () => {
+	if('serviceWorker' in navigator){
+		try{
+			const reg = await navigator.serviceWorker.register('../public/sw.js')
+      console.log('service worker register success', reg)
+		}
+    catch (e) {
+      console.log("error")
+    }
+	}
+
+})
+// swDev()
 function App() {
   return (
     <>

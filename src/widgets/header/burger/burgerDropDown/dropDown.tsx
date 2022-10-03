@@ -1,6 +1,6 @@
 import './dropdown.scss'
-import {CartoonSvg, MovieSvg, FavoriteSvg,SerialSvg, HomeSvg} from '../../../../shared/assets'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { SerialSvg, HomeSvg, MovieSvg, CartoonSvg, FavoriteSvg } from '@/shared/assets/menuIcons'
 const categories = [
 	{title: 'Главная', icon: HomeSvg, link: '/'},
 	{title: 'Фильмы', icon: MovieSvg, link: '/movies'},

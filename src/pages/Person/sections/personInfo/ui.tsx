@@ -1,4 +1,4 @@
-import { InfoTable } from '../../../../shared/ui'
+import { InfoTable } from '@/shared/ui/AboutFilm'
 import style from './styles.module.scss'
 
 

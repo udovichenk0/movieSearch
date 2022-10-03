@@ -1,7 +1,6 @@
 
-import { Facts } from "../../shared/ui/Facts/Facts";
-import { SwiperSlider } from "../../widgets/sliderBlock/Slider";
-
+import { Facts } from "@/shared/ui/Facts/Facts";
+import { SwiperSlider } from "@/widgets/sliderBlock/Slider";
 export const useActors = (persons:any) => {
 	return persons?.filter((item:any) => {
 	if (item.enProfession === 'actor' && item?.name?.length) {

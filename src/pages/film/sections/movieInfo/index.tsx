@@ -1,7 +1,8 @@
+import { InfoTable } from "@/shared/ui/AboutFilm"
+import { Rating } from "@/shared/ui/Rating"
 import { Link } from "react-router-dom"
 import { AddMovie } from "../../../../features/Fav"
 import { dateConverter, preload, validValue } from "../../../../shared/lib"
-import { InfoTable,Rating } from "../../../../shared/ui"
 import style from './styles.module.scss'
 export const MovieInfo = ({isLoading,id,name,countries,rating,genres,slogan,ageRating,budget,alternativeName,movieLength,premiere,fees,poster}:any) => {
 	const items = [

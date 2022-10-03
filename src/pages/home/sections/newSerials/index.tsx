@@ -1,8 +1,8 @@
 import style from './styles.module.scss'
-import { Cards } from "../../../../Entities/home"
-import { LoadMoreButton,loadMoreModel } from "../../../../features/loadMore"
+import { Cards } from "@/Entities/home"
+import { LoadMoreButton,loadMoreModel } from "@/features/loadMore"
 import { Panel } from "../../ui/Panel/Panel"
-import { cardType } from '../../../../types/someTypes/someTypes'
+import { cardType } from '@/types/someTypes/someTypes'
 export const NewSerials = ({data}: {data?: cardType}) => {
 	return (
 		<div>

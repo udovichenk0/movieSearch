@@ -1,4 +1,3 @@
-import { Layout } from '../Layout'
 import style from './styles.module.scss'
 type PropsType = {
 	title: string

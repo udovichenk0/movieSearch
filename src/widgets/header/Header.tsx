@@ -6,22 +6,17 @@ import { DropDown } from "./burger/burgerDropDown/dropDown"
 import style from './header.module.scss'
 import { Search } from "../../features/searchMovie/ui/SearchMovie"
 import { Link, useNavigate } from "react-router-dom"
-import { useAuth } from "../../shared/lib/auth/useAuth"
-import { LogoSvg } from "../../shared/assets"
-import { useAppDispatch } from "../../shared/lib"
-import { viewerModel } from "../../Entities/viewer"
+import { LogoSvg } from "@/shared/assets/logo"
 export const Header = () => {
 	const ref = useRef<null>(null)
 	const [isClicked, setClick] = useState(false)
-	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
-	const {isAuth} = useAuth()
 	return (
 	<HeaderStyled>
 		<div className={style.header__box} ref={ref}>	
 		<Container>
 			<div className={style.wrapper}>
-				<Burger reference={ref} 
+			<Burger reference={ref} 
 			isClicked={isClicked}
 			setClick={setClick}/>
 			<DropDown isClicked={isClicked}/>
@@ -31,12 +26,9 @@ export const Header = () => {
 			<Search/> 
 
 				<div className={style.empty}></div>
-				{!isAuth
-				? <Link className={style.header__login_box} to={'/login'}>
+				<Link className={style.header__login_box} to={'/login'}>
 					<div className={style.header__login}>Login</div>
 				</Link>
-				: <button onClick={() => dispatch(viewerModel.logOutUser())} className={style.header__login}>Logout</button>
-				}
 			</div>
 		</Container>
 			</div>

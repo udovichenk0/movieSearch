@@ -1,8 +1,8 @@
 import { Panel } from "../../ui/Panel/Panel"
 import style from './newFilms.module.scss'
-import { Cards } from "../../../../Entities/home"
-import { loadMoreModel, LoadMoreButton } from "../../../../features/loadMore"
-import { cardType } from "../../../../types/someTypes/someTypes"
+import { Cards } from "@/Entities/home"
+import { loadMoreModel, LoadMoreButton } from "@/features/loadMore"
+import { cardType } from "@/types/someTypes/someTypes"
 export const NewFilms = ({data}: {data?: cardType}) => {
 	return (
 			<div className={style.filmsWrap}>

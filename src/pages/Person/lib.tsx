@@ -1,4 +1,4 @@
-import { Facts } from "../../shared/ui"
+import { Facts } from "@/shared/ui/Facts"
 import { FilmType } from "../../types/FilmType"
 import { SwiperSlider } from "../../widgets/sliderBlock"
 

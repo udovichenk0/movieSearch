@@ -1,10 +1,12 @@
-import { Layout,FooterTabs,BackButton } from "../../shared/ui"
 import { useParams } from "react-router-dom"
-import { SwiperSlider } from "../../widgets/sliderBlock"
+import { SwiperSlider } from "@/widgets/sliderBlock"
 import style from './styles.module.scss'
-import { useGetMovieByIdQuery } from "../../shared/api"
+import { useGetMovieByIdQuery } from "@/shared/api"
 import { useActors, useInfo } from "./lib"
 import { Comments,MovieInfo } from "./sections"
+import { BackButton } from "@/shared/ui/BackButton"
+import { Layout } from "@/shared/ui/Layout"
+import { FooterTabs } from "@/shared/ui/Tabs"
 const MoviePage = () => {
 	const {id} = useParams<string>()
 	const {data, isLoading} = useGetMovieByIdQuery(id)

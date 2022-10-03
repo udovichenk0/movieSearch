@@ -1,11 +1,11 @@
-import { Container } from "../../app/styles/container"
-import { Layout } from "../../shared/ui/Layout/Layout"
+import { Container } from "@/app/styles/container"
+import { Preloader } from "@/shared/ui/Loader"
 import { Banner } from "./sections/banner"
 import style from './styles.module.scss'
 import { NewFilms } from "./sections/newFilms/newFilms"
 import { NewSerials } from "./sections/newSerials"
-import { homeModel } from "../../Entities/home"
-import { Preloader } from "../../shared/ui"
+import { homeModel } from "@/Entities/home"
+import { Layout } from "@/shared/ui/Layout"
 export const HomePage = () => {
 	const {data, isLoading} = homeModel.useGetNewMoviesQuery(homeModel.getMovieLimit())
 	const {data: serialData} = homeModel.useGetNewSerialsQuery(homeModel.getSerialLimit())
@@ -14,7 +14,7 @@ export const HomePage = () => {
 			<Banner/>
 			<div className={style.cards__body}>
 			<Container>
-				{isLoading? <div className={style.preloader}><Preloader/> </div>
+				{isLoading? <div className={style.preloader}><Preloader/></div> 
 				: 
 				<>
 				<NewFilms data={data}/>

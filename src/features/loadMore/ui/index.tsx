@@ -1,4 +1,3 @@
-// import { onHandleLoad } from '../model'
 import { useAppDispatch } from '../../../shared/lib'
 import style from './styles.module.scss'
 export const LoadMoreButton = ({action}:any) => {
