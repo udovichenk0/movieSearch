@@ -9,7 +9,7 @@ export const Search = () => {
 			<input className={style.search__input} placeholder="Search" type="text" />
 			<button className={style.form__button}onSubmit={onSubmit}>
 				<div className={style.searchImage__container}>
-					<img className={style.search} src={searchIcon} alt="" />
+					<img className={style.search} src={searchIcon} alt='search' />
 				</div>
 			</button>
 		</form>

@@ -7,8 +7,7 @@ import { Suspense } from 'react';
 window.addEventListener('load', async () => {
 	if('serviceWorker' in navigator){
 		try{
-			const reg = await navigator.serviceWorker.register('../public/sw.js')
-      console.log('service worker register success', reg)
+			const reg = await navigator.serviceWorker.register('/sw.js')
 		}
     catch (e) {
       console.log("error")

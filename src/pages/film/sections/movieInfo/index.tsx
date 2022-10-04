@@ -20,7 +20,7 @@ export const MovieInfo = ({isLoading,id,name,countries,rating,genres,slogan,ageR
 		<section className={style.box__body}>
 			<div className={style.body__poster}>
 				<div className={style.image__container}>
-					<img className={style.poster} src={poster?.url} alt="" />
+					<img className={style.poster} src={poster?.url} alt={`${name}`} />
 				</div>
 					<Rating ratingStyle={style.body__rating} rating={rating?.kp? rating.kp : 0}/>
 			</div>

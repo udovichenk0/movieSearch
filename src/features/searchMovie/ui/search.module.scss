@@ -5,18 +5,22 @@
 	font-size: 18px;
 	margin-left: 150px;
 	border-radius: 5px;
-	min-width: 400px;
+	width: 400px;
 	@media(max-width: 990px){
 		margin-left: 70px;
+		width: 300px;
 	}
-	@media(max-width: 818px){
-		min-width: 200px;
+	@media(max-width: 920px){
+		margin-left: 40px;
 	}
 }
 
 .form__wrapper{
 	display: flex;
 	align-items: center;
+	@media(max-width: 799px){
+		display: none;
+	}
 }
 
 .form__button{

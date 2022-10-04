@@ -7,7 +7,7 @@ export const Cards = ({item}:{item: movieTypes}) => {
 		<div className={style.card}>
 			<Link to={`/film/${item.id}`} className={style.card__image}>
 				<div className={style.card__image}>
-					<img className={style.image} src={item?.poster?.previewUrl} alt="" />
+					<img className={style.image} src={item?.poster?.previewUrl} alt={`${item.name}`} />
 				</div>
 			</Link>
 			<div className={style.card__title}>{item?.name}</div>

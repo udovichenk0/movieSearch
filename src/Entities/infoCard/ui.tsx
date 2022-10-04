@@ -9,7 +9,7 @@ return (
 			<div className={style.body__container}>
 				<Link to={`/film/${id}`}>
 					<div className={style.body__image}>
-						<img className={style.image} src={poster?.url} alt="" />
+						<img className={style.image} src={poster?.url} alt={`${name}`} />
 					</div>
 				</Link>
 				<article className={style.body__article}>

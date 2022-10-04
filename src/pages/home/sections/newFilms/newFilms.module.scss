@@ -4,6 +4,15 @@
 .cards{
 	display: grid;
 	grid-template-columns: repeat(5,1fr);
+	@media(max-width: 1030px){
+		grid-template-columns: repeat(4,1fr);
+	}
+	@media(max-width: 1030px){
+		grid-template-columns: repeat(4,1fr);
+	}
+	@media(max-width: 799px){
+		grid-template-columns: repeat(2,1fr);
+	}
 	gap: 30px;
 	row-gap: 90px;
 	align-items: center;

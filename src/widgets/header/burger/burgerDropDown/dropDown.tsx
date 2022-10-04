@@ -17,7 +17,7 @@ export const DropDown = ({isClicked}:{isClicked: boolean}) => {
 						return(
 						<li key={title} className="menu__link">
 							<Link to={link} className={'link'}>
-								<img src={icon} alt="" />
+								<img className='icon' src={icon} alt={title} />
 								<div className="menu__item">{title}</div>
 							</Link>
 							</li>

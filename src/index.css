@@ -1,5 +1,7 @@
 /* Reset and base styles  */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700);
+/* @import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700); */
+
+
 * {
 	padding: 0px;
 	margin: 0px;
