@@ -3,19 +3,11 @@ import { routes } from './pages/index'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
 import { Suspense } from 'react'; 
-// import {swDev} from '../swDev'
-window.addEventListener('load', async () => {
-	if('serviceWorker' in navigator){
-		try{
-			const reg = await navigator.serviceWorker.register('/sw.js')
-		}
-    catch (e) {
-      console.log("error")
-    }
-	}
-
-})
-// swDev()
+if('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+  })
+}
 function App() {
   return (
     <>

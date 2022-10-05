@@ -18,8 +18,8 @@
     "types": ["node"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
   },
-  "include": ["src"],
+  "include": ["src", "public/sw.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

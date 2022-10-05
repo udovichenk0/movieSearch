@@ -1,32 +1,40 @@
-const CACHE = 'network-or-cache-v2';
-const assetUrl = [
-	'/src/index.css',
-    '/src/main.tsx',
-    '/src/Entities/home/ui/Cards/cards.module.scss',
-    '/src/shared/assets/logo/LogoSvg.tsx',
-    '/node_modules/.vite/deps/chunk-EY5S3FDG.js?v=d03ec107',
-    '/src/shared/assets/heroImg/heroImg.webp'
-]
-// При установке воркера мы должны закешировать часть данных (статику).
-self.addEventListener('install', async (event) => {
-    const cache = await caches.open(CACHE)
-    await cache.addAll(assetUrl)
-});
+// import { cleanupOutdatedCaches, precacheAndRoute } from 'workbox-precaching'
+// import { clientsClaim } from 'workbox-core'
 
-self.addEventListener('activate', async event => {
-	const cacheNames = await caches.keys()
-    await Promise.all(
-        cacheNames.filter(name => name !== CACHE)
-        .map(name => caches.delete(name))
-    )
-})
+// self.skipWaiting()
+// clientsClaim()
+// cleanupOutdatedCaches()
 
-self.addEventListener('fetch', event => {
-    event.respondWith(cacheFirst(event.request))
-})
+// precacheAndRoute(self.__WB_MANIFEST)
+// registerRoute(new NavigationRoute(
+// 	createHandlerBoundToURL('index.html'),
+// 	{ denylist: [/^\/backoffice/] },
+//   ))
+// Establish a cache name
+const cacheName = 'MyFancyCacheName_v1';
 
-async function cacheFirst(request){
-    const cached = await caches.match(request)
-    return cached ?? fetch(request)
+self.addEventListener('fetch', (event) => {
+  // Check if this is a request for an image
+if (event.request.destination === 'image') {
+	console.log(event.request)
+    event.respondWith(caches.open(cacheName).then((cache) => {
+      // Go to the cache first
+    return cache.match(event.request.url).then((cachedResponse) => {
+        // Return a cached response if we have one
+        if (cachedResponse) {
+        return cachedResponse;
+        }
+        // Otherwise, hit the network
+        return fetch(event.request).then((fetchedResponse) => {
+          // Add the network response to the cache for later visits
+        cache.put(event.request, fetchedResponse.clone());
+
+          // Return the network response
+        return fetchedResponse;
+        });
+    });
+    }));
+} else {
+    return;
 }
-
+});
