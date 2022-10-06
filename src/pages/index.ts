@@ -7,6 +7,8 @@ const SerialsPageLazy = React.lazy(() => import ('./serials/ui'))
 const CartoonsPageLazy = React.lazy(() => import ('./cartoons/ui'))
 const FavoritesPageLazy = React.lazy(() => import('./favorites/ui'))
 const RoomPlayerPageLazy = React.lazy(() => import('./room'))
+const LoginPageLazy = React.lazy(() => import('./login'))
+const RegisterPageLazy = React.lazy(() => import('./register'))
 export const routes = [
 	{
 		path: '/',
@@ -39,5 +41,13 @@ export const routes = [
 	{
 		path: '/room/:id',
 		component: RoomPlayerPageLazy
+	},
+	{
+		path: '/login',
+		component: LoginPageLazy
+	},
+	{
+		path: '/register',
+		component: RegisterPageLazy
 	}
 ]

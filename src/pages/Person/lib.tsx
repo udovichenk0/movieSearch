@@ -1,6 +1,6 @@
 import { Facts } from "@/shared/ui/Facts"
-import { FilmType } from "../../types/FilmType"
-import { SwiperSlider } from "../../widgets/sliderBlock"
+import { FilmType } from "@/types/FilmType"
+import { SwiperSlider } from "@/widgets/sliderBlock"
 
 export const usePersonInfo = ({films, movies, facts}:any) => {
 	return [

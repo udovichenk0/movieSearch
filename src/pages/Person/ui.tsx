@@ -1,8 +1,8 @@
 import style from './personInfo.module.scss'
 import { useMemo } from "react"
 import { useParams } from "react-router-dom"
-import { useGetMoviesByIdQuery, useGetPersonByIdQuery } from "../../shared/api"
-import { dateConverter } from "../../shared/lib"
+import { useGetMoviesByIdQuery, useGetPersonByIdQuery } from "@/shared/api"
+import { dateConverter } from "@/shared/lib"
 import { PersonInfo } from "./sections"
 import { useFilms, usePersonInfo } from "./lib"
 import { FooterTabs } from '@/shared/ui/Tabs'

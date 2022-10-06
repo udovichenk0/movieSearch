@@ -21,7 +21,6 @@ type SwiperSliderType = {
   }
 
 export const SwiperSlider = ({content, title, redirect}: SwiperSliderType) => {
-	console.log(content)
 	return <div className='wrapper'>
 			<h1 className='title'>{title} <span>({content?.length})</span></h1>
 		<Swiper
