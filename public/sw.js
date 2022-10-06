@@ -1,23 +1,7 @@
-// import { cleanupOutdatedCaches, precacheAndRoute } from 'workbox-precaching'
-// import { clientsClaim } from 'workbox-core'
-
-// self.skipWaiting()
-// clientsClaim()
-// cleanupOutdatedCaches()
-
-// precacheAndRoute(self.__WB_MANIFEST)
-// registerRoute(new NavigationRoute(
-// 	createHandlerBoundToURL('index.html'),
-// 	{ denylist: [/^\/backoffice/] },
-//   ))
-// Establish a cache name
-const cacheName = 'MyFancyCacheName_v1';
-
 self.addEventListener('fetch', (event) => {
   // Check if this is a request for an image
-if (event.request.destination === 'image') {
-	console.log(event.request)
-    event.respondWith(caches.open(cacheName).then((cache) => {
+if (event.request.destination === 'image' || event.request.destination === 'font') {
+    event.respondWith(caches.open('MyFancyCacheName_v1').then((cache) => {
       // Go to the cache first
     return cache.match(event.request.url).then((cachedResponse) => {
         // Return a cached response if we have one
@@ -34,7 +18,28 @@ if (event.request.destination === 'image') {
         });
     });
     }));
-} else {
+}
+if (event.request.url.endsWith('.scss')) {
+    event.respondWith(caches.open('staticPrecache').then((cache) => {
+      // Go to the cache first
+    return cache.match(event.request.url).then((cachedResponse) => {
+        // Return a cached response if we have one
+        if (cachedResponse) {
+        return cachedResponse;
+        }
+        // Otherwise, hit the network
+        return fetch(event.request).then((fetchedResponse) => {
+          // Add the network response to the cache for later visits
+        cache.put(event.request, fetchedResponse.clone());
+
+          // Return the network response
+        return fetchedResponse;
+        });
+    });
+    }));
+}
+
+else {
     return;
 }
 });
