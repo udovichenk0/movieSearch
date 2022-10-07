@@ -10,6 +10,7 @@ const authSlice = createSlice({
 	},
 	reducers:{
 		loginUser(state, action){
+			console.log(action)
 			state.email = action.payload.email
 			state.id = action.payload.uid
 		},

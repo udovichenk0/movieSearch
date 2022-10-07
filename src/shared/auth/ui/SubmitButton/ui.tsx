@@ -1,6 +1,7 @@
 import style from './styles.module.scss'
-export const SubmitButton = ({handleAuth}:any) => {
+export const SubmitButton = ({handleAuth, title}:any) => {
+	
 	return (
-		<button className={style.submit} onSubmit={handleAuth}>Войти</button>
+		<button className={style.submit} onSubmit={handleAuth}>{title}</button>
 	)
 }

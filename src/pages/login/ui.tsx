@@ -1,4 +1,4 @@
-import { Auth } from "@/Entities/auth"
+import { Auth } from "@/features/auth"
 import { Layout } from "@/shared/ui/Layout"
 import style from './styles.module.scss'
 const Login = () => {

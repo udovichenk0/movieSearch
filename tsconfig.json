@@ -15,11 +15,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["node"],
+    "types": ["node", "vite-plugin-pwa/client"],
     "paths": {
       "@/*": ["./src/*"]
     },
   },
-  "include": ["src", "public/sw.js"],
+  "include": ["src", "src/sw.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

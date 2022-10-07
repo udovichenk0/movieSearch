@@ -1,15 +1,21 @@
 import { Form, SubmitButton, TextInput } from "@/shared/auth";
 import { Controller, useForm } from "react-hook-form"
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { loginModel } from ".";
 import style from './styles.module.scss'
 export const LoginForm = () => {
-	const {register, handleSubmit, control } = useForm({
+	const dispatch = useDispatch()
+	const { handleSubmit, control } = useForm({
 		defaultValues:{
 			email: '',
 			password: ''
 		}
 	})
-	const onSubmit = (data:any) => console.log(data);
+	const onSubmit = (data:any) => {
+		const {email, password} = data
+		loginModel.login.signIn({email, password, dispatch})
+	};
 	// const 
 	return (
 				<Form handleAuth={handleSubmit(onSubmit)}>
@@ -42,7 +48,7 @@ export const LoginForm = () => {
 							name="password"
 							control={control}
 						/>
-						<SubmitButton handleAuth={handleSubmit(onSubmit)} />
+						<SubmitButton handleAuth={handleSubmit(onSubmit)} title={'Войти'} />
 						<div className={style.box}>
 							<p>Нет аккаунта?</p>
 							<div className={style.link}>

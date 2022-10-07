@@ -2,6 +2,8 @@
 	display: flex;
 	align-items: center;
 	min-height: 70px;
+	z-index: 99;
+	background-color: #141414
 }
 .block{
 	display: flex;
@@ -22,6 +24,8 @@
 	color: #fff;
 	font-size: 17px;
 	font-weight: 600;
+	display: flex;
+	align-items: center;
 }
 .empty{
 	flex: 1;

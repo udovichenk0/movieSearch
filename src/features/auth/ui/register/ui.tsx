@@ -1,8 +1,11 @@
 import { Form, SubmitButton, TextInput } from "@/shared/auth";
+import { useAppDispatch } from "@/shared/lib";
 import { Controller, useForm } from "react-hook-form"
 import { Link } from "react-router-dom";
+import { registerModel } from ".";
 import style from './styles.module.scss'
 export const RegisterForm = () => {
+	const dispatch = useAppDispatch()
 	const {handleSubmit, formState: { errors }, control } = useForm({
 		defaultValues:{
 			email: '',
@@ -11,7 +14,10 @@ export const RegisterForm = () => {
 			secondName: ''
 		}
 	})
-	const onSubmit = (data:any) => console.log(data);
+	const onSubmit = (data:any) => {
+		const {email, password} = data
+		registerModel.register.signIn({email, password, dispatch})
+	};
 	// const 
 	return (
 				<Form handleAuth={handleSubmit(onSubmit)}>
@@ -78,7 +84,7 @@ export const RegisterForm = () => {
 							name="password"
 							control={control}
 						/>
-						<SubmitButton handleAuth={handleSubmit(onSubmit)} />
+						<SubmitButton handleAuth={handleSubmit(onSubmit)} title={'Зарегистрироваться'} />
 						<div className={style.box}>
 							<p>Есть аккаунт?</p>
 							<div className={style.link}>

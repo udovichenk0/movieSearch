@@ -1,4 +1,4 @@
-import { Auth } from "@/Entities/auth"
+import { Auth } from "@/features/auth"
 import { Layout } from "@/shared/ui/Layout"
 const Register = () => {
 	return (
