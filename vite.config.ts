@@ -11,11 +11,14 @@ export default defineConfig({
     VitePWA({
       injectRegister: 'auto',
       strategies: 'generateSW',
+      includeAssets: ['images/*.png'],
       srcDir: 'src',
       filename: 'sw.ts',
       workbox: {
-        globPatterns: ['/src/**.*'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
         cleanupOutdatedCaches: true,
+        globDirectory: '.',
+        swDest: path.resolve('dist', 'sw.js'),
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -43,6 +46,35 @@ export default defineConfig({
               cacheableResponse: {
                 statuses: [0, 200]
               },
+            }
+          },
+          // {
+          //   urlPattern: RegExp('^http:\/\/127\.0\.0\.1:5173\/.**\.{html}'),
+          //   //https://firebasestorage\.googleapis\.com/.*media&token
+          //   handler: 'CacheFirst',
+          //   options: {
+          //     cacheName: 'cross-origin',
+          //     expiration: {
+          //       maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+          //     },
+          //     cacheableResponse: {
+          //       statuses: [0, 200]
+          //     }
+          //   }
+          // },
+          {
+            urlPattern: RegExp('^https:\/\/st\.kp\.yandex\.net\/.*'),
+            //https:\/\/st\.kp\.yandex\.net\/.*
+            //https://firebasestorage\.googleapis\.com/.*media&token
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'cross-origin',
+              expiration: {
+                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
             }
           },
         ]
