@@ -12,6 +12,7 @@
 	}
 }
 
+
 .notfavorite{
 	border: 2px solid #22222231;
 	color: #000;
@@ -25,9 +26,12 @@
 	&:hover{
 		background-color: rgb(80, 80, 158);
 		color: #fff;
-	}
-	img{
-		background-color: red;
+		.svgHover{
+			transition: all 0.2s ease-in-out;
+			path{
+				stroke: #fff;
+			}
+		}
 	}
 }
 

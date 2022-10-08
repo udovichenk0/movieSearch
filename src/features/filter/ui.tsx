@@ -1,6 +1,5 @@
 import { Controller, useForm } from "react-hook-form"
-import { Filter } from "../../features/filter";
-import { getYear } from "../../shared/lib";
+import { getYear } from "@/shared/lib";
 import { ButtonSubmit, ResetButton } from "./ui/ButtonFilter";
 import { FilterRange } from "./ui/FilterRange";
 import { ReactSelect } from "./ui/FilterSelect";

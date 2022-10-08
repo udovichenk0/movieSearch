@@ -1,6 +1,6 @@
 import { HomePage } from "./home/ui"
 import React from "react"
-const MoviePageLazy = React.lazy(() => import('./film/index'))
+const MoviePageLazy = React.lazy(() => import('./film/ui'))
 const PersonPageLazy = React.lazy(() => import('./Person'))
 const MoviesPageLazy = React.lazy(() => import ('./movies/ui'))
 const SerialsPageLazy = React.lazy(() => import ('./serials/ui'))

@@ -1,10 +1,10 @@
 import { Layout } from "@/shared/ui/Layout"
 import { Preloader } from "@/shared/ui/Loader"
 import { Panel } from "@/shared/ui/Panel"
-import { InfoCard } from "../../Entities/infoCard"
-import { AddMovie } from "../../features/Fav"
-import { FilterForm } from "../../features/filter"
-import { Pagination } from "../../features/pagination"
+import { InfoCard } from "@/Entities/infoCard"
+import { AddMovie } from "@/features/Fav"
+import { FilterForm } from "@/features/filter"
+import { Pagination } from "@/features/pagination"
 
 import style from './styles.module.scss'
 export const Catalog = ({pages, data, isFetching, title, subtitle}:any) => {

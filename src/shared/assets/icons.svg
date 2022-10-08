@@ -1,0 +1,7 @@
+<svg width="0" height="0" className="hidden">
+	<symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="checkMark">
+		<rect width="48" height="48" fill="white" fillOpacity="0.01"></rect>
+		<path d="M14 24L15.25 25.25M44 14L24 34L22.75 32.75" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"></path>
+		<path d="M4 24L14 34L34 14" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"></path>
+	</symbol>
+</svg>
