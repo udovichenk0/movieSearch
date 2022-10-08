@@ -3,7 +3,7 @@ import { Burger } from "./burger/burgerButton/burder"
 import { useRef, useState } from "react"
 import { DropDown } from "./burger/burgerDropDown/dropDown"
 import style from './header.module.scss'
-import { Search } from "@/features/searchMovie/ui/SearchMovie"
+import { Search } from "@/features/searchMovie/ui"
 import { Link, useNavigate } from "react-router-dom"
 import { LogoSvg } from "@/shared/assets/logo"
 import { useAuth } from "@/shared/lib"

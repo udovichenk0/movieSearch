@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { commonApi } from "../../../shared/api";
-import { getYear } from "../../../shared/lib";
 import { getFullYear } from "../../../shared/lib/getFullYear";
 import { movieTypes } from "../../../types/FilmType";
 
@@ -58,6 +57,11 @@ const filteredApi = commonApi.injectEndpoints({
 				return `/movie?${query}&field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=!null&field=typeNumber&search=2&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=${currentPage}&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
+		getMovieBySearch: builder.query<movieTypes[], any>({
+			query: ({ratingFilter, yearFilter, query,currentPage, title}) => {
+				return `/movie?${query}&field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=${title}&field=typeNumber&search=1&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=${currentPage}&token=${import.meta.env.VITE_TOKEN}`
+			}
+		})
 	})
 })
 
@@ -80,6 +84,7 @@ export const {
 useGetFilteredMoviesQuery,
 useGetFilteredCartoonsQuery,
 useGetFilteredSerialsQuery,
-useGetFilteredFavoriteQuery
+useGetFilteredFavoriteQuery,
+useGetMovieBySearchQuery
 } = filteredApi
 

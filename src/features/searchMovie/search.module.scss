@@ -3,21 +3,23 @@
 	color: #fff;
 	padding: 12px 15px;
 	font-size: 18px;
-	margin-left: 150px;
+	// margin-left: 150px;
 	border-radius: 5px;
+
 	width: 400px;
+}
+
+.form__wrapper{
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-left: 150px;
 	@media(max-width: 990px){
 		margin-left: 70px;
-		width: 300px;
 	}
 	@media(max-width: 920px){
 		margin-left: 40px;
 	}
-}
-
-.form__wrapper{
-	display: flex;
-	align-items: center;
 	@media(max-width: 799px){
 		display: none;
 	}

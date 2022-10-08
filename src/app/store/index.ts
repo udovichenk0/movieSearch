@@ -3,10 +3,12 @@ import { commonApi } from '../../shared/api/apiConfig'
 import { loadMoreModel } from '../../features/loadMore'
 import { filterModel } from '../../Entities/filter'
 import { viewerModel } from '../../Entities/viewer'
+import { searchModel } from '@/Entities/searchDropDown'
 export const reducers = combineReducers({
 	showMoreSlice: loadMoreModel.showMoreSlice,
 	AuthSlice: viewerModel.AuthSlice,
 	filterSlice: filterModel.filterSlice,
+	searchSlice: searchModel.searchSlice,
 	[commonApi.reducerPath]: commonApi.reducer
 })
 

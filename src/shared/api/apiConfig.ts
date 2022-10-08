@@ -1,9 +1,8 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-import { FilmType, movieTypes } from '../../types/FilmType';
+import { FilmType } from '../../types/FilmType';
 import { PersonType } from '../../types/PersonType';
 import { ReviewType } from '../../types/ReviewType';
 import { MoviesByIdTypeProps, ReviewByIdTypeProps } from '../../types/someTypes/someTypes';
-import { getYear } from '../lib';
 
 
 
@@ -29,12 +28,22 @@ export const commonApi = createApi({
 				return `/movie?search=${id}&field=id&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
+		searchMovie: builder.query<any, any>({
+			query: ({title,tab}) => {
+				console.log(title,tab)
+				return `/movie?field=name&search=${title}&isStrict=true&field=typeNumber&search=${tab}&limit=10&token=${import.meta.env.VITE_TOKEN}`
+			},
+		}),
 	})
 })
+
+
+//https://api.kinopoisk.dev/movie?field=name&search=Бэтмен&field=typeNumber&search=1&limit=10&token=P1KCK9Y-R26MMAG-NCCF0W3-XXWKWA7
 export const {
 	useGetPersonByIdQuery,
 	useGetMoviesByIdQuery,
 	useGetReviewByIdQuery,
 	useGetMovieByIdQuery,
+	useSearchMovieQuery
 } = commonApi
 

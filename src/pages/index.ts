@@ -9,6 +9,7 @@ const FavoritesPageLazy = React.lazy(() => import('./favorites/ui'))
 const RoomPlayerPageLazy = React.lazy(() => import('./room'))
 const LoginPageLazy = React.lazy(() => import('./login'))
 const RegisterPageLazy = React.lazy(() => import('./register'))
+const SearchPageLazy = React.lazy(() => import('./search'))
 export const routes = [
 	{
 		path: '/',
@@ -49,5 +50,9 @@ export const routes = [
 	{
 		path: '/register',
 		component: RegisterPageLazy
+	},
+	{
+		path: '/search/:title',
+		component: SearchPageLazy
 	}
 ]
