@@ -9,11 +9,10 @@ export const Burger = ({reference, isClicked, setClick}:any) => {
 		const handleClick = (e: MouseEvent) =>{
 			if(!reference.current) return;
 			if(!reference.current.contains(e.target)){
-				console.log(e.target);
-				
 				setClick(false)
 			}
 		}
+		console.log(1)
 			document.addEventListener('click', handleClick)
 			return () => {
 				document.removeEventListener('click', handleClick)

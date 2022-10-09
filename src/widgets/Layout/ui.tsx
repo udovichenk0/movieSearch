@@ -39,7 +39,7 @@ export const Catalog = ({pages, data, isFetching, title, subtitle}:any) => {
 					}
 			</div>
 					</section>
-					{!isFetching && data?.docs.length > 10 && <Pagination pages={pages}/>}
+					{!isFetching && pages > 1 && <Pagination pages={pages}/>}
 				</div>
 			</div>
 		</Layout>

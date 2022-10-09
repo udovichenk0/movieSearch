@@ -30,7 +30,6 @@ export const commonApi = createApi({
 		}),
 		searchMovie: builder.query<any, any>({
 			query: ({title,tab}) => {
-				console.log(title,tab)
 				return `/movie?field=name&search=${title}&isStrict=true&field=typeNumber&search=${tab}&limit=10&token=${import.meta.env.VITE_TOKEN}`
 			},
 		}),

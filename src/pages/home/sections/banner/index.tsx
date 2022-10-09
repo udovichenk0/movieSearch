@@ -1,7 +1,7 @@
-import { FiArrowRight } from "react-icons/fi"
 import { useNavigate } from "react-router-dom"
 import { Container } from "@/app/styles/container"
 import style from './styles.module.scss'
+import { BackIcon } from "@/shared/assets/backButton"
 export const Banner = () => {
 	const navigate = useNavigate()
 	return (
@@ -12,7 +12,7 @@ export const Banner = () => {
 				<div className={style.main__description}>Джейн Фостер берет на себя обязанности Бога-громовержца и становится обладательницей молота Мьёльнира.</div>
 				<button onClick={() => navigate('film/1282688')} className={style.button}>Подробнее
 			<div className={style.icon}>
-			<FiArrowRight/>
+				<BackIcon style={style.arrow}/>
 			</div>
 		</button>
 			</div>

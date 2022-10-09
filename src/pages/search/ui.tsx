@@ -1,11 +1,13 @@
 import { filterModel } from "@/Entities/filter"
+import { getTab } from "@/Entities/searchDropDown/model"
 import { Catalog } from "@/widgets/Layout"
 import { useParams } from "react-router-dom"
 const Search = () => {
+	const id = getTab()
 	const {title} = useParams()
 	const {ratingFilter, yearFilter, genreFilter, currentPage} = filterModel.useFilterInfo()
 	const query = genreFilter? `field=genres.name&search=${genreFilter}` : ''
-	const {data, isFetching} = filterModel.useGetMovieBySearchQuery({ratingFilter, yearFilter, query, currentPage,title})
+	const {data, isFetching} = filterModel.useGetMovieBySearchQuery({ratingFilter, yearFilter, query, currentPage,title, id})
 	const {pages}:any = {...data}
 	return (
 		<Catalog

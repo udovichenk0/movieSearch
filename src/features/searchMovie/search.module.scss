@@ -24,7 +24,19 @@
 		display: none;
 	}
 }
-
+.link{
+	background-color: #141414;
+	transition: background-color 0.2s ease-in-out; 
+	width: 100%; 
+	display: inline-block;
+	padding: 15px;
+	align-items: center;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	&:hover{
+		background-color: #020202;
+	}
+}
 .form__button{
 	padding: 10px;
 }

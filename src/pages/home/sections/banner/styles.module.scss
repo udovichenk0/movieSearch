@@ -56,13 +56,17 @@
 	&:hover{
 		background-color: rgb(57, 57, 160);
 	& .icon{
-		transform: translateX(5px);
+		transform: translateX(5px) rotate(180deg);
 		}
 	}
 }
 .icon{
 	transition: transform 0.2s ease-in-out;
-
+	transform: rotate(180deg);
 	display: flex;
 	align-items: center;
+}
+
+.arrow{
+	stroke: #fff;
 }

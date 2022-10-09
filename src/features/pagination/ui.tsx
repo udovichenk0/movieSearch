@@ -1,7 +1,7 @@
 import style from './styles.module.scss'
-import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { filterModel } from '../../Entities/filter';
 import { useAppDispatch } from '../../shared/lib';
+import { BackIcon } from '@/shared/assets/backButton';
 
 export const Pagination = ({pages}:{pages:number}) => {
 	const {currentPage} = filterModel.useFilterInfo()
@@ -18,9 +18,13 @@ export const Pagination = ({pages}:{pages:number}) => {
 		<>
 		<div className={style.pagination}>
 			<button disabled={currentPage === 1 || currentPage === pages}
-			onClick={onPrevClick} className={style.pagination__prev}><AiOutlineLeft/></button>
+			onClick={onPrevClick} className={style.pagination__prev}><BackIcon style=''/></button>
 			<div className={style.pagination__info}>{currentPage}\{pages}</div>
-			<button onClick={onNextClick} className={style.pagination__next}>{<AiOutlineRight/>}</button>
+			<button onClick={onNextClick} className={style.pagination__next}>{
+				<div className={style.box}>
+					<BackIcon style=''/>
+				</div>
+				}</button>
 		</div>
 		</>
 	)

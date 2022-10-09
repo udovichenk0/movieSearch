@@ -1,26 +1,41 @@
-import { SearchDropDown, searchModel } from "@/Entities/searchDropDown"
+import { SearchDropDown } from "@/Entities/searchDropDown"
 import { searchIcon } from "@/shared/assets/buttonSearch"
+import { SearchModal } from "@/shared/ui/searchModal"
+import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import style from './search.module.scss'
+import { Switches } from "./searchSwitches"
 export const Search = () => {
-
-	const navigate = useNavigate()
-	const {register,watch,getValues} = useForm({defaultValues: {title: '' }})
+	const {register,watch} = useForm({defaultValues: {title: '' }})
+	const [isClicked, setClick] = useState(false)
 	const title = watch('title')
-	console.log('rerender')
+	const ref = useRef<any>(null)
+
+	useEffect(() => {
+		const closeDropDown = (e:any) => {
+			if (isClicked && ref.current && !ref.current.contains(e.target)) {
+				setClick(false)
+			}
+		}
+		document.addEventListener('click', closeDropDown)
+			return () => document.removeEventListener('click', closeDropDown)
+	},[isClicked, setClick])
+
 	return (
-		<div>
-			<form className={style.form__wrapper}>
-				<input className={style.search__input} {...register('title')} placeholder="Search" type="text" />
-				<button className={style.form__button}onSubmit={({title}:any) => navigate(`/search/${title}`)}>
+			<form ref={ref} className={style.form__wrapper}>
+				<input onClick={() => setClick(prev => true)} className={style.search__input} {...register('title')} placeholder="Search" type="text" />
+				<Link to={`/search/${title}`} className={style.form__button}>
 					<div className={style.searchImage__container}>
 						<img className={style.search} src={searchIcon} alt='search' />
 					</div>
-				</button>
-				{title && <SearchDropDown title={title}/>}
+				</Link>
+				{title && isClicked && 
+				<SearchModal>
+					<Switches/>
+					<SearchDropDown title={title}/>
+					<Link to={`/search/${title}`} className={style.link}>Показать все</Link>
+				</SearchModal>}
 			</form>
-		</div>
-		
 	)
 }

@@ -12,7 +12,6 @@ export const Header = () => {
 	const [isClicked, setClick] = useState(false)
 	const navigate = useNavigate()
 	const {isAuth, email} = useAuth()
-
 	return (
 		<div className={style.header__box} ref={ref}>	
 		<Container>

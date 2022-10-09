@@ -9,8 +9,8 @@
 		// color: rgb(34 34 34 / 19%);
 		border: 1px solid rgb(34 34 34 / 19%);
 		padding: 0 15px;
-		
 	}
+
 	&__info{
 		display: flex;
 		align-items: center;
@@ -22,4 +22,7 @@
 	[disabled]{
 		color: rgba(34, 34, 34, 0.322);
 	}
+}
+.box{
+	transform: scale(-1) translateY(3px);
 }

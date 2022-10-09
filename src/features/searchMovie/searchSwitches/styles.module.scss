@@ -1,0 +1,25 @@
+.tab_container{
+	border-bottom: 1px solid rgba(204, 202, 202, 0.281);
+}
+.tabs{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px;
+}
+.tab{
+	width: 100%;
+	background-color: #141414;
+	padding: 10px;
+	&:first-child{
+		border-bottom-left-radius: 5px;
+		border-top-left-radius: 5px;
+	}
+	&:nth-child(3){
+		border-bottom-right-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+}
+.active{
+	background-color: #020202;
+}

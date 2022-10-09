@@ -58,8 +58,8 @@ const filteredApi = commonApi.injectEndpoints({
 			}
 		}),
 		getMovieBySearch: builder.query<movieTypes[], any>({
-			query: ({ratingFilter, yearFilter, query,currentPage, title}) => {
-				return `/movie?${query}&field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=${title}&field=typeNumber&search=1&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=${currentPage}&token=${import.meta.env.VITE_TOKEN}`
+			query: ({ratingFilter, yearFilter, query,currentPage, title, id}) => {
+				return `/movie?${query}&field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=${title}&field=typeNumber&search=${id}&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=${currentPage}&token=${import.meta.env.VITE_TOKEN}`
 			}
 		})
 	})
