@@ -8,7 +8,7 @@ export const NewFilms = ({data}: {data?: cardType}) => {
 			<div className={style.filmsWrap}>
 			<Panel title='фильмы' link={'movies'}/>
 			<div className={style.cards}>
-			{data?.docs?.map((item:any) => <Cards item={item} key={item.id}/>)}
+				{data?.docs?.map((item:any) => <Cards item={item} key={item.id}/>)}
 			</div>
 			<LoadMoreButton action={loadMoreModel.showMoreFilms}/>
 		</div>

@@ -5,6 +5,9 @@
 	cursor:pointer;
 	position: relative;
 	margin-right: 60px;
+	@media(max-width: 920px){
+		margin-right: 20px;
+	}
 	&__line{
 		width: 100%;
 		border-radius: 8px;

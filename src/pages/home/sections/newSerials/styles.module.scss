@@ -6,11 +6,11 @@
 	align-items: center;
 	margin-bottom: 100px;
 	align-items: flex-start;
-	@media(max-width: 1030px){
+	@media(max-width: 1170px){
 		grid-template-columns: repeat(4,1fr);
 	}
-	@media(max-width: 1030px){
-		grid-template-columns: repeat(4,1fr);
+	@media(max-width: 970px){
+		grid-template-columns: repeat(3,1fr);
 	}
 	@media(max-width: 799px){
 		grid-template-columns: repeat(2,1fr);
