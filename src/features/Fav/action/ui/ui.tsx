@@ -2,7 +2,6 @@ import { useToggleMovie } from '../model'
 import style from './styles.module.scss'
 import classnames from 'classnames';
 import {FavIcon} from '@/shared/assets/favorite';
-import '@/shared/assets/checkmark/checkMark.svg';
 import { CheckMarkIcon } from '@/shared/assets/checkmark';
 export const AddMovie = ({id, customStyle}:any) => {
 	const {handleToggle, favorites} = useToggleMovie()
