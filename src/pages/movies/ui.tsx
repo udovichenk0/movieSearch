@@ -1,5 +1,5 @@
 import { filterModel } from "@/Entities/filter"
-import { Catalog } from "@/widgets/Layout"
+import { Catalog } from "@/widgets/catalog"
 const Movies = () => {
 	const {ratingFilter, yearFilter, genreFilter, currentPage} = filterModel.useFilterInfo()
 	const query = genreFilter? `field=genres.name&search=${genreFilter}` : ''

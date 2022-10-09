@@ -1,6 +1,6 @@
 import { filterModel } from "@/Entities/filter"
 import { getTab } from "@/Entities/searchDropDown/model"
-import { Catalog } from "@/widgets/Layout"
+import { Catalog } from "@/widgets/catalog"
 import { useParams } from "react-router-dom"
 const Search = () => {
 	const id = getTab()

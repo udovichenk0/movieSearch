@@ -1,6 +1,6 @@
 import { filterModel } from "../../Entities/filter"
 import { viewerModel } from "../../Entities/viewer"
-import { Catalog } from "../../widgets/Layout"
+import { Catalog } from "../../widgets/catalog"
 
 const Favorites = () => {
 	const {ratingFilter, yearFilter, genreFilter, currentPage} = filterModel.useFilterInfo()
