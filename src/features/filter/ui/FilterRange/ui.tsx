@@ -37,7 +37,7 @@ return (
             style={{
             ...props.style,
             height: '3px',
-            width: '270px',
+            width: '100%',
 			background: getTrackBackground({
                 values,
                 colors: ["#ccc", "rgb(80, 80, 158)", "#ccc"],

@@ -1,0 +1,19 @@
+.form{
+	margin-right: 50px;
+	width: 300px;
+	@media(max-width: 1025px){
+		margin: 0;
+		width: 400px;
+	}
+}
+
+.container{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	@media(min-width: 1026px){
+		align-items:flex-start;
+	}
+}

@@ -1,0 +1,21 @@
+.close{
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	&::after, &::before{
+		content: '';
+		width: 16px;
+		height: 2px;
+		background-color: black;
+		position: absolute;
+	}
+	&::after{
+		transform: rotate(45deg);
+	}
+	&::before{
+		transform: rotate(-45deg)
+	}
+}

@@ -3,11 +3,12 @@
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 30px;
+	gap: 20px;
 }
 
 .input{
 	border: 1px solid rgba(34, 34, 34, 0.5);
-	width: 120px;
+	width: 100%;
 	padding: 10px 15px;
 	border-radius: 5px;
 	margin-top: 6px;

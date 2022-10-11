@@ -3,6 +3,7 @@ import { getYear } from "@/shared/lib";
 import { ButtonSubmit, ResetButton } from "./ui/ButtonFilter";
 import { FilterRange } from "./ui/FilterRange";
 import { ReactSelect } from "./ui/FilterSelect";
+import style from './styles.module.scss'
 export const FilterForm = () => {
 	const { handleSubmit, control } = useForm<any>({
 		defaultValues: {
@@ -12,7 +13,8 @@ export const FilterForm = () => {
 		}
 	});
 	return (
-		<form style={{marginRight: '50px'}}>
+		<div className={style.container}>
+			<form className={style.form}>
 			<Controller
 			control={control}
 			name="rating"
@@ -56,6 +58,8 @@ export const FilterForm = () => {
 			/>
 			<ButtonSubmit handleSubmit={handleSubmit}/>
 			<ResetButton handleSubmit={handleSubmit}/>
-		</form>
+		</form>	
+		</div>
+			
 	)
 }

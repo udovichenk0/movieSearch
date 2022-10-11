@@ -7,15 +7,19 @@
 		justify-content: space-between;
 		max-width: 850px;
 		gap: 100px;
-		// margin-bottom: 30px;
 		@media(max-width: 1200px){
 			gap: 70px;
 		}
+		@media(max-width: 1025px){
+			max-width: 100%;
+		};
 
 	}
 	&__container{
 		display: flex;
-		max-width: 425px;
+		@media(min-width: 1026px){
+			max-width: 425px;
+		}
 	}
 	&__image{
 		width: 64px;
