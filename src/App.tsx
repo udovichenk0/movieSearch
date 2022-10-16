@@ -3,21 +3,10 @@ import { routes } from './pages/index'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
 import { Suspense } from 'react'; 
-import { Workbox } from 'workbox-window';
 import './firebase'
 
 
 
-// if('serviceWorker' in navigator) {
-//   window.addEventListener('load', () => {
-//     navigator.serviceWorker.register('/src/sw.ts')
-//   })
-// }
-
-// if ('serviceWorker' in navigator) {
-//   const wb = new Workbox('/src/sw.ts');
-//   wb.register();
-// }
 
 function App() {
   return (
