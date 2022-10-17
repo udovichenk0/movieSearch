@@ -1,5 +1,6 @@
 import { useSearchMovieQuery } from '@/shared/api'
 import { Preloader } from '@/shared/ui/Loader'
+import { FilmType } from '@/types/FilmType'
 import { Link } from 'react-router-dom'
 import { searchModel } from '.'
 import style from './styles.module.scss'
@@ -16,19 +17,21 @@ export const SearchDropDown = ({title}:{title:string}) => {
 					<Preloader/>
 				</div>
 				: data?.docs.length
-				? data?.docs.map((item:any) => {
+				? data?.docs.map((item:FilmType) => {
 						return (
-						<div className={style.box} key={item.id}>
-							<div className={style.left}>
-								<div className={style.imageContainer}>
-									<img  src={item?.poster?.url} alt='' />
-								</div>
-								<div>
-									<div>{item.name}</div>
-									<div>{item.year}</div>
+						<Link to={`film/${item.id}`} key={item.id}>	
+							<div className={style.box}>
+								<div className={style.left}>
+									<div className={style.imageContainer}>
+										<img  src={item?.poster?.url} alt='' />
+									</div>
+									<div>
+										<div>{item.name}</div>
+										<div>{item.year}</div>
+									</div>
 								</div>
 							</div>
-						</div>
+						</Link>
 						)
 					})
 					: <div>not found</div>

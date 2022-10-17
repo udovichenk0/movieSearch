@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { viewerModel } from "../../../Entities/viewer"
+import { viewerModel } from "@/Entities/viewer"
 
 
 export const useToggleMovie = () => {

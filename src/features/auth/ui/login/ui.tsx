@@ -12,7 +12,7 @@ export const LoginForm = () => {
 			password: ''
 		}
 	})
-	const onSubmit = (data:any) => {
+	const onSubmit = (data:{email:string, password: string}) => {
 		const {email, password} = data
 		loginModel.login.signIn({email, password, dispatch})
 	};

@@ -1,15 +1,11 @@
 import { MovieType } from "../../types/MovieType"
 
-export const useVotes = (data:any, total:any) => {
-	const goodReview = data?.docs?.filter((item:MovieType) => !item.type || item.type === 'Позитивный').length
-	const badReview = data?.docs?.filter((item:MovieType) =>  item.type === 'Негативный').length
-	const neutralReview = data?.docs?.filter((item:MovieType) =>  item.type === 'Нейтральный').length
+export const useVotes = (data:{docs: MovieType[]}, total:number) => {
+	const goodReview = <number>data?.docs?.filter((item:MovieType) => !item.type || item.type === 'Позитивный').length
+	const badReview = <number>data?.docs?.filter((item:MovieType) =>  item.type === 'Негативный').length
+	const neutralReview = <number>data?.docs?.filter((item:MovieType) =>  item.type === 'Нейтральный').length
 
-// 	return {
-// 		positive: {vote: goodReview, style: 'goodReview'},
-// 		negative: {vote: badReview, style: 'badReview'},
-// 		neutral: 
-// }
+
 return [
 	{value: goodReview, style: 'goodReview'},
 	{value: badReview, style: 'badReview'},

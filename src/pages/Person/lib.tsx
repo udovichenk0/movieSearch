@@ -1,8 +1,17 @@
 import { Facts } from "@/shared/ui/Facts"
-import { FilmType } from "@/types/FilmType"
+import { FactsType } from "@/types/FactsType"
+import { FilmType, movieTypes } from "@/types/FilmType"
+import { MoviesType } from "@/types/PersonType"
 import { SwiperSlider } from "@/widgets/sliderBlock"
 
-export const usePersonInfo = ({films, movies, facts}:any) => {
+type usePersonInfoType = {
+	films: movieTypes
+	movies?: MoviesType[]
+	facts?: FactsType[]
+}
+export const usePersonInfo = ({films, movies, facts}: usePersonInfoType) => {
+	
+	console.log(films)
 	return [
 		{title: 'Фильмы и сериалы', content:  <SwiperSlider content={films} redirect={'film'} title={'Фильмы и сериалы'}/>, condition:movies?.length},
 		{title: 'Факты', content:  <Facts facts={facts}/>, condition: facts?.length}

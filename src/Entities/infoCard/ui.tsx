@@ -3,7 +3,18 @@ import { Link } from "react-router-dom"
 import { arountNumber } from "@/shared/lib"
 import { ratingColor, textSplitter } from "./lib"
 import style from './styles.module.scss'
-export const InfoCard = ({poster,id, name, movieLength,year,description,rating, children}:any) => {
+import { ReactNode } from "react"
+type propsTypes = {
+	poster: {url:string}
+	id: number
+	name: string
+	movieLength: number
+	year: number
+	description: string
+	rating: {kp: number}
+	children: ReactNode
+}
+export const InfoCard = ({poster,id, name, movieLength,year,description,rating, children}:propsTypes) => {
 return (
 		<div className={style.body__card} key={id}>
 			<div className={style.body__container}>

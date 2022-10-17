@@ -2,7 +2,7 @@ import style from './facts.module.scss'
 import ReactHtmlParser from 'react-html-parser';
 import { FactsType } from '../../../types/FactsType';
 
-export const Facts = ({facts}: {facts: FactsType[] | undefined}) => {
+export const Facts = ({facts}: {facts?: FactsType[]}) => {
 	return (
 		<div >
 			<div className={style.title}>Знаете ли вы, что…</div>

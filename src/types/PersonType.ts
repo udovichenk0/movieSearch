@@ -6,7 +6,7 @@ type BirthPlaceType = {
 type DeathPlaceType = {
 	value: string
 }
-type MoviesType = {
+export type MoviesType = {
 	id: number
 	name: string
 	alternativeName: string

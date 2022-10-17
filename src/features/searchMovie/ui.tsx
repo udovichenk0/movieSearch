@@ -13,7 +13,7 @@ export const Search = () => {
 	const ref = useRef<any>(null)
 
 	useEffect(() => {
-		const closeDropDown = (e:any) => {
+		const closeDropDown = (e:Event) => {
 			if (isClicked && ref.current && !ref.current.contains(e.target)) {
 				setClick(false)
 			}

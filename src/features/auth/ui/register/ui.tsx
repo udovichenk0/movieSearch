@@ -6,7 +6,7 @@ import { registerModel } from ".";
 import style from './styles.module.scss'
 export const RegisterForm = () => {
 	const dispatch = useAppDispatch()
-	const {handleSubmit, formState: { errors }, control } = useForm({
+	const {handleSubmit, control } = useForm({
 		defaultValues:{
 			email: '',
 			password: '',
@@ -14,7 +14,7 @@ export const RegisterForm = () => {
 			secondName: ''
 		}
 	})
-	const onSubmit = (data:any) => {
+	const onSubmit = (data:{email:string, password: string}) => {
 		const {email, password} = data
 		registerModel.register.signIn({email, password, dispatch})
 	};

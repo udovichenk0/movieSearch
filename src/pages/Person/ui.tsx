@@ -10,7 +10,7 @@ import { BackButton } from '@/shared/ui/BackButton'
 import { Layout } from '@/shared/ui/Layout'
 const InfoPerson = () => {
 	const id = useParams()
-	const {data, isLoading} = useGetPersonByIdQuery(id.id)
+	const {data} = useGetPersonByIdQuery(id.id)
 	//@ts-ignore
 	const {name, enName, sex,death,growth,birthday, profession, movies, facts, spouses, photo} = {...data}
 	const query = movies?.map((item:any /* queryType */) => {

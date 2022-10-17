@@ -1,8 +1,12 @@
 import { useAppDispatch } from '../../../shared/lib'
 import style from './styles.module.scss'
-export const LoadMoreButton = ({action}:any) => {
+type propsType = {
+	action: () =>  void
+}
+export const LoadMoreButton = ({action}:propsType) => {
+	console.log(action)
 	const dispatch = useAppDispatch()
-	const onHandleLoad = (action:any) => {
+	const onHandleLoad = (action:() =>  any) => {
 		dispatch(action())
 	}
 	return(
