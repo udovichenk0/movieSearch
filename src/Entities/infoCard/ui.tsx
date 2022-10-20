@@ -31,9 +31,11 @@ return (
 						<div>{year},</div>
 						<div>{movieLength} min</div>
 					</div>
-					<Link to={`/film/${id}`}>
-						<div className={style.body__description}>{textSplitter(description)}</div>
-					</Link>
+						<div className={style.body__description}>
+							<Link to={`/film/${id}`}>
+								{textSplitter(description)}
+							</Link>
+						</div>
 				</article>
 			</div>
 			<div className={style.body__fav}>

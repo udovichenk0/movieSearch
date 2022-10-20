@@ -1,5 +1,8 @@
 .statistics{
 	padding: 35px 36px;
+	@media(max-width: 768px){
+		display: none;
+	}
 }
 .stickyBlock{
 	position: sticky;

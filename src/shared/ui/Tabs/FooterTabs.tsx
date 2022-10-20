@@ -20,10 +20,10 @@ export const FooterTabs = ({tabInfo}: {tabInfo: TabInfoType[]}) => {
       })}
     </TabList>
 
-     {tabInfo.map((item: TabInfoType, id:number) => {
+    {tabInfo.map((item: TabInfoType, id:number) => {
       if(!item.condition) return
       return <TabPanel key={id}>{item.content}</TabPanel>
-     })}
+    })}
   </Tabs>
 	)
 }

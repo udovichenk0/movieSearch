@@ -12,13 +12,16 @@
 	span{
 		font-size: 30px;
 		font-weight: 600;
-		color: rgb(77, 75, 75)
+		color: rgb(77, 75, 75);
 	}
 	@media(max-width: 880px){
 		font-size: 25px;
 		span{
 			font-size: 22px;
 		}
+	}
+	@media(max-width: 550px){
+		display: none;
 	}
 }
 
@@ -84,6 +87,9 @@
     display: flex;
     transition-property: transform;
     box-sizing: content-box;
+	@media(max-width: 550px){
+		padding-top: 70px;
+	}
 }
 .swiper-slide {
     flex-shrink: 0;
