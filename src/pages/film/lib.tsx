@@ -9,7 +9,7 @@ type personsType = {
 	name: string
 	photo: URL
 }
-export const useActors = (persons:personsType[]) => {
+export const useActors = (persons: any) => {
 	return persons?.filter((item:{name:string, enProfession:string}) => {
 	if (item.enProfession === 'actor' && item?.name?.length) {
 		return item
@@ -18,12 +18,10 @@ export const useActors = (persons:personsType[]) => {
 }
 
 type useInfoType = {
-	description: string
+	description?: string
 	actors: personsType[]
-	facts: FactsType[]
-	style: {
-		description: string
-	}
+	facts?: FactsType[]
+	style: any
 }
 export const useInfo = ({description, actors, facts, style}:useInfoType) => {
 	return [

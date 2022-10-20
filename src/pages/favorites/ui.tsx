@@ -3,7 +3,7 @@ import { viewerModel } from "../../Entities/viewer"
 import { Catalog } from "../../widgets/catalog"
 
 const Favorites = () => {
-	const {ratingFilter, yearFilter, genreFilter, currentPage} = filterModel.useFilterInfo()
+	const {ratingFilter, yearFilter, currentPage} = filterModel.useFilterInfo()
 	const {favorites} = viewerModel.useMovieFavStatus()
 	const query = favorites.map(favId => `field=id&search=${favId}&`).join('')
 	const {data, isFetching} = filterModel.useGetFilteredFavoriteQuery({ratingFilter, yearFilter, query, currentPage})

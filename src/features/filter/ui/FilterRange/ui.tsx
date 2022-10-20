@@ -14,14 +14,14 @@ return (
 		От
 		<input className={style.input} type='number'value={values[0]}
 			onChange={(e: React.ChangeEvent<HTMLInputElement>) => 
-			onChange([validNumber(e?.target.value || min,min, max, values), values[1]])} ref={ref} 
+			onChange([validNumber(e?.target.value || min,min, max), values[1]])} ref={ref} 
 		/>
 		</label>
 		<label htmlFor="" className={style.label}>
 		До
 		<input className={style.input} type='number'value={values[1]}
 			onChange={(e: React.ChangeEvent<HTMLInputElement>) => 
-			onChange([values[0],validNumber(e?.target.value || min,min, max, values)])} ref={ref} 
+			onChange([values[0],validNumber(e?.target.value || min,min, max)])} ref={ref} 
 		/>
 		</label>
 		</div>

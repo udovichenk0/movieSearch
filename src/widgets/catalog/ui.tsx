@@ -41,7 +41,6 @@ export const Catalog = ({pages, data, isFetching, title, subtitle}:any) => {
 							year={year}
 							description={description}
 							rating={rating}
-							customStyle={style.addToLS}
 							>
 							<AddMovie id={id} customStyle={style.addToLS}/>
 							</InfoCard>
