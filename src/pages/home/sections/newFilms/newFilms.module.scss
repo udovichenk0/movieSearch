@@ -11,11 +11,11 @@
 		grid-template-columns: repeat(3,1fr);
 	}
 	@media(max-width: 799px){
-		grid-template-columns: repeat(2,1fr);
+		grid-template-columns: repeat(2,40%);
 	}
 	gap: 30px;
 	row-gap: 90px;
-	align-items: center;
+	justify-content: center;
 	margin-bottom: 100px;
 	align-items: flex-start;
 }

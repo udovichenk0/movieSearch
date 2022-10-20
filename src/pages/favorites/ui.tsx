@@ -8,6 +8,7 @@ const Favorites = () => {
 	const query = favorites.map(favId => `field=id&search=${favId}&`).join('')
 	const {data, isFetching} = filterModel.useGetFilteredFavoriteQuery({ratingFilter, yearFilter, query, currentPage})
 	const {pages}:any= {...data}
+	console.log(pages)
 	return (
 		<Catalog
 		pages={pages} 

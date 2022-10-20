@@ -34,4 +34,7 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	@media(max-width: 799px){
+		display: none;
+	}
 }
