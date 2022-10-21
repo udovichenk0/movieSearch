@@ -1,4 +1,115 @@
-.fav {
-  padding: 8px 12px;
+.wrapper {
+  background-color: #f4f4f4;
+  height: 100%;
+}
+
+.container {
+  padding: 40px 40px 100px 40px;
+  background-color: #fff;
+  height: 100%;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 0 20px;
+  height: 100%;
+}
+
+.block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1025px) {
+  .block {
+    display: block;
+  }
+}
+
+.loader {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.filter__container {
+  -webkit-transition: left 0.2s ease-in-out;
+  transition: left 0.2s ease-in-out;
+  left: 0%;
+}
+
+@media (max-width: 1025px) {
+  .filter__container {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    top: 0;
+    padding: 0 20px;
+  }
+}
+
+.active {
+  left: -100%;
+}
+
+.mobile__headerFilter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 40px;
+}
+
+@media (min-width: 1026px) {
+  .mobile__headerFilter {
+    display: none;
+  }
+}
+
+.mobile__headerFilter::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(66, 66, 66, 0.315);
+  left: 0;
+  top: 50px;
+}
+
+.box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.addToLS {
+  padding: 11px 13px;
   border-radius: 5px;
 }

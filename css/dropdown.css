@@ -57,3 +57,9 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.icon {
+  width: 16px;
+  height: auto;
+  aspect-ratio: 1/1;
+}

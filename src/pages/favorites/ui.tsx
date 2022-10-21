@@ -1,6 +1,6 @@
-import { filterModel } from "../../Entities/filter"
-import { viewerModel } from "../../Entities/viewer"
-import { Catalog } from "../../widgets/catalog"
+import { filterModel } from "@/Entities/filter"
+import { viewerModel } from "@/Entities/viewer"
+import { Catalog } from "@/widgets/catalog"
 
 const Favorites = () => {
 	const {ratingFilter, yearFilter, currentPage} = filterModel.useFilterInfo()
@@ -12,10 +12,10 @@ const Favorites = () => {
 	return (
 		<Catalog
 		pages={pages} 
-		data={data} 
+		data={data && query.length} 
 		isFetching={isFetching} 
-		title="Все фильмы" 
-		subtitle="Подборка фильмов всего мира"/>
+		title="Избранное" 
+		subtitle="Ваша подборка избранного"/>
 	)
 }
 

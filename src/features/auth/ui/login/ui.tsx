@@ -1,11 +1,14 @@
 import { Form, SubmitButton, TextInput } from "@/shared/auth";
+import { useLocalStorage } from "@/shared/lib/browser/useLocalStorage";
 import { Controller, useForm } from "react-hook-form"
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginModel } from ".";
 import style from './styles.module.scss'
 export const LoginForm = () => {
 	const dispatch = useDispatch()
+	const [auth, setAuth] = useLocalStorage("auth", '');
+	const navigate = useNavigate()
 	const { handleSubmit, control } = useForm({
 		defaultValues:{
 			email: '',
@@ -14,9 +17,9 @@ export const LoginForm = () => {
 	})
 	const onSubmit = (data:{email:string, password: string}) => {
 		const {email, password} = data
-		loginModel.login.signIn({email, password, dispatch})
+		loginModel.login.signIn({email, password, dispatch, setAuth})
+		navigate(-1)
 	};
-	// const 
 	return (
 				<Form handleAuth={handleSubmit(onSubmit)}>
 					<h1 className={style.title}>Вход</h1>

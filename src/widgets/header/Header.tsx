@@ -12,6 +12,7 @@ export const Header = () => {
 	const [isClicked, setClick] = useState(false)
 	const navigate = useNavigate()
 	const {isAuth, email} = useAuth()
+	console.log(isAuth)
 	return (
 		<div className={style.header__box} ref={ref}>	
 		<Container>
@@ -27,7 +28,7 @@ export const Header = () => {
 
 				<div className={style.empty}></div>
 				
-				{isAuth? <div className={style.header__login}>{email}</div>
+				{isAuth? <div className={style.header__login}>Logged</div>
 				: <Link className={style.header__login_box} to={'/login'}>
 					<div className={style.header__login}>Войти</div>
 				</Link>

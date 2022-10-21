@@ -17,9 +17,15 @@
   color: #252525;
 }
 
-.panel__button {
+@media (max-width: 600px) {
+  .panel__title {
+    font-size: 22px;
+  }
+}
+
+.link {
   background-color: #50509e;
-  color: #fff;
+  color: #fff !important;
   padding: 13px 20px;
   line-height: 16px;
   font-weight: 600;

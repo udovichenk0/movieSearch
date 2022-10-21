@@ -1,16 +1,19 @@
-import { browser } from "../../../shared/lib"
+import { browser } from "@/shared/lib"
 
 import { createSlice } from "@reduxjs/toolkit"
-
+const storedAuth:string | null = localStorage.getItem('auth')
+	let json
+	if (typeof storedAuth === 'string') {
+		json = JSON.parse(`${storedAuth}`)
+	}
 const authSlice = createSlice({
 	name: 'authSlice',
 	initialState: {
-		email: null,
-		id: null
+		email: json?.email || null,
+		id: json?.uid || null
 	},
 	reducers:{
 		loginUser(state, action){
-			console.log(action)
 			state.email = action.payload.email
 			state.id = action.payload.uid
 		},
@@ -27,6 +30,5 @@ export default authSlice.reducer
 
 export const useMovieFavStatus = () => {
 	const [favorites, setFavorite] = browser.useLocalStorage<number[]>('favorite', [])
-
 	return {favorites, setFavorite}
 }

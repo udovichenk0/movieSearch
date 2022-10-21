@@ -16,6 +16,20 @@
           justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .footer__block {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__logo {
+    display: none;
+  }
+}
+
 .footer__links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,4 +64,10 @@
 
 .footer__watermark {
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer__watermark {
+    display: none;
+  }
 }

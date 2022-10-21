@@ -54,7 +54,7 @@ const filteredApi = commonApi.injectEndpoints({
 		}),
 		getFilteredFavorite: builder.query<{docs: movieTypes[]}, FilterType>({
 			query: ({ratingFilter, yearFilter, query,currentPage}) => {
-				return `/movie?${query}&field=year&search=${yearFilter}&${query}&field=rating.kp&search=${ratingFilter}&field=name&search=!null&field=typeNumber&search=2&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=${currentPage}&token=${import.meta.env.VITE_TOKEN}`
+				return `movie?${query}&field=year&search=${yearFilter}&field=rating.kp&search=${ratingFilter}&field=votes.kp&search=!null&sortField=year&sortType=-1&limit=10&page=${currentPage}&token=${import.meta.env.VITE_TOKEN}`
 			}
 		}),
 		getMovieBySearch: builder.query<movieTypes[], any>({
