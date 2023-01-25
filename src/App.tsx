@@ -9,6 +9,7 @@ import './firebase'
 
 
 function App() {
+  alert('If you can\'t see any movies, you probably need to turn on VPN')
   return (
     <>
     <Provider store={store()}>
